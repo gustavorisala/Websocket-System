@@ -1,10 +1,8 @@
 <?php
-
-$i=0;
+$i = 0;
 include 'controle/cadastrarNovoUsuario.php';
 if (isset($_GET["a"])) {
     $i = $_GET["a"];
-
 }
 ?>
 
@@ -32,68 +30,67 @@ if (isset($_GET["a"])) {
 <link rel="icon" href="imagens/favicon.png">
 </head>
 <style>
-html, body
-{
-  height: 100%;
-}
-	body
-	{
-		  background: url("https://i.pinimg.com/originals/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
-}
-html, p
-{
-	font-family: "Gotham SSm A","Gotham SSm B","Helvetica Neue",sans-serif !important;
+html, body {
+	height: 100%;
 }
 
-	.collogin
-	{
-	    box-shadow: 0 0 100px black;
-		background-color: black;
-		height: 100%;
-	}
-	.box-login
-	{
-    padding-top: 5% !important;
-			padding: 15%;
+body {
+	background:
+		url("https://i.pinimg.com/originals/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
+}
+
+html, p {
+	font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue",
+		sans-serif !important;
+}
+
+.collogin {
+	box-shadow: 0 0 100px black;
+	background-color: black;
+	height: 100%;
+}
+
+.box-login {
+	padding-top: 5% !important;
+	padding: 15%;
 }
 /*campos texto */
-label
-{
+label {
 	font-size: 18px;
-color: white;
+	color: white;
 }
 /* botao enviar*/
-.btn
-{
+.btn {
 	border-color: white;
-	font-family: "Gotham SSm A","Gotham SSm B","Helvetica Neue",sans-serif !important;
+	font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue",
+		sans-serif !important;
 	font-size: 18px;
 	color: white;
 	background-color: #bb914a;
 }
 /* bloco erro*/
-.form-control
-{
-  border: 2px solid #bb914a7a
+.form-control {
+	border: 2px solid #bb914a7a
 }
-.errormsg
-{
-padding-top: 1%;
+
+.errormsg {
+	padding-top: 1%;
 }
-.rowtxtregister
-{
+
+.rowtxtregister {
 	padding-top: 2%;
 }
-.txtregister
-{
-	font-family: "Gotham SSm A","Gotham SSm B","Helvetica Neue",sans-serif !important;
+
+.txtregister {
+	font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue",
+		sans-serif !important;
 	font-size: 14px;
 	color: white;
 }
-.btn:hover
-{
-  background-color: white;
-  color: black;
+
+.btn:hover {
+	background-color: white;
+	color: black;
 }
 </style>
 <body>
@@ -107,62 +104,71 @@ padding-top: 1%;
 
 <?php
 
-
 if (isset($erro))
-    echo '<div style="color:#F00">' . utf8_encode($erro) . '</div><br/><br/>';
-    else if (isset($sucesso))
-        echo '<div style="color:#00f">' . utf8_encode($sucesso) . '</div><br/><br/>';
+    echo '<div style="color:#F00">' . utf8_encode($erro) . '</div>';
+else if (isset($sucesso))
+    echo '<div style="color:#00f">' . utf8_encode($sucesso) . '</div>';
 
 ?>
 
 
 <div class="container containerlogin h-100">
-  <div class="row rowlogin h-100">
-    <div class="col-6 mx-auto collogin">
-    <div class="well box-login">
-      <img class="img-fluid" src="images/logo.jpeg" />
-			<form role="form" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
-				<fieldset>
+		<div class="row rowlogin h-100">
+			<div class="col-6 mx-auto collogin">
+				<div class="well box-login">
+					<img class="img-fluid" src="images/logo.jpeg" />
+					<form role="form" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
+						<fieldset>
 
+<?php
+
+if (isset($erro))
+    echo '<div style="color:#F00">' . utf8_encode($erro) . '</div><br/><br/>';
+else if (isset($sucesso))
+    echo '<div style="color:#00f">' . utf8_encode($sucesso) . '</div><br/><br/>';
+
+?>
 					<div class="form-group ls-login-user">
-						<label for="userLogin">Nome</label> <input
-							class="form-control ls-login-bg-user input-lg" id="nome"
-							type="text" aria-label="Nome" name="nome" placeholder="Insira seu nome">
-					</div>
+								<label for="userLogin">Nome</label> <input
+									class="form-control ls-login-bg-user input-lg" id="nome"
+									type="text" aria-label="Nome" name="nome"
+									placeholder="Insira seu nome">
+							</div>
 
-					<div class="form-group ls-login-user">
-						<label for="email">E-mail</label> <input
-							class="form-control ls-login-bg-password input-lg" id="email"
-							type="text" aria-label="E-mail" name="emailUser"
-							placeholder="Insira seu e-mail">
-					</div>
-          <div class="row">
-					<div class="form-group col ls-login-password">
-						<label for="userPassword">Senha</label> <input
-							class="form-control ls-login-bg-password input-lg"
-							id="userPassword" type="password" aria-label="senha"
-							name="senhaUser" placeholder="Insira sua senha">
-					</div>
+							<div class="form-group ls-login-user">
+								<label for="email">E-mail</label> <input
+									class="form-control ls-login-bg-password input-lg" id="email"
+									type="text" aria-label="E-mail" name="emailUser"
+									placeholder="Insira seu e-mail">
+							</div>
+							<div class="row">
+								<div class="form-group col ls-login-password">
+									<label for="userPassword">Senha</label> <input
+										class="form-control ls-login-bg-password input-lg"
+										id="userPassword" type="password" aria-label="senha"
+										name="senhaUser" placeholder="Insira sua senha">
+								</div>
 
-					<div class="form-group col ls-login-password">
-						<label for="userPassword">Confirmar Senha</label> <input
-							class="form-control ls-login-bg-password input-lg"
-							id="userPassword2" type="password" aria-label="confirmar senha"
-							name="confirmarSenhaUser" placeholder="Repita sua senha">
-					</div>
-        </div>
-
-
-					<input type="hidden" value="<?php echo $i?>" name="indicacao"> <input
-						type="submit" value="CONTINUAR"
-						class="btn btn-primary btn-lg btn-block">
+								<div class="form-group col ls-login-password">
+									<label for="userPassword">Confirmar Senha</label> <input
+										class="form-control ls-login-bg-password input-lg"
+										id="userPassword2" type="password"
+										aria-label="confirmar senha" name="confirmarSenhaUser"
+										placeholder="Repita sua senha">
+								</div>
+							</div>
 
 
-				</fieldset>
-			</form>
+							<input type="hidden" value="<?php echo $i?>" name="indicacao"> <input
+								type="submit" value="CONTINUAR"
+								class="btn btn-primary btn-lg btn-block">
+
+
+						</fieldset>
+					</form>
+				</div>
+			</div>
 		</div>
-  </div>
-</div>
 	</div>
 
 </body>
