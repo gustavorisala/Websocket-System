@@ -144,26 +144,15 @@ width: 100%;
 	<div class="row">
 		<div id="menu" class="col-3 paineluser">
 
-		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 
-
-			<div>
-				<h4>E-MAIL: <?=$dados_usuario['email']?><h4>
-
+			<div class="dadosusuario">
+				<ul class="sidebar">
+					<li>Dados Pessoais</i>
+				<li>E-MAIL: <?=$dados_usuario['email']?></li>
+				<li>Nome: <?=$dados_usuario['nome']?></li>
+				<li>link Indicacao: https://copytraderbrasil.com.br?a=<?=$dados_usuario['codigoindicacao']?></li>
+			</ul>
 			</div>
-			<br>
-			<div>
-				<h4>Nome: <?=$dados_usuario['nome']?><h4>
-
-			</div>
-			<br>
-			<div>
-				<h4>
-					link Indicacao: https://copytraderbrasil.com.br?a=<?=$dados_usuario['codigoindicacao']?>
-					<h4>
-
-			</div>
-			<br>
 
 </div>
 
