@@ -129,6 +129,13 @@ padding-top: 1%;
 					</span>
 				  </div>
 				</div>
+				<div class="row rowtxtregister">
+				  <div class="col text-center">
+						<span class="txtregister">
+				    Esqueceu a Senha<a href="resetarSenha.php">  RESETAR SENHA</a>
+					</span>
+				  </div>
+				</div>
 				<?php
     if (isset($erro))
         echo '<div class="errormsg" style="color:#F00">' . utf8_encode($erro) . '</div><br/><br/>';
