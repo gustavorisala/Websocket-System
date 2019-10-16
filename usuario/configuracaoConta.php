@@ -147,7 +147,7 @@ width: 100%;
 
 			<div class="dadosusuario">
 				<ul class="sidebar">
-					<li>Dados Pessoais</i>
+					<li> Dados Pessoais</i>
 				<li>E-MAIL: <?=$dados_usuario['email']?></li>
 				<li>Nome: <?=$dados_usuario['nome']?></li>
 				<li>link Indicacao: https://copytraderbrasil.com.br?a=<?=$dados_usuario['codigoindicacao']?></li>
