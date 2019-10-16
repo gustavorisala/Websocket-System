@@ -2,12 +2,12 @@
 
 require_once("phpmailer/class.phpmailer.php");
 
-define('GUSER', 'pubekessler@gmail.com');	// <-- Insira aqui o seu GMail
-define('GPWD', 'Zweistein01');		// <-- Insira aqui a senha do seu GMail
+define('GUSER', 'suporte.copytraderbrasil@gmail.com');	// <-- Insira aqui o seu GMail
+define('GPWD', 'mt@brasil@01');		// <-- Insira aqui a senha do seu GMail
 
 function smtpmailer($para, $assunto, $corpo)
 {
-    $de="pubekessler@gmail.com";
+    $de="suporte.copytraderbrasil@gmail.com";
     $de_nome="MT BRASIL"; 
     global $error;
     $mail = new PHPMailer();
