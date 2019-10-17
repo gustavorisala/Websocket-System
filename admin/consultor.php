@@ -27,26 +27,123 @@ require_once '../controle/dadosConsultor.php';
 <!--  link href="../estilo2.css" rel="stylesheet"-->
 
 </head>
+<style>
+.headerdados
+{
+  background-color: black;
+  color: white;
+  border-bottom: 1px solid black;
+      height: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+.input-group-text
+{
+  width: 150px;
+  justify-content: center;
+  padding: 10px;
+  background-color: #bb914a;
+  color: white;
+}
+.form-control
+{
+  height: auto;
+}
+.btn
+{
 
+    padding-left: 10%;
+    padding-right: 10%;
+  	border-color: white;
+  	font-family: "Gotham SSm A","Gotham SSm B","Helvetica Neue",sans-serif !important;
+  	color: white;
+  	background-color: #bb914a;
+}
+.dadosuser
+{
+  font-size: 20px !important;
+}
+.formdados
+{
+  background-color: white !important;
+  border: 1px solid;
+  padding: 4%;
+  border-color: gray;
+  margin-bottom: 0px !important;
+    margin-block-end: 0px !important;
+		height: 100%;
+}
+.formdados h5
+{
+  font-size: 16px;
+}
+body {
+    background: url("https://i.pinimg.com/originals/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
+}
+.paineluser
+{
+  background-color: white;
+}
+.colinfos
+{
+  padding: 0px !important;
+}
+footer
+{
+  color: white;
+  background-color: black;
+  position: absolute;
+bottom: 0;
+width: 100%;
+}
+.paineluser
+{
+  border: 1px solid;
+}
+.containerdados .row
+{
+
+}
+</style>
 <body>
-	<div id="menu">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+		<span class="navbar-toggler-icon"></span>
+	</button>
 
-<?php
+	<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+		<ul class="navbar-nav mr-auto">
+			<a class="navbar-brand" href="#">
+	<img class="ml-4" src="../images/logosemfundo.png" width="30" height="30" alt="">
+</a>
+		</ul>
+		<?php
 include_once '../menus/consultor.php';
-?>
+		?>
+	</div>
+</nav>
+
+		<div class="container-fluid">
+		<div class="row headerdados">
+			<div class="col text-center">
+				<h1>Relatório de operações</h1>
+			</div>
+		</div>
+		</div>
+		<div class="container-fluid containerdados">
+		<div class="row" style="height:65%;">
+		<div id="menu" class="col-3 paineluser">
+			<div class="dadosusuario">
+			</div>
 
 </div>
-
-	<div align="center">
-
-
-
-
-		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
-
+<div class="col-9 colinfos">
+	<form class="formdados" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
+<div class="col-8 mx-auto">
 			<p>Periodo</p>
-			<div style="width: 80%">
-				<div class="input-group mb-3">
+			<div class="row">
+				<div class="input-group col">
 					<div class="input-group-prepend">
 						<span class="input-group-text" id="basic-addon1">De :</span>
 					</div>
@@ -61,7 +158,7 @@ $(function() {
 });
 </script>
 
-				<div class="input-group mb-3">
+				<div class="input-group col">
 					<div class="input-group-prepend">
 						<span class="input-group-text" id="basic-addon2">Ate:</span>
 					</div>
@@ -75,7 +172,7 @@ $(function() {
 });
 </script>
 			</div>
-			<input type='submit' value='Filtrar'><br>
+			<input type='submit' value='Filtrar'>
 		</form>
 
 
@@ -95,10 +192,10 @@ $(function() {
 				</tr>
 
 			</thead>
-                   
-             
-        
-      
+
+
+
+
  <?php
 
 if ($saldoOperacoes) {
@@ -111,21 +208,26 @@ if ($saldoOperacoes) {
         echo "</tr> ";
     }
 } else {
-    echo utf8_encode('<tr><th>Sem Opera��es</th></tr>');
+    echo utf8_encode('<tr><th>Sem Opera��es</th></tr>');
 }
 
 ?>
     </table>
-
-
-
-
-
-
 	</div>
+</div>
+</div>
+</div>
+<footer class="page-footer font-small special-color-dark pt-4">
 
+	<!-- Footer Elements -->
+	<!-- Footer Elements -->
 
+	<!-- Copyright -->
+	<div class="footer-copyright text-center py-3">© 2019 Copyright
+		<a href="#"> MTBrasil</a>
+	</div>
+	<!-- Copyright -->
 
-
+</footer>
 </body>
 </html>

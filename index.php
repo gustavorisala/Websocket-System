@@ -53,6 +53,7 @@ html, p
 	}
 	.box-login
 	{
+		height: 100%;
 			padding: 15%;
 }
 /*campos texto */
@@ -125,14 +126,14 @@ padding-top: 1%;
 				<div class="row rowtxtregister">
 				  <div class="col text-center">
 						<span class="txtregister">
-				    Ainda não sou membro<a href="cadastroUsuario.php">  CRIAR CONTA</a>
+				    Ainda não é membro?<a href="cadastroUsuario.php">  Crie sua conta</a>
 					</span>
 				  </div>
 				</div>
 				<div class="row rowtxtregister">
 				  <div class="col text-center">
 						<span class="txtregister">
-				    Esqueceu a Senha<a href="resetarSenha.php">  RESETAR SENHA</a>
+				    <a href="resetarSenha.php">Esqueceu a senha?</a>
 					</span>
 				  </div>
 				</div>
