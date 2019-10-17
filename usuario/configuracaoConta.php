@@ -103,6 +103,18 @@ width: 100%;
 	width: 10%;
 	margin-right: 3%;
 }
+ul
+{
+	font-size: 22px;
+	font-weight: 500;
+}
+li
+{
+	font-weight: 400;
+	font-size: 20px;
+	margin-top: 3%;
+	margin-bottom: 3%:
+}
 </style>
 <body>
 
@@ -152,9 +164,9 @@ width: 100%;
 
 			<div class="dadosusuario">
 				<ul class="sidebar">Dados pessoais
-				<li><img src="../images/user.svg"> <?=$dados_usuario['email']?></li>
+				<li><img src="../images/gmail.svg"> <?=$dados_usuario['email']?></li>
 				<li><img src="../images/password.svg"> <?=$dados_usuario['nome']?></li>
-				<li><img src="../images/link.svg"> https://copytraderbrasil.com.br?a=<?=$dados_usuario['codigoindicacao']?></li>
+				<li><img src="../images/link.svg"> <a href="https://copytraderbrasil.com.br?a=<?=$dados_usuario['codigoindicacao']?>">Copiar Link</a></li>
 			</ul>
 			</div>
 

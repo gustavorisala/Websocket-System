@@ -178,7 +178,7 @@ $(function() {
 
 		<br>
 		<div>
-			<p>Qantidade De Clientes Aprovados No Periodo: <?=$quantidadeDeClienteAprovado?></p>
+			<p>Clientes aprovados no periodo: <?=$quantidadeDeClienteAprovado?></p>
 		</div>
 
 
