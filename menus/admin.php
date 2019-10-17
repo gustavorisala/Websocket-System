@@ -6,7 +6,7 @@
 		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 			<li><a class="navbar-brand" href="../cliente/operacoes.php">1231123</a></li>
 
-			<li><a class="navbar-brand" href="../cliente/dadosCliente.php">888888</a></li>
+			<li><a class="navbar-brand" href="../cliente/dadosCliente.php"><?php echo utf8_encode("Configurações");?></a></li>
 
 
 

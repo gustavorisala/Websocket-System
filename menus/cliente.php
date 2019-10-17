@@ -4,11 +4,11 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-			<li><a class="navbar-brand" href="../cliente/">Inicio</a></li>
+			<li><a class="navbar-brand" href="../cliente/"><?php echo utf8_encode("Inicio");?></a></li>
 
-			<li><a class="navbar-brand" href="../cliente/operacoes.php">Ordens</a></li>
+			<li><a class="navbar-brand" href="../cliente/operacoes.php"><?php echo utf8_encode("Ordens");?></a></li>
 
-			<li><a class="navbar-brand" href="../usuario/configuracaoConta.php">Configurações</a></li>
+			<li><a class="navbar-brand" href="../usuario/configuracaoConta.php"><?php echo utf8_encode("Configurações");?></a></li>
 
 
 

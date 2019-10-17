@@ -4,11 +4,10 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-			<li><a class="navbar-brand" href="../admin/consultorMaster.php">Inicio</a></li>
-<li><a class="navbar-brand" href="../admin/inserirConsultor.php">Inserir
-					Consultor</a></li>
-			
-			<li><a class="navbar-brand" href="../usuario/configuracaoConta.php">Configurações</a></li>
+			<li><a class="navbar-brand" href="../admin/consultorMaster.php"><?php echo utf8_encode("Inicio");?></a></li>
+			<li><a class="navbar-brand" href="../admin/inserirConsultor.php"><?php echo utf8_encode("Inserir Consultor");?></a></li>
+
+			<li><a class="navbar-brand" href="../usuario/configuracaoConta.php"><?php echo utf8_encode("Configurações");?></a></li>
 
 
 
