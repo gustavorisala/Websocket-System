@@ -15,26 +15,40 @@ if ($atual == 'completo') {
 
 <!-- bootstrap - link cdn -->
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 
 </head>
 
 <body style="width: 100%;">
 	<div id="menu">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#conteudoNavbarSuportado"
+				aria-controls="conteudoNavbarSuportado" aria-expanded="false"
+				aria-label="Alterna navegação">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-<?php
+			<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+				<ul class="navbar-nav mr-auto">
+					<a class="navbar-brand" href="#"> <img class="ml-4"
+						src="../images/logosemfundo.png" width="30" height="30" alt="">
+					</a>
+				</ul>
+	  <?php
     include_once '../menus/cliente.php';
     ?>
-
-</div>
+	  </div>
+		</nav>
+	</div>
 	<div align="center">
 		<form method="post" action="dadosCliente.php">
 
 
 			<div>
 				<p>Email: <?=$email?></p>
-				<br>
+
 				<p>Nome: <?=$nome?></p>
 			</div>
 

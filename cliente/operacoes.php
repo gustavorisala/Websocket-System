@@ -18,26 +18,38 @@ require_once '../controle/operacoesIQ.php';
 <!-- jquery - link cdn -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
+<!-- bootstrap - link cdn -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 <link rel="stylesheet"
 	href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" />
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 
-<!-- bootstrap - link cdn -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link href="../estilo2.css" rel="stylesheet">
-
 </head>
 
-<body>
-	<div id="menu">
+<div id="menu">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#conteudoNavbarSuportado"
+				aria-controls="conteudoNavbarSuportado" aria-expanded="false"
+				aria-label="Alterna navegação">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-<?php
-include_once '../menus/cliente.php';
-?>
-
-</div>
+			<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+				<ul class="navbar-nav mr-auto">
+					<a class="navbar-brand" href="#"> <img class="ml-4"
+						src="../images/logosemfundo.png" width="30" height="30" alt="">
+					</a>
+				</ul>
+	  <?php
+    include_once '../menus/cliente.php';
+    ?>
+	  </div>
+		</nav>
+	</div>
 	<div align="center">
 		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 			<p>Periodo</p>
