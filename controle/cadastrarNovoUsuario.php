@@ -12,7 +12,7 @@ function emailExiste($email, $link)
 function salvarUsuario($nome, $email, $senha, $link, $indicacao)
 {
     $sql = "INSERT INTO user(email, senha, userAtivo, papel, nome, indicacao, codigoindicacao) VALUES ('$email','$senha',1,'cliente','$nome', '$indicacao', '" . md5($email) . "')";
-    echo $sql;
+   // echo $sql;
     $resultado_id = mysqli_query($link, $sql);
 
     $sqlA = " SELECT id FROM user WHERE email = '$email'";
@@ -23,7 +23,7 @@ function salvarUsuario($nome, $email, $senha, $link, $indicacao)
     }
 
     $sql2 = "INSERT INTO statususer(status, data, observacao, iduser, idadmin) VALUES ('preCadastro'," . strtotime(date("Y-m-d H:i:s")) . ",'Cadastro feito pelo site',$id,0)";
-    echo $sql2;
+   // echo $sql2;
     $resultado_id = mysqli_query($link, $sql2);
     return $resultado_id;
 }
@@ -31,7 +31,7 @@ function salvarUsuario($nome, $email, $senha, $link, $indicacao)
 function salvarUsuarioIQ($email, $link)
 {
     $sql2 = "INSERT INTO useriq(ativo, operacaoAtivo, idUser, valorEntrada) VALUES (1,0,(select id from user where email='" . $email . "'),2.0)";
-    echo ("<script>console.log('PHP: " . $sql2 . "');</script>");
+   // echo ("<script>console.log('PHP: " . $sql2 . "');</script>");
     $resultado_id = mysqli_query($link, $sql2);
 
     return $resultado_id;

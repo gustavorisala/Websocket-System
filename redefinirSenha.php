@@ -36,7 +36,7 @@ include 'controle/redefinirSenha.php';
 <?php
 
 if (isset($sucesso)) {
-    echo "<p>".$sucesso."</p><br><a target='_blank' href='http://localhost/painel'>Fazer Login</a>";
+    echo "<p>".$sucesso."</p><br><a target='_blank' href='/'>Fazer Login</a>";
 } else {
     if ($email == null) {
         echo "<p>Token invalido!!!</p>";
@@ -54,14 +54,14 @@ if (isset($sucesso)) {
 						<input type="hidden" name="token" value="<?=$token ?>">
 						<input type="hidden" name="email" value="<?=$email ?>">
 						<div class="form-group ls-login-user">
-							<label for="senha1">Senha</label> <input
+							<label for="senha1">Nova Senha</label> <input
 								class="form-control ls-login-bg-user input-lg" id="senha1"
 								type="password" aria-label="Senha" name="senha1"
 								placeholder="Senha">
 						</div>
 
 						<div class="form-group ls-login-user">
-							<label for="senha2">Confirmação da Senha</label> <input
+							<label for="senha2"><?php echo utf8_encode("Confirmação da Senha");?></label> <input
 								class="form-control ls-login-bg-user input-lg" id="senha2"
 								type="password" aria-label="Senha" name="senha2"
 								placeholder="Senha">

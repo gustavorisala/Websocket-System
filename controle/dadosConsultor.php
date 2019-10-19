@@ -4,7 +4,7 @@ require_once 'buscarDados.php';
 session_start();
 
 if (! isset($_SESSION['usuario'])) {
-    header('Location: index.php?erro=1');
+    header('Location: ../index.php');
 } else {
     if ($_SESSION['papel'] != "admin" && $_SESSION['papel'] != "consultor") {
         echo "<h1>Somente ADM<h1>";

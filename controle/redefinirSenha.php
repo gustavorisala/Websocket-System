@@ -5,7 +5,7 @@ require_once ('util/mail.php');
 function buscarTokenRec($token, $link)
 {
     $sql = " SELECT email FROM user WHERE tokenrec = '$token'";
-    echo $sql;
+   // echo $sql;
     $resultado_id = mysqli_query($link, $sql);
     if ($resultado_id) {
         $dados_usuario = mysqli_fetch_array($resultado_id);
@@ -28,11 +28,11 @@ function enviarNovaSenha($token, $senha)
     $objDb = new db();
     $link = $objDb->conecta_mysql();
     $sql1 = "UPDATE user SET senha='" . md5(utf8_encode($senha)) . "' WHERE tokenrec='" . $token . "'";
-    echo ($sql1 . "<br>");
+   // echo ($sql1 . "<br>");
     $resultado_id = mysqli_query($link, $sql1);
     
     $sql2 = "UPDATE user SET tokenrec=NULL WHERE tokenrec='" . $token . "';";
-    echo ($sql2 . "<br>");
+    //echo ($sql2 . "<br>");
     $resultado_id = mysqli_query($link, $sql2);
     
     return $resultado_id;

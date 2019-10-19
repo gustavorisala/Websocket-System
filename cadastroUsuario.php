@@ -102,30 +102,21 @@ label {
 	</div>
 	<!--/.nav-collapse -->
 
-<?php
-
-if (isset($erro))
-    echo '<div style="color:#F00">' . utf8_encode($erro) . '</div>';
-else if (isset($sucesso))
-    echo '<div style="color:#00f">' . utf8_encode($sucesso) . '</div>';
-
-?>
-
 
 <div class="container containerlogin h-100">
 		<div class="row rowlogin h-100">
 			<div class="col-6 mx-auto collogin">
 				<div class="well box-login">
-					<img class="img-fluid" src="images/logo.jpeg" />
+					<a href="/"><img class="img-fluid" src="images/logo.jpeg" /></a>
 					<form role="form" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 						<fieldset>
 
 <?php
 
 if (isset($erro))
-    echo '<div style="color:#F00">' . utf8_encode($erro) . '</div><br/><br/>';
+    echo '<div style="color:#F00">' . utf8_encode($erro) . '</div><br/>';
 else if (isset($sucesso))
-    echo '<div style="color:#00f">' . utf8_encode($sucesso) . '</div><br/><br/>';
+    echo '<div style="color:#00f">' . utf8_encode($sucesso) . '</div><br/>';
 
 ?>
 					<div class="form-group ls-login-user">

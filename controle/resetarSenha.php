@@ -5,7 +5,7 @@ require_once ('util/mail.php');
 function emailExiste($email, $link)
 {
     $sql = " SELECT email FROM user WHERE email = '$email'";
-    echo $sql;
+   // echo $sql;
     $resultado_id = mysqli_query($link, $sql);
     $quantidade = $resultado_id->num_rows;
 
@@ -45,7 +45,7 @@ function criarTokenEmail($email, $link)
 {
     $tokenRec = md5(utf8_encode(date("d h-m-s") . $email));
     $sql = "update user SET tokenRec = '$tokenRec' where email='$email'";
-    echo $sql;
+    //echo $sql;
     $resultado_id = mysqli_query($link, $sql);
     if ($resultado_id) {
         return $tokenRec;
