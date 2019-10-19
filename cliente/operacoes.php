@@ -30,69 +30,75 @@ require_once '../controle/operacoesIQ.php';
 </head>
 
 <div id="menu">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#conteudoNavbarSuportado"
-				aria-controls="conteudoNavbarSuportado" aria-expanded="false"
-				aria-label="Alterna navegação">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#conteudoNavbarSuportado"
+			aria-controls="conteudoNavbarSuportado" aria-expanded="false"
+			aria-label="Alterna navegação">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-			<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-				<ul class="navbar-nav mr-auto">
-					<a class="navbar-brand" href="#"> <img class="ml-4"
-						src="../images/logosemfundo.png" width="30" height="30" alt="">
-					</a>
-				</ul>
+		<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+			<ul class="navbar-nav mr-auto">
+				<a class="navbar-brand" href="#"> <img class="ml-4"
+					src="../images/logosemfundo.png" width="30" height="30" alt="">
+				</a>
+			</ul>
 	  <?php
-    include_once '../menus/cliente.php';
-    ?>
+include_once '../menus/cliente.php';
+?>
 	  </div>
-		</nav>
-	</div>
-	<div align="center">
-		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
-			<p>Periodo</p>
+	</nav>
+</div>
+<div align="center">
+	<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
+		<p>Periodo</p>
 
-			<p>
-				De : <input type="text" id="calendarioInicio" name="calendarioI"
-					value="<?=$dataInicio ?>" />
-			</p>
-			<script>
+		<p>
+			De : <input type="text" id="calendarioInicio" name="calendarioI"
+				value="<?=$dataInicio ?>" />
+		</p>
+		<script>
 $(function() {
     $( "#calendarioInicio" ).datepicker({dateFormat: 'dd/mm/yy'});
 });
 </script>
 
-			<p>
-				Ate: <input type="text" id="calendarioFim" name="calendarioF"
-					value="<?=$dataFinal ?>" />
-			</p>
-			<script>
+		<p>
+			Ate: <input type="text" id="calendarioFim" name="calendarioF"
+				value="<?=$dataFinal ?>" />
+		</p>
+		<script>
 $(function() {
     $( "#calendarioFim" ).datepicker({dateFormat: 'dd/mm/yy'});
 });
 </script>
-			<input type='submit' value='Filtrar'><br>
-		</form>
 
-		<p>SALDO : <?=$saldo ?> <?=$moeda ?> </p>
+		<input type='submit' value='Filtrar'><br>
+	</form>
+	<br>
+	<p>SALDO : <?=$saldo ?> <?=$moeda ?> </p>
 
-		<table>
-			<br>
-			<p>Ordens</p>
+
+
+
+
+	<table class="table" style="width: 80%">
+
+		<p>Ordens</p>
+		<thead class="thead-dark">
 			<tr>
-				<th>ID Operacao</th>
-				<th>Ativo</th>
-				<th>Modo</th>
-				<th>Sentido</th>
-				<th>Hora Abertura</th>
-				<th>Expiracao</th>
-				<th>Preco Abertura</th>
-				<th>Preco Fechamento</th>
-				<th>Resultado</th>
+				<th scope="col">ID Operacao</th>
+				<th scope="col">Ativo</th>
+				<th scope="col">Modo</th>
+				<th scope="col">Sentido</th>
+				<th scope="col">Hora Abertura</th>
+				<th scope="col">Expiracao</th>
+				<th scope="col">Preco Abertura</th>
+				<th scope="col">Preco Fechamento</th>
+				<th scope="col">Resultado</th>
 			</tr>
-                   
+		</thead>   
                    <?php
 
                 if (mysqli_num_rows($dados) > 0) {
@@ -100,7 +106,7 @@ $(function() {
                     while ($row = mysqli_fetch_array($dados)) {
 
                         echo "<tr>";
-                        echo "<th>" . $row['idOperacao'] . "</th>";
+                        echo "<th scope='row'>" . $row['idOperacao'] . "</th>";
 
                         $moeda = "";
                         if ($row['idAtivo'] == 1) {
@@ -115,28 +121,29 @@ $(function() {
                             $moeda = "GBP/USD";
                         }
 
-                        echo "<th>" . $moeda . "</th>";
+                        echo "<th scope='row'>" . $moeda . "</th>";
 
-                        echo "<th>" . $row['tipo'] . "</th>";
-                        echo "<th>" . $row['direcao'] . "</th>";
-                        echo "<th>" . date("d/m/y H:i:s", $row['tempoAbertura']) . "</th>";
-                        echo "<th>" . date("d/m/y H:i:s", $row['expiracao']) . "</th>";
-                        echo "<th>" . $row['precoAbertura'] . "</th>";
-                        echo "<th>" . $row['precoFechamento'] . "</th>";
+                        echo "<th scope='row'>" . $row['tipo'] . "</th>";
+                        echo "<th scope='row'>" . $row['direcao'] . "</th>";
+                        echo "<th scope='row'>" . date("d/m/y H:i:s", $row['tempoAbertura']) . "</th>";
+                        echo "<th scope='row'>" . date("d/m/y H:i:s", $row['expiracao']) . "</th>";
+                        echo "<th scope='row'>" . $row['precoAbertura'] . "</th>";
+                        echo "<th scope='row'>" . $row['precoFechamento'] . "</th>";
 
-                        echo "<th>$" . number_format($row['resultado'], 2, ',', '.') . "</th>";
+                        echo "<th scope='row'>$" . number_format($row['resultado'], 2, ',', '.') . "</th>";
                         echo "</tr>";
                     }
                 } else {
-                    echo '<tr><th>Sem Ordens Fechadas...<th></tr>';
+                    echo '<tr><th scope"row">Sem Ordens Fechadas...<th></tr>';
                 }
 
                 ?>
           </table>
-	</div>
+
+</div>
 
 
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
