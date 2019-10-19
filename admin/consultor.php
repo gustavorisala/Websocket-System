@@ -1,8 +1,6 @@
 <?php
 require_once '../controle/dadosConsultor.php';
-
 ?>
-
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -17,6 +15,8 @@ require_once '../controle/dadosConsultor.php';
 	href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" />
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<link rel="stylesheet"
+	href="../css/styleconsultor.css">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
@@ -28,84 +28,7 @@ require_once '../controle/dadosConsultor.php';
 
 </head>
 <style>
-.headerdados {
-	background-color: black;
-	color: white;
-	border-bottom: 1px solid black;
-	height: 10%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 
-.input-group-text {
-	width: 150px;
-	justify-content: center;
-	padding: 10px;
-	background-color: #bb914a;
-	color: white;
-}
-
-.form-control {
-	height: auto;
-}
-
-.btn {
-	padding-left: 10%;
-	padding-right: 10%;
-	border-color: white;
-	font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue",
-		sans-serif !important;
-	color: white;
-	background-color: #bb914a;
-}
-
-.dadosuser {
-	font-size: 20px !important;
-}
-
-.formdados {
-	background-color: white !important;
-	border: 1px solid;
-	padding: 4%;
-	border-color: gray;
-	margin-bottom: 0px !important;
-	margin-block-end: 0px !important;
-	height: 100%;
-}
-
-.formdados h5 {
-	font-size: 16px;
-}
-
-body {
-	background:
-		url("https://i.pinimg.com/originals/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
-}
-
-.paineluser {
-	background-color: white;
-}
-
-.colinfos {
-	padding: 0px !important;
-}
-
-footer {
-	color: white;
-	background-color: black;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-}
-
-.paineluser {
-	border: 1px solid;
-}
-
-.containerdados .row {
-	
-}
 </style>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -118,8 +41,8 @@ footer {
 
 		<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 			<ul class="navbar-nav mr-auto">
-				<a class="navbar-brand" href="#"> <img class="ml-4"
-					src="../images/logosemfundo.png" width="30" height="30" alt="">
+				<a class="navbar-brand" href="#">
+					<img class="ml-4 logotipo" src="../images/logosemfundo.png" alt="">
 				</a>
 			</ul>
 		<?php
@@ -136,20 +59,31 @@ include_once '../menus/consultor.php';
 		</div>
 	</div>
 	<div class="container-fluid containerdados">
-		<div class="row" style="height: 65%;">
+		<div class="row conteudo">
+			<!--
 			<div id="menu" class="col-3 paineluser">
-				<div class="dadosusuario"></div>
+				<div class="dadosusuario">
+					<ul class="sidebar"><h3>Dados pessoais</h3>
+					<li><img src="../images/gmail.svg"> <?=$dados_usuario['email']?></li>
+					<li><img src="../images/password.svg"> <?=$dados_usuario['nome']?></li>
+					<li><img src="../images/link.svg"> <a href="https://copytraderbrasil.com.br?a=<?=$dados_usuario['codigoindicacao']?>">Copiar Link</a></li>
+
+				</ul>
+				</div>
 
 			</div>
-			<div class="col-9 colinfos">
+		-->
+			<div class="col mx-auto colinfos">
 				<form class="formdados" action="<?=$_SERVER["PHP_SELF"]?>"
 					method="POST">
 					<div class="col-8 mx-auto">
-						<p>Periodo</p>
-						<div class="row">
-							<div class="input-group col">
+						<div class="col centralizar mb-3">
+						<h3>Selecione o periodo</h3>
+					</div>
+						<div class="row centralizar">
+							<div class="input-group col-4 datafiltro">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">De :</span>
+									<span class="input-group-text filtro" id="basic-addon1">De :</span>
 								</div>
 								<input type="text" id="calendarioInicio" name="calendarioI"
 									class="form-control" aria-describedby="basic-addon1"
@@ -162,9 +96,9 @@ $(function() {
 });
 </script>
 
-							<div class="input-group col">
+							<div class="input-group col-4 datafiltro">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon2">Ate:</span>
+									<span class="input-group-text filtro" id="basic-addon2">Ate:</span>
 								</div>
 								<input type="text" id="calendarioFim" name="calendarioF"
 									class="form-control" aria-describedby="basic-addon2"
@@ -177,27 +111,25 @@ $(function() {
 </script>
 						</div>
 
-						<div class="col text-center p-0 pt-3">
+						<div class="col text-center p-0 pt-4">
 							<button class="btn" type="submit">Filtrar</button>
 						</div>
-				
+
 				</form>
 
 
 				<br>
-				<div class="col text-center">
-					<h1>Clientes aprovados no periodo: <?=$quantidadeDeClienteAprovado?></h1>
+				<div class="col text-center aprovados">
+					<h4>Clientes aprovados no periodo: <span class="numclientes"><?=$quantidadeDeClienteAprovado?></span></h4>
 				</div>
 				<br>
 
-
-				<table class="table" style="width: 80%">
+				<div class="col-7 mx-auto">
+				<table class="table">
 					<thead class="thead-dark">
 						<tr>
-
-
-							<th scope="col">Resultado no Periodo</th>
-							<th scope="col">Moeda Corrente</th>
+							<th class="colresult" scope="col" style="width: 70%; text-align: center;">Resultado no Periodo</th>
+							<th class="moeda" style="text-align: center;" scope="col">Moeda Corrente</th>
 						</tr>
 
 					</thead>
@@ -212,8 +144,8 @@ if ($saldoOperacoes) {
     while ($row = mysqli_fetch_array($saldoOperacoes)) {
 
         echo "<tr >";
-        echo "<th scope='row'>" . number_format($row['resultado'], 2, ',', '.') . "</th>";
-        echo "<th scope='row'>" . $row['moedaCorrente'] . "</th>";
+        echo "<th class='colresult' scope='row'>" . number_format($row['resultado'], 2, ',', '.') . "</th>";
+        echo "<th class='colmoeda' scope='row'>" . $row['moedaCorrente'] . "</th>";
         echo "</tr> ";
     }
 } else {
@@ -222,6 +154,7 @@ if ($saldoOperacoes) {
 
 ?>
     </table>
+		</div>
 			</div>
 		</div>
 	</div>

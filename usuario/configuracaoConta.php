@@ -1,3 +1,5 @@
+
+
 <?php
 require_once '../controle/dadosConfigurarConta.php';
 
@@ -6,116 +8,18 @@ require_once '../controle/dadosConfigurarConta.php';
 <!doctype html>
 <html lang="pt-br">
 <head>
-
-
+<script src="../js/clipboard.min.js"></script>
 <title>Dados Cliente</title>
 <link rel="icon" href="../imagens/favicon.png">
 <!-- jquery - link cdn -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-
 <!-- bootstrap - link cdn -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
+	<link rel="stylesheet"
+		href="../css/style.css">
 
 </head>
-
-<style>
-.headerdados
-{
-  background-color: black;
-  color: white;
-  border-bottom: 1px solid black;
-      height: 10%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-.input-group-text
-{
-  width: 150px;
-  justify-content: center;
-  padding: 10px;
-  background-color: #bb914a;
-  color: white;
-}
-.form-control
-{
-  height: auto;
-}
-.btn
-{
-
-    padding-left: 10%;
-    padding-right: 10%;
-  	border-color: white;
-  	font-family: "Gotham SSm A","Gotham SSm B","Helvetica Neue",sans-serif !important;
-  	color: white;
-  	background-color: #bb914a;
-}
-.dadosuser
-{
-  font-size: 20px !important;
-}
-.formdados
-{
-  background-color: white !important;
-  border: 1px solid;
-  padding: 4%;
-  border-color: gray;
-  margin-bottom: 0px !important;
-    margin-block-end: 0px !important;
-		height: 100%;
-}
-.formdados h5
-{
-  font-size: 16px;
-}
-body {
-    background: url("https://i.pinimg.com/originals/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
-}
-.paineluser
-{
-  background-color: white;
-}
-.colinfos
-{
-  padding: 0px !important;
-}
-footer
-{
-  color: white;
-  background-color: black;
-  position: absolute;
-bottom: 0;
-width: 100%;
-}
-.paineluser
-{
-  border: 1px solid;
-}
-.containerdados .row
-{
-	height: 75%;
-}
-.sidebar img
-{
-	width: 10%;
-	margin-right: 3%;
-}
-ul
-{
-	font-size: 22px;
-	font-weight: 500;
-}
-li
-{
-	font-weight: 400;
-	font-size: 20px;
-	margin-top: 3%;
-	margin-bottom: 3%:
-}
-</style>
 <body>
 
 	  <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -126,7 +30,7 @@ li
 	  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 	    <ul class="navbar-nav mr-auto">
 	      <a class="navbar-brand" href="#">
-	  <img class="ml-4" src="../images/logosemfundo.png" width="30" height="30" alt="">
+	  <img class="ml-4 logotipo" src="../images/logosemfundo.png" alt="">
 	</a>
 	    </ul>
 	    <?php
@@ -151,7 +55,7 @@ li
 	<div class="container-fluid">
 	<div class="row headerdados">
 	  <div class="col text-center">
-	    <h1>Dados do Usuario</h1>
+	    <h1>Modificar senha</h1>
 	  </div>
 	</div>
 	</div>
@@ -163,10 +67,12 @@ li
 
 
 			<div class="dadosusuario">
-				<ul class="sidebar">Dados pessoais
+				<ul class="sidebar"><h3>Dados pessoais</h3>
 				<li><img src="../images/gmail.svg"> <?=$dados_usuario['email']?></li>
 				<li><img src="../images/password.svg"> <?=$dados_usuario['nome']?></li>
-				<li><img src="../images/link.svg"> <a href="https://copytraderbrasil.com.br?a=<?=$dados_usuario['codigoindicacao']?>">Copiar Link</a></li>
+				<li><img src="../images/link.svg"> <a class="btn copiarlink" data-clipboard-target="#link">
+					<span>Copiar Link</span></a></li>
+					<input id="link" value="https://copytraderbrasil.com.br?a=<?=$dados_usuario['codigoindicacao']?>">
 			</ul>
 			</div>
 
@@ -192,7 +98,7 @@ else if (isset($sucesso))
 ?>
 
 			<div>
-				<p>Alterar Senha</p>
+				<p class="alterartxt">Alterar Senha</p>
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
 						<span class="input-group-text" id="basic-addon1">Senha atual</span>
@@ -246,5 +152,8 @@ else if (isset($sucesso))
 
       </footer>
       <!-- Footer -->
+			<script>
+			new ClipboardJS('.btn');
+			</script>
 </body>
 </html>
