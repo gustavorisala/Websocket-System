@@ -32,14 +32,15 @@ include 'controle/validar_acesso.php';
 </head>
 
 <style>
-html,body
-{
+html, body {
 	height: 100%;
 }
-	body
-	{
-		  background: url("https://i.pinimg.com/originals/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
+
+body {
+	background:
+		url("https://i.pinimg.com/originals/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
 }
+<<<<<<< HEAD
 .btn:hover {
 	background-color: white;
 	color: black;
@@ -47,50 +48,54 @@ html,body
 html, p
 {
 	font-family: "Gotham SSm A","Gotham SSm B","Helvetica Neue",sans-serif !important;
+=======
+
+html, p {
+	font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue",
+		sans-serif !important;
+>>>>>>> 8faa6c63b57b5f40b1ab0402e37236ee7cb458dd
 }
 
-	.collogin
-	{
-	    box-shadow: 0 0 100px black;
-		background-color: black;
-		height: 100%;
-	}
-	.box-login
-	{
-		height: 100%;
-			padding: 15%;
+.collogin {
+	box-shadow: 0 0 100px black;
+	background-color: black;
+	height: 100%;
+}
+
+.box-login {
+	height: 100%;
+	padding: 15%;
 }
 /*campos texto */
-label
-{
+label {
 	font-size: 18px;
-color: white;
+	color: white;
 }
 /* botao enviar*/
-.btn
-{
+.btn {
 	border-color: white;
-	font-family: "Gotham SSm A","Gotham SSm B","Helvetica Neue",sans-serif !important;
+	font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue",
+		sans-serif !important;
 	font-size: 18px;
 	color: white;
 	background-color: #bb914a;
 }
 /* bloco erro*/
-.errormsg
-{
-padding-top: 1%;
+.errormsg {
+	padding-top: 1%;
 }
-.form-control
-{
+
+.form-control {
 	border: 2px solid #bb914a7a;
 }
-.rowtxtregister
-{
+
+.rowtxtregister {
 	padding-top: 2%;
 }
-.txtregister
-{
-	font-family: "Gotham SSm A","Gotham SSm B","Helvetica Neue",sans-serif !important;
+
+.txtregister {
+	font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue",
+		sans-serif !important;
 	font-size: 14px;
 	color: white;
 }
@@ -98,56 +103,57 @@ padding-top: 1%;
 <body>
 
 	<div class="container containerlogin h-100">
+
 		<div class="row rowlogin h-100">
 			<div class="col-6 mx-auto collogin">
-			<div class="well box-login">
-				<img class="img-fluid" src="images/logo.jpeg" />
-				<form role="form" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
-					<fieldset>
-
-						<div class="form-group ls-login-user">
-							<label for="userLogin">E-mail</label> <input
-								class="form-control ls-login-bg-user input-lg" id="userLogin"
-								type="text" aria-label="E-mail" name="usuario"
-								placeholder="Insira seu e-mail">
-						</div>
-
-						<div class="form-group ls-login-password">
-							<label for="userPassword">Senha</label> <input
-								class="form-control ls-login-bg-password input-lg"
-								id="userPassword" type="password" aria-label="Senha"
-								name="senha" placeholder="Insira sua senha">
-						</div>
-
-
-
-						<input type="submit" value="ENTRAR"
-							class="btn btn-lg btn-block">
-
-
-					</fieldset>
-				</form>
-				<div class="row rowtxtregister">
-				  <div class="col text-center">
-						<span class="txtregister">
-				    Ainda não é membro?<a href="cadastroUsuario.php">  Crie sua conta</a>
-					</span>
-				  </div>
-				</div>
-				<div class="row rowtxtregister">
-				  <div class="col text-center">
-						<span class="txtregister">
-				    <a href="resetarSenha.php">Esqueceu a senha?</a>
-					</span>
-				  </div>
-				</div>
+				<div class="well box-login">
+					<img class="img-fluid" src="images/logo.jpeg" />
 				<?php
     if (isset($erro))
-        echo '<div class="errormsg" style="color:#F00">' . utf8_encode($erro) . '</div><br/><br/>';
+        echo '<div class="errormsg" style="color:#F00">' . utf8_encode($erro) . '</div>';
 
     ?>
+				<form role="form" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
+						<fieldset>
+
+							<div class="form-group ls-login-user">
+								<label for="userLogin">E-mail</label> <input
+									class="form-control ls-login-bg-user input-lg" id="userLogin"
+									type="text" aria-label="E-mail" name="usuario"
+									placeholder="Insira seu e-mail">
+							</div>
+
+							<div class="form-group ls-login-password">
+								<label for="userPassword">Senha</label> <input
+									class="form-control ls-login-bg-password input-lg"
+									id="userPassword" type="password" aria-label="Senha"
+									name="senha" placeholder="Insira sua senha">
+							</div>
+
+
+
+							<input type="submit" value="ENTRAR" class="btn btn-lg btn-block">
+
+
+						</fieldset>
+					</form>
+					<div class="row rowtxtregister">
+						<div class="col text-center">
+							<span class="txtregister"> Ainda não é membro?<a
+								href="cadastroUsuario.php"> Crie sua conta</a>
+							</span>
+						</div>
+					</div>
+					<div class="row rowtxtregister">
+						<div class="col text-center">
+							<span class="txtregister"> <a href="resetarSenha.php">Esqueceu a
+									senha?</a>
+							</span>
+						</div>
+					</div>
+
+				</div>
 			</div>
-		</div>
 		</div>
 	</div>
 </body>

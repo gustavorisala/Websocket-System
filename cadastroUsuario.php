@@ -1,8 +1,8 @@
 <?php
 $i = 0;
 include 'controle/cadastrarNovoUsuario.php';
-if (isset($_GET["a"])) {
-    $i = $_GET["a"];
+if (isset($_POST["a"])) {
+    $i = $_POST["a"];
 }
 ?>
 
