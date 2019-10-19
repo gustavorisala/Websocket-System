@@ -30,41 +30,140 @@ include 'controle/resetarSenha.php';
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+<style>
+html, body {
+	height: 100%;
+}
 
+body {
+	background:
+		url("https://i.pinimg.com/originals/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
+}
+.btn:hover {
+	background-color: white;
+	color: black;
+}
+html, p
+{
+	font-family: "Gotham SSm A","Gotham SSm B","Helvetica Neue",sans-serif !important;
+}
+html, p {
+	font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue",
+		sans-serif !important;
+}
+
+.collogin {
+	box-shadow: 0 0 100px black;
+	background-color: black;
+	height: 100%;
+}
+
+.box-login {
+	height: 100%;
+	padding: 15%;
+}
+/*campos texto */
+label {
+	font-size: 18px;
+	color: white;
+}
+/* botao enviar*/
+.btn {
+	border-color: white;
+	font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue",
+		sans-serif !important;
+	font-size: 18px;
+	color: white;
+	background-color: #bb914a;
+}
+/* bloco erro*/
+.errormsg {
+	padding-top: 1%;
+}
+
+.form-control {
+	border: 2px solid #bb914a7a;
+}
+
+.rowtxtregister {
+	padding-top: 2%;
+}
+
+.txtregister {
+	font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue",
+		sans-serif !important;
+	font-size: 14px;
+	color: white;
+}
+.titulosenha h1
+{
+	font-size: 30px;
+	color: white;
+}
+.titulosenha
+{
+	margin-bottom: 1rem;
+}
+.titulosenha span
+{
+	color: white;
+}
+</style>
 <body>
 
+		<div class="container containerlogin h-100">
 
-	<div align="center">
-		<div class="box-parent-login" style="width: 80%">
-			<div class="well bg-white box-login">
-				<h1 class="ls-login-logo">Resetar Senha</h1>
-				<form role="form" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
-					<fieldset>
+			<div class="row rowlogin h-100">
+				<div class="col-6 mx-auto collogin">
+					<div class="well box-login">
+						<img class="img-fluid" src="images/logo.jpeg" />
 
-						<div class="form-group ls-login-user">
-							<label for="userLogin">E-mail</label> <input
-								class="form-control ls-login-bg-user input-lg" id="userLogin"
-								type="text" aria-label="E-mail" name="email"
-								placeholder="E-mail">
+					<form role="form" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
+							<fieldset>
+								<form role="form" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
+									<fieldset>
+
+										<div class="form-group ls-login-user">
+											<div class="col text-center titulosenha">
+											<h1> Redefinir senha</h1>
+											</div>
+												<div class="col text-center titulosenha">
+												<span> Insira seu email e enviaremos a você um link para voltar a acessar sua conta.</span>
+												</div>
+											<input class="form-control ls-login-bg-user input-lg" id="userLogin"
+												type="text" aria-label="E-mail" name="email"
+												placeholder="Insira seu e-mail">
+										</div>
+
+
+
+
+										<input type="submit" value="Enviar"
+											class="btn btn-primary btn-lg btn-block">
+
+
+									</fieldset>
+								</form>
+
+								<?php
+				    if (isset($erro))
+				        echo '<div style="color:#F00">' . utf8_encode($erro) . '</div><br/><br/>';
+
+				    ?>
+
+							</fieldset>
+						</form>
+						<div class="row rowtxtregister">
+							<div class="col text-center">
+								<span class="txtregister"> Ainda não é membro?<a
+									href="cadastroUsuario.php"> Crie sua conta</a>
+								</span>
+							</div>
 						</div>
 
-						
-
-
-						<input type="submit" value="Resetar"
-							class="btn btn-primary btn-lg btn-block">
-
-
-					</fieldset>
-				</form>
-				
-				<?php
-    if (isset($erro))
-        echo '<div style="color:#F00">' . utf8_encode($erro) . '</div><br/><br/>';
-
-    ?>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
 </body>
 </html>

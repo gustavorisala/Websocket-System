@@ -6,6 +6,10 @@
 {
   font-family: 'Montserrat', sans-serif;
 }
+.form-control
+{
+  height: calc(1.5em + 1rem + 2px) !important;
+}
 .sidebar h3
 {
   background-color: #bb914a;
@@ -99,10 +103,7 @@ color: #bb914a !important
   background-color: #bb914a;
   color: white;
 }
-.form-control
-{
-  height: auto;
-}
+
 .dadosuser
 {
   font-size: 20px !important;
