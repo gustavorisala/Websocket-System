@@ -40,6 +40,10 @@ html,body
 	{
 		  background: url("https://i.pinimg.com/originals/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
 }
+.btn:hover {
+	background-color: white;
+	color: black;
+}
 html, p
 {
 	font-family: "Gotham SSm A","Gotham SSm B","Helvetica Neue",sans-serif !important;

@@ -52,6 +52,8 @@
 }
 .filtro
 {
+    font-family: "Gotham SSm A","Gotham SSm B","Helvetica Neue",sans-serif !important;
+    font-size: 18px !important;
   background-color: #bb914a !important;
   color: white !important;
 }
@@ -60,8 +62,8 @@
   border-radius: 5px !important;
   font-family: "Gotham SSm A","Gotham SSm B","Helvetica Neue",sans-serif !important;
   font-size: 18px !important;
-  padding-right: 5% !important;
-  padding-left: 5% !important;
+  padding-right: 10% !important;
+  padding-left: 10% !important;
   color: white !important;
   background-color: #bb914a !important;
 }
