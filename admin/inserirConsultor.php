@@ -2,7 +2,7 @@
 session_start();
 
 if (! isset($_SESSION['usuario'])) {
-    header('Location: index.php');
+    header('Location: ../index.php');
 } else {
     if ($_SESSION['papel'] != "admin" && $_SESSION['papel'] != "consultorM") {
         echo "<h1>Somente ADM<h1>";

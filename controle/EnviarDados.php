@@ -34,7 +34,7 @@ function enviarNovaSenha($id_usuario, $senha)
     $objDb = new db();
     $link = $objDb->conecta_mysql();
     $sql = "UPDATE user SET senha='" . $senha . "' WHERE id=" . $id_usuario;
-    echo ($sql . "<br>");
+  //  echo ($sql . "<br>");
     $resultado_id = mysqli_query($link, $sql);
     return $resultado_id;
 }

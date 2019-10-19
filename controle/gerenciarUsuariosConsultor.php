@@ -8,7 +8,7 @@ $papel = "admin";
 function buscarDadosUsuario($link, $id)
 {
     $sql = "SELECT id, nome, email, papel, userAtivo FROM user where id=$id";
-    echo ($sql);
+    //echo ($sql);
     $resultado_id = mysqli_query($link, $sql);
     return $resultado_id;
 }
@@ -18,7 +18,7 @@ function buscarDadosUsuario($link, $id)
 function buscarDadosTodosUsuarios($link)
 {
     $sql = "SELECT id, nome, email, papel, userAtivo FROM user where papel in ('consultorM', 'consultor', 'admin' ) order by nome DESC";
-    echo ($sql);
+  //  echo ($sql);
     $resultado_id = mysqli_query($link, $sql);
     return $resultado_id;
 }
@@ -26,7 +26,7 @@ function buscarDadosTodosUsuarios($link)
 function buscarDadosTodosUsuariosConsultor($link)
 {
     $sql = "SELECT id, nome, email, papel, userAtivo FROM user where papel ='consultor' order by nome DESC";
-    echo ($sql);
+   // echo ($sql);
     $resultado_id = mysqli_query($link, $sql);
     return $resultado_id;
 }
@@ -52,7 +52,7 @@ function salvarUsuario($nome, $email, $senha, $link, $indicacao)
 function atualizarUsuarioAdmin($nome, $email, $link, $papel, $id)
 {
     $sql2 = "Update user set email='$email', papel='$papel', nome='$nome' where id='$id'";
-    echo ($sql2);
+  //  echo ($sql2);
     $resultado_id = mysqli_query($link, $sql2);
     
     return $resultado_id;
@@ -60,7 +60,7 @@ function atualizarUsuarioAdmin($nome, $email, $link, $papel, $id)
 function salvarUsuarioAdmin($nome, $email, $senha, $link, $papel)
 {
     $sql2 = "INSERT INTO user(email, senha, userAtivo, papel, nome, indicacao, codigoindicacao) VALUES ('$email','$senha',1,'$papel','$nome', 0, '".md5($email)."')";
-    echo ($sql2);
+//    echo ($sql2);
     $resultado_id = mysqli_query($link, $sql2);
 
     return $resultado_id;
@@ -89,7 +89,7 @@ if (isset($_POST["nome"]) && isset($_POST["email"]) && isset($_POST["papel"]) &&
         else {
             // gerar senha temporaria
             $senhaTemp = rand(100000, 999999);
-            echo $senhaTemp;
+       //     echo $senhaTemp;
 
             // Vamos realizar o cadastro ou alteração dos dados enviados.
             if (salvarUsuarioAdmin($_POST["nome"], $_POST["email"], md5(utf8_encode($senhaTemp)), $link, $_POST["papel"])) {
@@ -122,7 +122,7 @@ if (isset($_POST["nome"]) && isset($_POST["email"]) && isset($_POST["papel"]) &&
 
 if (isset($_GET["objeto"])) {
     $objeto = base64_decode($_GET["objeto"]);
-    echo $objeto;
+   // echo $objeto;
     $obj = $_GET["objeto"];
 
     $resultado_id = buscarDadosUsuario($link, $objeto);
