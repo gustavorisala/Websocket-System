@@ -141,7 +141,7 @@ label {
       </li>
         <li>
         <span>3</span>
-        Lançamento
+        Conclusão
       </li>
     </ul>
   </div>
@@ -244,11 +244,11 @@ label {
       </form>
     </div>
     <div class="form-container animated container-fluid">
-      <h2 class="text-center form-title">Pronto</h2>
+      <h2 class="text-center form-title">Concluído</h2>
       <form>
         <div class="form-group">
-          <h3 class="text-center">Você já está a um passo de participar do MT Brasil</h3>
-          <p class="text-center">Lançamento marcado para o dia:</p>
+          <h3 class="text-center">Você está a um passo de receber as operações</h3>
+          <p class="text-center">Lançamento marcado para o dia <br><b>01/11/2019</b></p>
         </div>
       </form>
     </div>
