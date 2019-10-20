@@ -40,7 +40,6 @@ body {
 	background:
 		url("https://i.pinimg.com/originals/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
 }
-<<<<<<< HEAD
 .btn:hover {
 	background-color: white;
 	color: black;
@@ -48,12 +47,10 @@ body {
 html, p
 {
 	font-family: "Gotham SSm A","Gotham SSm B","Helvetica Neue",sans-serif !important;
-=======
-
+}
 html, p {
 	font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue",
 		sans-serif !important;
->>>>>>> 8faa6c63b57b5f40b1ab0402e37236ee7cb458dd
 }
 
 .collogin {
