@@ -94,6 +94,15 @@ label {
 	color: #bb914a;
 	margin-bottom: 2rem;
 }
+@media (max-width: 65rem)
+{
+	.collogin
+	{
+		max-width: 100%;
+		flex: 100%;
+		width: 100%;
+	}
+}
 </style>
 <body>
 
