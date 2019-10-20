@@ -1,3 +1,30 @@
+@media (max-width: 65rem)
+{
+  .paineluser
+  {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: auto;
+  }
+  .sidebar li
+  {
+  font-size: 3rem !important;
+  }
+  .sidebar .copiarlink
+  {
+  font-size: 2rem !important;
+  }
+  .sidebar h3
+  {
+    padding-left: 4% !important;
+    padding: 0% !important;
+    padding-right: 4% !important;
+    width: 60% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 *
 {
   font-family: 'Montserrat', sans-serif;
@@ -39,12 +66,13 @@
 {
   border: 1px solid black !important;
   border-radius: 30px !important;
-  padding: 3.5% !important;
   color: black !important;
   cursor: pointer;
-  font-size: 14px !important;
+  font-size: 1rem;
   background-color: whitesmoke !important;
   box-shadow: 0 0 4px black !important;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 .navbar a
 {
@@ -134,8 +162,8 @@ footer
   color: white;
   background-color: black;
   position: absolute;
-bottom: 0;
-width: 100%;
+  bottom: 0;
+  width: 100%;
 }
 .paineluser
 {

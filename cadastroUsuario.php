@@ -116,7 +116,7 @@ label {
 if (isset($erro))
     echo '<div style="color:#F00">' . utf8_encode($erro) . '</div><br/>';
 else if (isset($sucesso))
-    echo '<div style="color:#00f">' . utf8_encode($sucesso) . '</div><br/>';
+    echo '<div style="color:#bb914a">' . utf8_encode($sucesso) . '</div><br/>';
 
 ?>
 					<div class="form-group ls-login-user">
@@ -141,7 +141,7 @@ else if (isset($sucesso))
 								</div>
 
 								<div class="form-group col ls-login-password">
-									<label for="userPassword">Confirmar Senha</label> <input
+									<label for="userPassword">Confirmar senha</label> <input
 										class="form-control ls-login-bg-password input-lg"
 										id="userPassword2" type="password"
 										aria-label="confirmar senha" name="confirmarSenhaUser"

@@ -78,9 +78,8 @@ require_once '../controle/dadosConfigurarConta.php';
 
 </div>
 
-<div class="col-9 colinfos">
+<div class="col-9 colinfos formdados">
 
-	<form class="formdados" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 
 
 
@@ -103,6 +102,7 @@ else if (isset($sucesso))
 					<div class="input-group-prepend">
 						<span class="input-group-text" id="basic-addon1">Senha atual</span>
 					</div>
+					<form class="" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 					<input type="password" class="form-control"
 						placeholder="Insira sua senha" aria-label="Senha atual"
 						aria-describedby="basic-addon1" name="senhaatual">
