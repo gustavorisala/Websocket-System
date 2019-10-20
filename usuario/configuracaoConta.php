@@ -79,11 +79,7 @@ require_once '../controle/dadosConfigurarConta.php';
 </div>
 
 <div class="col-9 colinfos formdados">
-
-
-
-
-<div class="col-8 mx-auto">
+<div class="container">
 			<?php
 
 if (isset($erro))
@@ -95,8 +91,8 @@ else if (isset($sucesso))
 			<div style="color: #00f">' . utf8_encode($sucesso) . '</div>
 			<br /> <br />';
 ?>
-
-			<div>
+			<div class="row">
+			<div class="col-md-6 mx-auto colcel">
 				<p class="alterartxt">Alterar Senha</p>
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
@@ -131,12 +127,12 @@ else if (isset($sucesso))
       </div>
 
 			</div>
-
+		</div>
 </div>
 		</form>
 	</div>
   	</div>
-    	</div>
+	  	</div>
 
       <!-- Footer -->
       <footer class="page-footer font-small special-color-dark pt-4">
