@@ -55,7 +55,7 @@ require_once '../controle/dadosConfigurarConta.php';
 	<div class="container-fluid">
 	<div class="row headerdados">
 	  <div class="col text-center">
-	    <h1>Modificar senha</h1>
+	    <h1>Pagina do usuário</h1>
 	  </div>
 	</div>
 	</div>
