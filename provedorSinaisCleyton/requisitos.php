@@ -248,7 +248,7 @@ label {
       <form>
         <div class="form-group">
           <h3 class="text-center">Você está a um passo de receber as operações</h3>
-          <p class="text-center">Lançamento marcado para o dia <br><b>01/11/2019</b></p>
+          <p class="text-center">Lançamento marcado para o dia <br><b>04/11/2019</b></p>
         </div>
       </form>
     </div>
