@@ -14,9 +14,12 @@ include '../controle/cadastrarNovoUsuarioCleyton.php';
 <!-- jquery - link cdn -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
+<script src="../js/clipboard.min.js"></script>
 <!-- Bootstrap -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet">
+<link href="../css/cadastro.css" rel="stylesheet">
+
 
 <!-- bootstrap - link cdn -->
 
@@ -105,8 +108,9 @@ label {
 		</ul>
 	</div>
 	<!--/.nav-collapse -->
+<style>
 
-
+</style>
 	<div class="container containerlogin h-100">
 		<div class="row rowlogin h-100">
 			<div class="col-6 mx-auto collogin">
@@ -117,25 +121,168 @@ label {
 			</div>
 			<div class="row">
 				<div class="col">
-					<h4 class="provedor">Provedor de sinais: Cleyton</h4>
+					<div class="form-wizard">
+						<div class="row">
+  <div class="steps col">
+    <ul>
+      <li>
+        <span>1</span>
+        Cadastro
+      </li>
+			<!--
+      <li class="d-none">
+        <span>2</span>
+        Pagamento
+      </li>
+		-->
+      <li>
+        <span>2</span>
+        Confirmação
+      </li>
+        <li>
+        <span>3</span>
+        Lançamento
+      </li>
+    </ul>
+  </div>
+	</div>
+  <div class="myContainer">
+    <div class="form-container animated">
+      <h2 class="text-center form-title">Provedor: Kleyton Alves</h2>
+      <form>
+        <div class="form-group">
+          <div class="blocoafiliadoiq row">
+						<div class="metodo col">
+							<img src="../images/iqoption.gif">
+						</div>
+
+								<div class="rentabilidade col">
+									<span>1% - 3% /Dia</span>
+								</div>
+										<div class="investimento col">
+											<span>
+											$500 - $1000
+										</span>
+										</div>
+										<div class="selecionar col">
+											<a href="https://affiliate.iqoption.com/redir/?aff=124319" rel="noopener noreferrer" target="_blank" id="selectiq" class="escolher" >SELECIONAR</a>
+										</div>
+					</div>
+					<div class="blocoafiliadoalpari row">
+						<div class="metodo col">
+							<img src="../images/alpari.png">
+						</div>
+								<div class="rentabilidade col">
+									<span>1% - 3% /Dia</span>
+								</div>
+										<div class="investimento col">
+											<span>
+										 	$1000 - $3000
+										</span>
+										</div>
+										<div class="selecionar col">
+											<button disabled class="escolheralpari">EM BREVE</button>
+										</div>
+					</div>
+        </div>
+        <div class="form-group text-center mar-b-0">
+          <input type="button" value="PRÓXIMO" class="btn next">
+        </div>
+      </form>
+    </div>
+
+		<!-- PAGAMENTO
+    <div class="form-container animated">
+      <h2 class="text-center form-title">Formas de pagamento</h2>
+      <form>
+        <div class="form-group">
+					<div class="row">
+						<div class="col logotipo">
+					<img src="../images/neteller.svg">
 				</div>
 				</div>
-
-				<div class="row">
-					<div class="col">
-						<h4 class="provedor">Faça seu registro na IQ Option</h4>
-					</div>
-					</div>
-
+					<div class="container">
 					<div class="row">
 						<div class="col">
-							<h4 class="provedor">Insira seu e-mail registrado</h4>
-						</div>
-						</div>
+						<span class="txtpay">Enviar pagamento para:</span>
+					</div>
+					</div>
+					<div class="row boxemail">
+						<div class="col d-flex centralizar">
+          <input type="text" id="link" class="caixacopy" value="niltonrochaengenharia@gmail.com">
+					<input id="copybtn" type="button" data-clipboard-target="#link" value="Copiar">
+					</div>
+				</div>
+					</div>
+				</div>
+		        <div class="form-group text-center mar-b-0">
+		          <input type="button" value="PRÓXIMO" class="btn next">
+		        </div>
+      </form>
+    </div>
+		-->
+		<div class="form-container animated container-fluid">
+      <h2 class="text-center form-title">Confirme seu e-mail</h2>
+      <form action="../envia.php">
+        <div class="form-group">
+        <div class="container">
+					<div class="row">
+					  <div class="col">
+							<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">@</span>
+  </div>
+  <input type="text" class="form-control" placeholder="Insira seu e-mail IQ Option" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+					  </div>
+					</div>
+				</div>
+        </div>
+        <div class="form-group text-center mar-b-0">
+          <input type="submit" formtarget="_blank" value="PRÓXIMO" class="btn next">
+        </div>
+      </form>
+    </div>
+    <div class="form-container animated container-fluid">
+      <h2 class="text-center form-title">Pronto</h2>
+      <form>
+        <div class="form-group">
+          <h3 class="text-center">Você já está a um passo de participar do MT Brasil</h3>
+          <p class="text-center">Lançamento marcado para o dia:</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+				</div>
+				</div>
 				</div>
 			</div>
 		</div>
 	</div>
+<script>
+var totalSteps = $(".steps li").length;
 
+$(".submit").on("click", function(){
+  return false;
+});
+
+$(".steps li:nth-of-type(1)").addClass("active");
+$(".myContainer .form-container:nth-of-type(1)").addClass("active");
+
+$(".form-container").on("click", ".next", function() {
+  $(".steps li").eq($(this).parents(".form-container").index() + 1).addClass("active");
+  $(this).parents(".form-container").removeClass("active").next().addClass("active flipInX");
+});
+
+$(".form-container").on("click", ".back", function() {
+  $(".steps li").eq($(this).parents(".form-container").index() - totalSteps).removeClass("active");
+  $(this).parents(".form-container").removeClass("active flipInX").prev().addClass("active flipInY");
+});
+</script>
+
+<script>
+new ClipboardJS('#copybtn');
+</script>
 </body>
 </html>
