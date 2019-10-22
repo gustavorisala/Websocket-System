@@ -23,7 +23,7 @@ include '../controle/cadastrarNovoUsuarioCleyton.php';
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-<title>Pre Cadastro Kleyton MT BRASIL</title>
+<title>Pre Cadastro Kleyton Alves MT BRASIL</title>
 <link rel="icon" href="../imagens/favicon.png">
 </head>
 <style>
@@ -119,7 +119,7 @@ label {
 			<div class="col-6 mx-auto collogin">
 				<div class="well box-login">
 					<a href="/"><img class="img-fluid" src="../images/logo.jpeg" /></a>
-					<h4 class="provedor">Provedor de sinais: Kleyton</h4>
+					<h4 class="provedor">Provedor de sinais: Kleyton Alves</h4>
 					<form role="form" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 						<fieldset>
 
