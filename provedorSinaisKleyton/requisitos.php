@@ -36,7 +36,7 @@ html, body {
 
 body {
 	background:
-		url("https://i.pinimg.com/originals/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
+		url("../images/background.jpg");
 }
 
 html, p {
@@ -99,6 +99,10 @@ label {
 	color: #bb914a;
 	margin-bottom: 2rem;
 }
+.bg-wizard
+{
+	background-color: black;
+}
 </style>
 <body>
 
@@ -120,7 +124,7 @@ label {
 				</div>
 			</div>
 			<div class="row">
-				<div class="col">
+				<div class="col bg-wizard">
 					<div class="form-wizard">
 						<div class="row">
   <div class="steps col">

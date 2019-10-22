@@ -19,6 +19,8 @@ if (! isset($_SESSION['usuario'])) {
 <!-- jquery - link cdn -->
 <meta charset="utf-8">
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<link rel="stylesheet"
+	href="../css/styleconsultor.css">
 
 <link rel="stylesheet"
 	href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" />
@@ -36,15 +38,35 @@ if (! isset($_SESSION['usuario'])) {
 </head>
 
 <body>
-	<div id="menu">
 
-<?php
-        include_once '../menus/consultorMaster.php';
-        ?>
+  	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  		<button class="navbar-toggler" type="button" data-toggle="collapse"
+  			data-target="#conteudoNavbarSuportado"
+  			aria-controls="conteudoNavbarSuportado" aria-expanded="false"
+  			aria-label="Alterna navegação">
+  			<span class="navbar-toggler-icon"></span>
+  		</button>
 
-</div>
-
-	<div align="center">
+  		<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+  			<ul class="navbar-nav mr-auto">
+  				<a class="navbar-brand" href="#">
+  					<img class="ml-4 logotipo" src="../images/logosemfundo.png" alt="">
+  				</a>
+  			</ul>
+  			<?php
+  			        include_once '../menus/consultorMaster.php';
+  			        ?>
+  	</div>
+  	</nav>
+    <div class="container-fluid">
+      <div class="row headerdados">
+        <div class="col text-center">
+          <h1>Cadastro de Consultor</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid containerdados">
+  		<div class="row conteudo">
 
 <?php
 
@@ -106,10 +128,10 @@ if (! isset($_SESSION['usuario'])) {
 				</tr>
 
 			</thead>
-                   
-             
-        
-      
+
+
+
+
  <?php
 
         $cont = 0;
@@ -137,6 +159,20 @@ if (! isset($_SESSION['usuario'])) {
 
 
 
+  </div>
+  </div>
+  <footer class="page-footer font-small special-color-dark pt-4">
+
+  <!-- Footer Elements -->
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">
+    © 2019 Copyright <a href="#"> MTBrasil</a>
+  </div>
+  <!-- Copyright -->
+
+  </footer>
 </body>
 </html>
 <?php
