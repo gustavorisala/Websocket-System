@@ -1,5 +1,17 @@
 <?php
 
+function pesquisarConsultor($a, $link)
+{
+    $sql = " SELECT nome FROM user WHERE codigoIndicacao = '$a' and papel='consultor'";
+    echo $sql;
+    $resultado_id = mysqli_query($link, $sql);
+    if ($resultado_id) {
+        $dados_usuario = mysqli_fetch_array($resultado_id);
+        return $dados_usuario['nome'];
+    }
+    return null;
+}
+
 function emailExiste($email, $link)
 {
     $sql = " SELECT email FROM user WHERE email = '$email'";
@@ -39,11 +51,21 @@ function salvarUsuarioIQ($email, $link)
 
 // session_start();
 include_once ("conexaobd.php");
-
-if (isset($_POST["nome"]) && isset($_POST["emailUser"]) && isset($_POST["WhatsApp"])) {
+$nomeConsultor = null;
+echo $i . "kkkk";
+if ($i != '0') {
     $objDb = new db();
     $link = $objDb->conecta_mysql();
 
+    $nomeConsultor = pesquisarConsultor($i, $link);
+}
+
+if (isset($_POST["nome"]) && isset($_POST["emailUser"]) && isset($_POST["WhatsApp"]) && isset($_POST["indicacao"])) {
+    $objDb = new db();
+    $link = $objDb->conecta_mysql();
+    $i = $_POST["indicacao"];
+    $nomeConsultor = pesquisarConsultor($i, $link);
+    
     if (empty($_POST["emailUser"]))
         $erro = "Campo E-mail Obrigatório";
     else if (empty($_POST["nome"]))
@@ -55,10 +77,16 @@ if (isset($_POST["nome"]) && isset($_POST["emailUser"]) && isset($_POST["WhatsAp
         $erro = "E-mail Já Cadastrado no Sistema!!!";
     else {
         // Vamos realizar o cadastro ou alteração dos dados enviados.
-        // codigo cleyton =660fcd56e1b41fd2bac33ccc94e82c15
-        if (salvarUsuario($_POST["nome"], $_POST["emailUser"], md5(utf8_encode("01012019")), $link, '660fcd56e1b41fd2bac33ccc94e82c15', $_POST["WhatsApp"])) {
+        if ($_POST["indicacao"] == '0') {
+            // codigo cleyton =660fcd56e1b41fd2bac33ccc94e82c15
+            $ind = '660fcd56e1b41fd2bac33ccc94e82c15';
+        } else {
+            $ind = $_POST["indicacao"];
+        }
+
+        if (salvarUsuario($_POST["nome"], $_POST["emailUser"], md5(utf8_encode("01012019")), $link, $ind, $_POST["WhatsApp"])) {
             $sucesso = "Dados cadastrados com sucesso!";
-            header('Location: confirmacaoPreCadastro.php');
+            header('Location: http://precadastro.copytraderbrasil.com.br');
         } else {
             $erro = "Erro ao Inserir Dados";
         }

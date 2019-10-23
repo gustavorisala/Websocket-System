@@ -1,6 +1,11 @@
 <?php
-include '../controle/cadastrarNovoUsuarioCleyton.php';
+$i = 0;
 
+if (isset($_GET["a"])) {
+    $i = $_GET["a"];
+}
+
+include '../controle/cadastrarNovoUsuarioCleyton.php';
 ?>
 
 
@@ -119,6 +124,7 @@ label {
 				<div class="well box-login">
 					<a href="/"><img class="img-fluid" src="../images/logo.jpeg" /></a>
 					<h4 class="provedor">Provedor de sinais: Kleyton Alves</h4>
+					<h8 class="provedor"><?php if ($nomeConsultor != null) echo "Indicado por: " . $nomeConsultor;?></h8>
 					<form role="form" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 						<fieldset>
 
@@ -150,9 +156,9 @@ else if (isset($sucesso))
 									id="WhatsApp" type="text" aria-label="WhatsApp" name="WhatsApp"
 									placeholder="Insira seu WhatsApp">
 							</div>
-							
 
 
+<input type="hidden" value="<?php echo $i?>" name="indicacao">
 
 
 							<input type="submit" value="Cadastrar"
