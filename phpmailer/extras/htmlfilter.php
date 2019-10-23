@@ -61,22 +61,11 @@ function tln_tagprint($tagname, $attary, $tagtype)
     return $fulltag;
 }
 
-/**
- * A small helper function to use with array_walk.
- * Modifies a by-ref
- * value and makes it lowercase.
- *
- * @return void since it modifies a by-ref value.
- */
 function tln_casenormalize(&$val)
 {
     $val = strtolower($val);
 }
 
-/**
- * This function skips any whitespace from the current position within
- * a string and to the next non-whitespace value.
- */
 function tln_skipspace($body, $offset)
 {
     $me = 'tln_skipspace';
@@ -88,12 +77,6 @@ function tln_skipspace($body, $offset)
     return $offset;
 }
 
-/**
- * This function looks for the next character within a string.
- * It's
- * really just a glorified "strpos", except it catches the failures
- * nicely.
- */
 function tln_findnxstr($body, $offset, $needle)
 {
     $me = 'tln_findnxstr';
@@ -104,13 +87,6 @@ function tln_findnxstr($body, $offset, $needle)
     return $pos;
 }
 
-/**
- * This function takes a PCRE-style regexp and tries to match it
- * within the string.
- *
- *
- * - string with whatever it is we matched
- */
 function tln_findnxreg($body, $offset, $reg)
 {
     $me = 'tln_findnxreg';
@@ -128,21 +104,6 @@ function tln_findnxreg($body, $offset, $reg)
     return $retarr;
 }
 
-/**
- * This function looks for the next tag.
- *
- * @param $body String
- *            where to look for the next tag.
-            looking from here.
- * @return false if no more tags exist in the body, or
- *         an array with the following members:
- *         - string with the name of the tag
- *         - array with attributes and their values
- *         - integer with tag type (1, 2, or 3)
- *         - integer where the tag starts (starting "<")
- *         - integer where the tag ends (ending ">")
- *         first three members will be false, if the tag is invalid.
- */
 function tln_getnxtag($body, $offset)
 {
     $me = 'tln_getnxtag';
@@ -531,12 +492,6 @@ function tln_getnxtag($body, $offset)
     );
 }
 
-/**
- * Translates entities into literal values so they can be checked.
- *
- 
- * @return True or False depending on whether there were matches.
- */
 function tln_deent(&$attvalue, $regex, $hex = false)
 {
     $me = 'tln_deent';
@@ -558,13 +513,6 @@ function tln_deent(&$attvalue, $regex, $hex = false)
     }
 }
 
-/**
- * This function checks attribute values for entity-encoded values
- * and returns them translated into 8-bit strings so we can run
- * checks on them.
- 
- 
- */
 function tln_defang(&$attvalue)
 {
     $me = 'tln_defang';
@@ -584,14 +532,6 @@ function tln_defang(&$attvalue)
     $attvalue = stripslashes($attvalue);
 }
 
-/**
- * Kill any tabs, newlines, or carriage returns.
- * Our friends the
- * makers of the browser with 95% market value decided that it'd
- * be funny to make "java[tab]script" be just as good as "javascript".
- *
-
- */
 function tln_unspace(&$attvalue)
 {
     $me = 'tln_unspace';
@@ -612,15 +552,6 @@ function tln_unspace(&$attvalue)
     }
 }
 
-/**
- * This function runs various checks against the attributes.
- *
- * @param $tagname String
- *            with the name of the tag.
- * @param $attary Array
- *            with all tag attributes.
- 
- */
 function tln_fixatts($tagname, $attary, $rm_attnames, $bad_attvals, $add_attr_to_tag)
 {
     $me = 'tln_fixatts';
@@ -680,9 +611,6 @@ function tln_fixatts($tagname, $attary, $rm_attnames, $bad_attvals, $add_attr_to
     return $attary;
 }
 
-/**
- 
- */
 function tln_sanitize($body, $tag_list, $rm_tags_with_content, $self_closing_tags, $force_tag_closing, $rm_attnames, $bad_attvals, $add_attr_to_tag)
 {
     $me = 'tln_sanitize';

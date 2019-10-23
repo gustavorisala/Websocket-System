@@ -89,15 +89,14 @@ label {
 	background-color: white;
 	color: black;
 }
-.provedor
-{
+
+.provedor {
 	color: #bb914a;
 	margin-bottom: 2rem;
 }
-@media (max-width: 65rem)
-{
-	.collogin
-	{
+
+@media ( max-width : 65rem) {
+	.collogin {
 		max-width: 100%;
 		flex: 100%;
 		width: 100%;
@@ -144,6 +143,14 @@ else if (isset($sucesso))
 									type="text" aria-label="E-mail" name="emailUser"
 									placeholder="Insira seu e-mail">
 							</div>
+
+							<div class="form-group ls-login-user">
+								<label for="email">WhatsApp</label> <input
+									class="form-control ls-login-bg-password input-lg"
+									id="WhatsApp" type="text" aria-label="WhatsApp" name="WhatsApp"
+									placeholder="Insira seu WhatsApp">
+							</div>
+							
 
 
 
