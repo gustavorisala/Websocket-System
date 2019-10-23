@@ -12,6 +12,24 @@ function buscarClientesNovosPeriodo($dInicial, $dFinal, $id_usuario)
     return $resultado_id;
 }
 
+function buscarDadosTodasOrdens($inicio, $fim){
+    $objDb = new db ();
+    $link = $objDb->conecta_mysql();
+    
+    
+    $sql = "SELECT u.nome, u.email, iq.email as emailiq , sum(o.resultado) as resultado, iq.moedaCorrente FROM operacao o join useriq iq on o.idUser=iq.idConta join user u on u.id=iq.idUser where o.expiracao >= ".$inicio." and o.expiracao <= ".$fim." group by o.idUser";
+    //$sql = "SELECT sum(resultado) as total, (SELECT s.nome from sala s where id=iq.idSala) as nomesala , iq.moedaCorrente as moeda FROM operacao o join useriq iq on iq.idConta=o.idUser where o.status=1 and iq.idUser=".$id." and from_unixtime(o.expiracao) BETWEEN '".$inicio."' and '".$fim."' GROUP BY o.idUser";
+    echo("<script>console.log('PHP: ".$sql."');</script>");
+    
+    
+    $resultado_id = mysqli_query($link, $sql);
+    return $resultado_id;
+    
+    
+    
+    
+}
+
 function buscarResultadoClientesConsultor($dInicial, $dFinal, $id_usuario)
 {
     $objDb = new db();
