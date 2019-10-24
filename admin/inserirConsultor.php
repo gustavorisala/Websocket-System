@@ -9,7 +9,10 @@ if (! isset($_SESSION['usuario'])) {
     } else {
         require_once '../controle/gerenciarUsuariosConsultor.php';
         ?>
+        <?php
+        require_once '../controle/dadosConfigurarConta.php';
 
+        ?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -22,6 +25,7 @@ if (! isset($_SESSION['usuario'])) {
 <link rel="stylesheet"
 	href="../css/styleconsultor.css">
 
+  <script src="../js/clipboard.min.js"></script>
 <link rel="stylesheet"
 	href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" />
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
@@ -38,7 +42,71 @@ if (! isset($_SESSION['usuario'])) {
 </head>
 
 <body>
+<style>
+.btn
 
+{
+  border: 1px solid black !important;
+  border-radius: 30px !important;
+  color: black !important;
+  cursor: pointer;
+  font-size: 1rem;
+  background-color: whitesmoke !important;
+  box-shadow: 0 0 4px black !important;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+nav
+{
+  margin-top: -3rem !important;
+}
+.colcadastro
+{
+  background-color: white !important;
+}
+
+#link
+{
+  opacity: 0;
+  color: transparent;
+  text-align: center;
+  font-size: 10px;
+  margin-top: 1rem;
+  border: 0px;
+  text-align: center;
+}
+.input-group-text
+{
+  width: 150px;
+  justify-content: center;
+  padding: 10px;
+  background-color: #bb914a;
+  color: white;
+}
+.btncreate
+{
+    display: flex;
+    margin-left: auto;
+  justify-content: center;
+  padding: 10px;
+  background-color: #bb914a;
+  color: white;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    font-size: 16px;
+}
+.colcadastro
+{
+   overflow-y: scroll;
+   height: 69.5vh;
+}
+.form-control
+{
+  height: 3rem !important;
+}
+</style>
   	<nav class="navbar navbar-expand-lg navbar-light bg-light">
   		<button class="navbar-toggler" type="button" data-toggle="collapse"
   			data-target="#conteudoNavbarSuportado"
@@ -61,13 +129,27 @@ if (! isset($_SESSION['usuario'])) {
     <div class="container-fluid">
       <div class="row headerdados">
         <div class="col text-center">
-          <h1>Cadastro de Consultor</h1>
+          <h1>Gerenciamento de Consultor</h1>
         </div>
       </div>
     </div>
     <div class="container-fluid containerdados">
   		<div class="row conteudo">
+        <div id="menu" class="col-3 paineluser">
 
+
+    			<div class="dadosusuario">
+    				<ul class="sidebar"><h3>Dados pessoais</h3>
+    				<li><img src="../images/gmail.svg"> <?=$dados_usuario['email']?></li>
+    				<li><img src="../images/password.svg"> <?=$dados_usuario['nome']?></li>
+    				<li><img src="../images/link.svg"> <a class="btn copiarlink" data-clipboard-target="#link">
+    					<span>Copiar Link</span></a></li>
+    					<input id="link" value="https://copytraderbrasil.com.br?a=<?=$dados_usuario['codigoindicacao']?>">
+    			</ul>
+    			</div>
+
+    </div>
+        <div class="col colcadastro">
 <?php
 
         if (isset($erro))
@@ -80,8 +162,8 @@ if (! isset($_SESSION['usuario'])) {
 
 		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 			<p></p>
-			<div style="width: 80%">
-
+			<div class="col-6 mx-auto">
+        <h2>Novo cadastro</h2>
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
 						<span class="input-group-text" id="basic-addon1">Nome</span>
@@ -102,29 +184,23 @@ if (! isset($_SESSION['usuario'])) {
 
 				<input type="hidden" value="consultor" name="papel"> <input
 					type="hidden" value="<?=$obj?>" name="obj">
-
-
+          			<input class="btncreate" type='submit'
+          				value='<?=(isset($_GET["objeto"]))?"Atualizar":"Confirmar"?>'>
 			</div>
 
-			<input type='submit'
-				value='<?=(isset($_GET["objeto"]))?"Atualizar":"Criar"?>'><br>
 		</form>
-
-
-
-		<br>
-		<div>
-			<p>Usuarios</p>
+		<div class="col mx-auto">
+			<h3>Lista de usuários</h3>
 		</div>
 
-		<table class="table" style="width: 80%">
+		<table class="table" style="width: 100%">
 			<thead class="thead-dark">
 				<tr>
-					<th scope="col">#</th>
+					<th scope="col">ID</th>
 					<th scope="col">Nome</th>
 					<th scope="col">E-mail</th>
-					<th scope="col">Ativo</th>
-					<th scope="col">#</th>
+					<th scope="col">Status</th>
+					<th scope="col">Alterar</th>
 				</tr>
 
 			</thead>
@@ -156,10 +232,7 @@ if (! isset($_SESSION['usuario'])) {
 
 
 	</div>
-
-
-
-  </div>
+</div>
   </div>
   <footer class="page-footer font-small special-color-dark pt-4">
 
@@ -173,6 +246,9 @@ if (! isset($_SESSION['usuario'])) {
   <!-- Copyright -->
 
   </footer>
+  <script>
+  new ClipboardJS('.btn');
+  </script>
 </body>
 </html>
 <?php

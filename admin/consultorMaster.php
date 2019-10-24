@@ -79,7 +79,7 @@ require_once '../controle/dadosConsultorMaster.php';
 					method="POST">
 					<div class="col-8 mx-auto">
 						<div class="col centralizar mb-3">
-						<h3>Selecione o periodo</h3>
+						<h2>Selecione o periodo</h2>
 					</div>
 						<div class="row centralizar">
 							<div class="input-group col-4 datafiltro">
@@ -121,7 +121,7 @@ $(function() {
 
 				<br>
 				<div class="col text-center aprovados">
-					<h4>Clientes aprovados no periodo: <span class="numclientes"><?=$quantidadeDeClienteAprovado?></span></h4>
+					<h5>Clientes aprovados no periodo: <span class="numclientes"><?=$quantidadeDeClienteAprovado?></span></h5>
 				</div>
 				<br>
 
