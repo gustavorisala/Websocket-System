@@ -17,7 +17,7 @@ function buscarDadosTodasOrdens($inicio, $fim){
     $link = $objDb->conecta_mysql();
     
     
-    $sql = "SELECT u.nome, u.email, iq.email as emailiq , sum(o.resultado) as resultado, iq.moedaCorrente FROM operacao o join useriq iq on o.idUser=iq.idConta join user u on u.id=iq.idUser where o.expiracao >= ".$inicio." and o.expiracao <= ".$fim." group by o.idUser";
+    $sql = "SELECT  iq.email as emailiq , sum(o.resultado) as resultado, iq.moedaCorrente FROM operacao o join useriq iq on o.idUser=iq.idConta where o.expiracao >= ".$inicio." and o.expiracao <= ".$fim." group by o.idUser";
     //$sql = "SELECT sum(resultado) as total, (SELECT s.nome from sala s where id=iq.idSala) as nomesala , iq.moedaCorrente as moeda FROM operacao o join useriq iq on iq.idConta=o.idUser where o.status=1 and iq.idUser=".$id." and from_unixtime(o.expiracao) BETWEEN '".$inicio."' and '".$fim."' GROUP BY o.idUser";
     echo("<script>console.log('PHP: ".$sql."');</script>");
     
