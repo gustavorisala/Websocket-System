@@ -23,10 +23,11 @@ include '../controle/cadastrarNovoUsuarioCleyton.php';
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet">
 
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
 <!-- bootstrap - link cdn -->
 
 <link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 <title>Pre Cadastro Kleyton Alves MT BRASIL</title>
 <link rel="icon" href="../imagens/favicon.png">
@@ -37,6 +38,7 @@ html, body {
 }
 
 body {
+  overflow: hidden;
 	background:
 		url("https://i.pinimg.com/originals/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
 }
@@ -51,7 +53,10 @@ html, p {
 	background-color: black;
 	height: 100%;
 }
-
+.box-login img
+{
+  width: 90%;
+}
 .box-login {
 	padding-top: 5% !important;
 	padding: 15%;
@@ -94,10 +99,13 @@ label {
 	background-color: white;
 	color: black;
 }
-
 .provedor {
 	color: #bb914a;
 	margin-bottom: 2rem;
+}
+
+input {
+  font-family: 'Helvetica', FontAwesome, sans-serif;
 }
 
 @media ( max-width : 65rem) {
@@ -122,7 +130,9 @@ label {
 		<div class="row rowlogin h-100">
 			<div class="col-6 mx-auto collogin">
 				<div class="well box-login">
+          <div class="col text-center">
 					<a href="/"><img class="img-fluid" src="../images/logo.jpeg" /></a>
+        </div>
 					<h4 class="provedor">Provedor de sinais: Kleyton Alves</h4>
 					<h8 class="provedor"><?php if ($nomeConsultor != null) echo "Indicado por: " . $nomeConsultor;?></h8>
 					<form role="form" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
@@ -138,23 +148,23 @@ else if (isset($sucesso))
 ?>
 					<div class="form-group ls-login-user">
 								<label for="userLogin">Nome</label> <input
-									class="form-control ls-login-bg-user input-lg" id="nome"
+									class="form-control fontawesome ls-login-bg-user input-lg" id="nome"
 									type="text" aria-label="Nome" name="nome"
-									placeholder="Insira seu nome">
+									placeholder="&#xf007; Insira seu nome">
 							</div>
 
 							<div class="form-group ls-login-user">
 								<label for="email">E-mail</label> <input
 									class="form-control ls-login-bg-password input-lg" id="email"
 									type="text" aria-label="E-mail" name="emailUser"
-									placeholder="Insira seu e-mail">
+									placeholder="&#xf0e0; Insira seu e-mail">
 							</div>
 
 							<div class="form-group ls-login-user">
-								<label for="email">WhatsApp</label> <input
-									class="form-control ls-login-bg-password input-lg"
+                  <label for="email">WhatsApp</label>
+                <input class="form-control ls-login-bg-password input-lg"
 									id="WhatsApp" type="text" aria-label="WhatsApp" name="WhatsApp"
-									placeholder="Insira seu WhatsApp">
+									placeholder="&#xf232; Insira seu WhatsApp">
 							</div>
 
 

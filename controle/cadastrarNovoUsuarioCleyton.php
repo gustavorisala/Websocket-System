@@ -65,18 +65,18 @@ if (isset($_POST["nome"]) && isset($_POST["emailUser"]) && isset($_POST["WhatsAp
     $link = $objDb->conecta_mysql();
     $i = $_POST["indicacao"];
     $nomeConsultor = pesquisarConsultor($i, $link);
-    
+
     if (empty($_POST["emailUser"]))
-        $erro = "Campo E-mail Obrigatório";
+        $erro = "Campo E-mail Obrigatï¿½rio";
     else if (empty($_POST["nome"]))
-        $erro = "Campo Nome Obrigatório";
+        $erro = "Campo Nome Obrigatï¿½rio";
     else if (empty($_POST["WhatsApp"]))
-        $erro = "Campo WhatsApp Obrigatório";
+        $erro = "Campo WhatsApp Obrigatï¿½rio";
 
     else if (emailExiste($_POST["emailUser"], $link))
-        $erro = "E-mail Já Cadastrado no Sistema!!!";
+        $erro = "E-mail Jï¿½ Cadastrado no Sistema!!!";
     else {
-        // Vamos realizar o cadastro ou alteração dos dados enviados.
+        // Vamos realizar o cadastro ou alteraï¿½ï¿½o dos dados enviados.
         if ($_POST["indicacao"] == '0') {
             // codigo cleyton =660fcd56e1b41fd2bac33ccc94e82c15
             $ind = '660fcd56e1b41fd2bac33ccc94e82c15';
