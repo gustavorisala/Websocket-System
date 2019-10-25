@@ -8,27 +8,25 @@ if (! isset($_SESSION['usuario'])) {
         echo "<h1>Somente ADM<h1>";
     } else {
         require_once '../controle/gerenciarUsuariosConsultor.php';
-       
-        require_once '../controle/dadosConfigurarConta.php';
+
+      
 
         ?>
 <!doctype html>
 <html lang="pt-br">
 <head>
 
-<title>Gerenciar Consultores</title>
+<title>Gerenciar Consultor</title>
 <link rel="icon" href="../imagens/favicon.png">
 <!-- jquery - link cdn -->
 <meta charset="utf-8">
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<link rel="stylesheet"
-	href="../css/styleconsultor.css">
 
-  <script src="../js/clipboard.min.js"></script>
 <link rel="stylesheet"
 	href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" />
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<link rel="stylesheet" href="../css/styleconsultor.css">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
@@ -39,116 +37,96 @@ if (! isset($_SESSION['usuario'])) {
 <!--  link href="../estilo2.css" rel="stylesheet"-->
 
 </head>
-
-<body>
 <style>
-.btn
-
-{
-  border: 1px solid black !important;
-  border-radius: 30px !important;
-  color: black !important;
-  cursor: pointer;
-  font-size: 1rem;
-  background-color: whitesmoke !important;
-  box-shadow: 0 0 4px black !important;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-nav
-{
-  margin-top: -3rem !important;
-}
-.colcadastro
-{
-  background-color: white !important;
+.btn {
+	border: 1px solid black !important;
+	border-radius: 30px !important;
+	color: black !important;
+	cursor: pointer;
+	font-size: 1rem;
+	background-color: whitesmoke !important;
+	box-shadow: 0 0 4px black !important;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
-#link
-{
-  opacity: 0;
-  color: transparent;
-  text-align: center;
-  font-size: 10px;
-  margin-top: 1rem;
-  border: 0px;
-  text-align: center;
+
+.colcadastro {
+	background-color: white !important;
 }
-.input-group-text
-{
-  width: 150px;
-  justify-content: center;
-  padding: 10px;
-  background-color: #bb914a;
-  color: white;
+
+#link {
+	opacity: 0;
+	color: transparent;
+	text-align: center;
+	font-size: 10px;
+	margin-top: 1rem;
+	border: 0px;
+	text-align: center;
 }
-.btncreate
-{
-    display: flex;
-    margin-left: auto;
-  justify-content: center;
-  padding: 10px;
-  background-color: #bb914a;
-  color: white;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-    font-size: 16px;
+
+.input-group-text {
+	width: 150px;
+	justify-content: center;
+	padding: 10px;
+	background-color: #bb914a;
+	color: white;
 }
-.colcadastro
-{
-   overflow-y: scroll;
-   height: 69.5vh;
+
+.btncreate {
+	display: flex;
+	margin-left: auto;
+	justify-content: center;
+	padding: 10px;
+	background-color: #bb914a;
+	color: white;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+	font-size: 16px;
 }
-.form-control
-{
-  height: 3rem !important;
+
+.colcadastro {
+	overflow-y: scroll;
+	height: 69.5vh;
+}
+
+.form-control {
+	height: 3rem !important;
 }
 </style>
-  		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#conteudoNavbarSuportado"
-			aria-controls="conteudoNavbarSuportado" aria-expanded="false"
-			aria-label="Alterna navegação">
-			<span class="navbar-toggler-icon"></span>
-		</button>
 
-		<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-			<ul class="navbar-nav mr-auto">
-				<a class="navbar-brand" href="#">
-					<img class="ml-4 logotipo" src="../images/logosemfundo.png" alt="">
-				</a>
-			</ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#conteudoNavbarSuportado"
+		aria-controls="conteudoNavbarSuportado" aria-expanded="false"
+		aria-label="Alterna navegação">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+		<ul class="navbar-nav mr-auto">
+			<a class="navbar-brand" href="#"> <img class="ml-4 logotipo"
+				src="../images/logosemfundo.png" alt="">
+			</a>
+		</ul>
 			<?php
-			        include_once '../menus/consultorMaster.php';
-			        ?>
+        include_once '../menus/consultorMaster.php';
+        ?>
 	</div>
-	</nav>
-    <div class="container-fluid">
-      <div class="row headerdados">
-        <div class="col text-center">
-          <h1>Gerenciamento de Consultor</h1>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid containerdados">
-  		<div class="row conteudo">
-        <div id="menu" class="col-3 paineluser">
+</nav>
+<div class="container-fluid">
+	<div class="row headerdados">
+		<div class="col text-center">
+			<h1>Gerenciamento de Consultor</h1>
+		</div>
+	</div>
+</div>
+<div class="container-fluid containerdados">
+	<div class="row conteudo">
 
-
-    			<div class="dadosusuario">
-    				<ul class="sidebar"><h3>Dados pessoais</h3>
-    				<li><img src="../images/gmail.svg"> <?=$dados_usuario['email']?></li>
-    				<li><img src="../images/password.svg"> <?=$dados_usuario['nome']?></li>
-    				<li><img src="../images/link.svg"> <a class="btn copiarlink" data-clipboard-target="#link">
-    					<span>Copiar Link</span></a></li>
-    					<input id="link" value="https://copytraderbrasil.com.br?a=<?=$dados_usuario['codigoindicacao']?>">
-    			</ul>
-    			</div>
-
-    </div>
-        <div class="col colcadastro">
+		<div class="col colcadastro">
 <?php
 
         if (isset($erro))
@@ -160,49 +138,49 @@ nav
 
 
 		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
-			<p></p>
-			<div class="col-6 mx-auto">
-        <h2>Novo cadastro</h2>
-				<div class="input-group mb-3">
-					<div class="input-group-prepend">
-						<span class="input-group-text" id="basic-addon1">Nome</span>
+				<p></p>
+				<div class="col-6 mx-auto">
+					<h2>Novo cadastro</h2>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon1">Nome</span>
+						</div>
+						<input type="text" class="form-control" placeholder="Nome"
+							aria-label="Nome" aria-describedby="basic-addon1" name="nome"
+							value="<?=$nome?>">
 					</div>
-					<input type="text" class="form-control" placeholder="Nome"
-						aria-label="Nome" aria-describedby="basic-addon1" name="nome"
-						value="<?=$nome?>">
-				</div>
-				<div class="input-group mb-3">
+					<div class="input-group mb-3">
 
-					<div class="input-group-prepend">
-						<span class="input-group-text" id="basic-addon2">E-mail</span>
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon2">E-mail</span>
+						</div>
+						<input type="text" class="form-control" placeholder="E-mail"
+							aria-label="E-mail" aria-describedby="basic-addon2" name="email"
+							value="<?=$email?>">
 					</div>
-					<input type="text" class="form-control" placeholder="E-mail"
-						aria-label="E-mail" aria-describedby="basic-addon2" name="email"
-						value="<?=$email?>">
+
+					<input type="hidden" value="consultor" name="papel"> <input
+						type="hidden" value="<?=$obj?>" name="obj"> <input
+						class="btncreate" type='submit'
+						value='<?=(isset($_GET["objeto"]))?"Atualizar":"Confirmar"?>'>
 				</div>
 
-				<input type="hidden" value="consultor" name="papel"> <input
-					type="hidden" value="<?=$obj?>" name="obj">
-          			<input class="btncreate" type='submit'
-          				value='<?=(isset($_GET["objeto"]))?"Atualizar":"Confirmar"?>'>
+			</form>
+			<div class="col mx-auto">
+				<h3>Lista de usuários</h3>
 			</div>
 
-		</form>
-		<div class="col mx-auto">
-			<h3>Lista de usuários</h3>
-		</div>
+			<table class="table" style="width: 100%">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Nome</th>
+						<th scope="col">E-mail</th>
+						<th scope="col">Status</th>
+						<th scope="col">Alterar</th>
+					</tr>
 
-		<table class="table" style="width: 100%">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">ID</th>
-					<th scope="col">Nome</th>
-					<th scope="col">E-mail</th>
-					<th scope="col">Status</th>
-					<th scope="col">Alterar</th>
-				</tr>
-
-			</thead>
+				</thead>
 
 
 
@@ -230,22 +208,22 @@ nav
 
 
 
+		</div>
 	</div>
 </div>
-  </div>
-  <footer class="page-footer font-small special-color-dark pt-4">
+<footer class="page-footer font-small special-color-dark pt-4">
 
-  <!-- Footer Elements -->
-  <!-- Footer Elements -->
+	<!-- Footer Elements -->
+	<!-- Footer Elements -->
 
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">
-    © 2019 Copyright <a href="#"> MTBrasil</a>
-  </div>
-  <!-- Copyright -->
+	<!-- Copyright -->
+	<div class="footer-copyright text-center py-3">
+		© 2019 Copyright <a href="#"> MTBrasil</a>
+	</div>
+	<!-- Copyright -->
 
-  </footer>
-  <script>
+</footer>
+<script>
   new ClipboardJS('.btn');
   </script>
 </body>
