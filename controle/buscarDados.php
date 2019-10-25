@@ -15,7 +15,7 @@ function buscarClientesNovosPeriodoNome($dInicial, $dFinal, $id_usuario)
 {
     $objDb = new db();
     $link = $objDb->conecta_mysql();
-    $sql = " SELECT nome, sobrenome FROM user join statususer on statususer.idUser= user.id where indicacao = (select codigoindicacao from user where id=$id_usuario) and statususer.status='completo' and statususer.data >= $dInicial and statususer.data <= $dFinal";
+    $sql = " SELECT nome FROM user join statususer on statususer.idUser= user.id where indicacao = (select codigoindicacao from user where id=$id_usuario) and statususer.status='completo' and statususer.data >= $dInicial and statususer.data <= $dFinal";
     // echo ($sql);
     
     $resultado_id = mysqli_query($link, $sql);

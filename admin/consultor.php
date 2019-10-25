@@ -145,7 +145,7 @@ $(function() {
      while ($row = mysqli_fetch_array($novosClientesNome)) {
 
         echo "<tr >";
-        echo "<th class='colresult' scope='row'>" . $row['nome']." ".$row['sobrenome']. "</th>";
+        echo "<th class='colresult' scope='row'>" . $row['nome']. "</th>";
        
         echo "</tr> ";
     }
