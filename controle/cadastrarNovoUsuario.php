@@ -43,7 +43,6 @@ include_once ("conexaobd.php");
 if (isset($_POST["nome"]) && isset($_POST["emailUser"]) && isset($_POST["WhatsApp"])) {
     $objDb = new db();
     $link = $objDb->conecta_mysql();
-    $i = $_POST["indicacao"];
     if (empty($_POST["emailUser"]))
         $erro = "Campo E-mail Obrigatório";
     else if (empty($_POST["nome"]))
