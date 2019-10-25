@@ -156,7 +156,7 @@ label {
 						<div class="row rowtxtregister">
 							<div class="col text-center">
 								<span class="txtregister"> Ainda não é membro?<a
-									href="cadastroUsuario.php"> Crie sua conta</a>
+									href="cadastro"> Crie sua conta</a>
 								</span>
 							</div>
 						</div>
