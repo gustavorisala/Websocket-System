@@ -73,17 +73,17 @@ require_once '../controle/dadosConfigurarConta.php';
 						<h3>Dados pessoais</h3>
 						<li><img src="../images/gmail.svg"> <?=$dados_usuario['email']?></li>
 						<li><img src="../images/password.svg"> <?=$dados_usuario['nome']?></li>
-						<li><img src="../images/link.svg"> <a class="btn copiarlink"
-							data-clipboard-target="#link"> <span>Copiar Link</span></a></li>
-						<input id="link"
-							value="<?php
-    if ($papel == "consultor")
-        echo "https://app.copytraderbrasil.com.br/provedorSinaisKleyton?a=".$dados_usuario['codigoindicacao'];
-    if ($papel == "consultorM")
-        echo "https://app.copytraderbrasil.com.br/provedorSinaisKleyton";
-    if ($papel == "cliente")
-        echo "https://app.copytraderbrasil.com.br/cadastroUsuario.php?a=\"" . $dados_usuario['codigoindicacao'] . "\"";
-    ?>">
+						<?php 
+						if ($papel == "consultor") {
+						    include_once '../afiliacao/consultorlink.php';
+						}
+						if ($papel == "consultorM") {
+						    include_once '../afiliacao/consultorlinkM.php';
+						}
+						
+						?>
+
+					
 					</ul>
 				</div>
 

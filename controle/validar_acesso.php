@@ -26,7 +26,7 @@ if (isset($_POST["usuario"]) && isset($_POST["senha"])) {
             $_SESSION['papel'] = $dados_usuario['papel'];
 
             if ($dados_usuario['papel'] == "admin") {
-                header('Location: admin/admin.php');
+                header('Location: admin');
             } else if ($dados_usuario['papel'] == "consultorM") {
                 header('Location: admin/consultorMaster.php');
             } else if ($dados_usuario['papel'] == "consultor") {
