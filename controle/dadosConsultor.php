@@ -30,7 +30,7 @@ if (! isset($_SESSION['usuario'])) {
         $dInicial = strtotime($dInicial);
 
         $dFinal = (strtotime($dFinal) + 24 * 3600);
-
+        $novosClientesNome = buscarClientesNovosPeriodoNome($dInicial, $dFinal, $id_usuario);  
         $novosClientes = buscarClientesNovosPeriodo($dInicial, $dFinal, $id_usuario);
         $saldoOperacoes = buscarResultadoClientesConsultor($dInicial, $dFinal, $id_usuario);
 

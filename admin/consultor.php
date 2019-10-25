@@ -120,7 +120,8 @@ $(function() {
 
 				<br>
 				<div class="col text-center aprovados">
-					<h4>Clientes aprovados no periodo: <span class="numclientes"><?=$quantidadeDeClienteAprovado?></span></h4>
+					<h4>Clientes aprovados no periodo: <?=$quantidadeDeClienteAprovado?></span></h4>
+					<h4>Rendimento: R$ <?php echo number_format(($quantidadeDeClienteAprovado*10), 2, ',', '.');?></span></h4>
 				</div>
 				<br>
 
@@ -128,8 +129,8 @@ $(function() {
 				<table class="table">
 					<thead class="thead-dark">
 						<tr>
-							<th class="colresult" scope="col" style="width: 70%; text-align: center;">Resultado no Periodo</th>
-							<th class="moeda" style="text-align: center;" scope="col">Moeda Corrente</th>
+							<th class="colresult" scope="col" style="width: 70%; text-align: center;">Nome</th>
+							
 						</tr>
 
 					</thead>
@@ -139,13 +140,13 @@ $(function() {
 
  <?php
 
-if ($saldoOperacoes) {
+ if ($novosClientesNome) {
 
-    while ($row = mysqli_fetch_array($saldoOperacoes)) {
+     while ($row = mysqli_fetch_array($novosClientesNome)) {
 
         echo "<tr >";
-        echo "<th class='colresult' scope='row'>" . number_format($row['resultado'], 2, ',', '.') . "</th>";
-        echo "<th class='colmoeda' scope='row'>" . $row['moedaCorrente'] . "</th>";
+        echo "<th class='colresult' scope='row'>" . $row['nome']." ".$row['sobrenome']. "</th>";
+       
         echo "</tr> ";
     }
 } else {

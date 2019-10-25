@@ -121,7 +121,9 @@ $(function() {
 
 				<br>
 				<div class="col text-center aprovados">
-					<h5>Clientes aprovados no periodo: <span class="numclientes"><?=$quantidadeDeClienteAprovado?></span></h5>
+				<h4>Clientes aprovados no periodo</h4>
+					<h5>Diretamente: <?=$quantidadeDeClienteAprovado?>     Rendimento: R$ <?php echo number_format(($quantidadeDeClienteAprovado*35), 2, ',', '.');?></h5>
+					<h5>Pelo Consultores: <?=$quantidadeDeClienteAprovadoConsultores?>     Rendimento: R$ <?php echo number_format(($quantidadeDeClienteAprovadoConsultores*25), 2, ',', '.');?></h5>
 				</div>
 				<br>
 
@@ -130,7 +132,7 @@ $(function() {
 					<thead class="thead-dark">
 						<tr>
 							<th class="colresult" scope="col" style="width: 50%; text-align: center;">Consultor</th>
-							<th class="moeda" style="text-align: center;" scope="col">Clientes Aprovados no Periodo</th>
+							<th class="moeda" style="text-align: center;" scope="col">quantidade</th>
 						</tr>
 
 					</thead>
@@ -140,13 +142,13 @@ $(function() {
 
  <?php
 
-if ($saldoOperacoes) {
-
-    while ($row = mysqli_fetch_array($saldoOperacoes)) {
+ if ($novosClientesMaster) {
+     while ($row = mysqli_fetch_array($novosClientesMaster)) {
 
         echo "<tr >";
-        echo "<th class='colresult' scope='row'>" . number_format($row['resultado'], 2, ',', '.') . "</th>";
-        echo "<th class='colmoeda' scope='row'>" . $row['moedaCorrente'] . "</th>";
+        echo "<th class='colmoeda' scope='row'>" . $row['email'] . "</th>";
+        echo "<th class='colresult' scope='row'>" . $row['quant'] . "</th>";
+      
         echo "</tr> ";
     }
 } else {
@@ -154,39 +156,7 @@ if ($saldoOperacoes) {
 }
 
 ?>
-    </table>
-		</div>
-
-		<div class="col-7 mx-auto">
-		<table class="table">
-			<thead class="thead-dark">
-				<tr>
-					<th class="colresult" scope="col" style="width: 50%; text-align: center;">Resultado no Periodo</th>
-					<th class="moeda" style="text-align: center;" scope="col">Moeda Corrente</th>
-				</tr>
-
-			</thead>
-
-
-
-
-
-			 <?php
-
-			        if ($saldoOperacoes) {
-
-			            while ($row = mysqli_fetch_array($saldoOperacoes)) {
-
-			                echo "<tr >";
-			                echo "<th scope='row'>" . number_format($row['resultado'], 2, ',', '.') . "</th>";
-			                echo "<th scope='row'>" . $row['moedaCorrente'] . "</th>";
-			                echo "</tr> ";
-			            }
-			        } else {
-			            echo utf8_encode('<tr><th>Sem Opera��es</th></tr>');
-			        }
-
-			        ?>
+   
 </table>
 </div>
 			</div>
