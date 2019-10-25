@@ -145,35 +145,37 @@ else if (isset($sucesso))
     echo '<div style="color:#00f">' . utf8_encode($sucesso) . '</div><br/>';
 
 ?>
-					<div class="form-group ls-login-user">
-								<label for="userLogin">Nome</label> <input
+					<div class="form-group ls-login-user row">
+            <div class="col">
+								<label for="userLogin">Nome completo</label> <input
 									class="form-control fontawesome ls-login-bg-user input-lg" id="nome"
-									type="text" aria-label="Nome" name="nome"
-									placeholder="&#xf007; Insira seu nome">
-							</div>
-
-							<div class="form-group ls-login-user">
+									type="text" aria-label="Nome Completo" name="nome"
+									placeholder="&#xf007; Insira seu nome completo">
+                </div>
+                        </div>
+							<div class="form-group ls-login-user row">
+                <div class="col">
 								<label for="email">E-mail</label> <input
 									class="form-control ls-login-bg-password input-lg" id="email"
 									type="text" aria-label="E-mail" name="emailUser"
 									placeholder="&#xf0e0; Insira seu e-mail">
 							</div>
-
-							<div class="form-group ls-login-user">
+              	</div>
+							<div class="form-group ls-login-user row">
+                <div class="col">
                   <label for="email">WhatsApp</label>
                 <input class="form-control ls-login-bg-password input-lg"
 									id="WhatsApp" type="text" aria-label="WhatsApp" name="WhatsApp"
 									placeholder="&#xf232; Insira seu WhatsApp">
 							</div>
-
-
+              	</div>
 <input type="hidden" value="<?php echo $i?>" name="indicacao">
-
-
+              <div class="row">
+            <div class="col">
 							<input type="submit" value="Cadastrar"
 								class="btn btn-primary btn-lg btn-block" />
-
-
+              </div>
+            </div>
 						</fieldset>
 					</form>
 				</div>
