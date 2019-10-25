@@ -7,7 +7,7 @@ if (! isset($_SESSION['usuario'])) {
     if ($_SESSION['papel'] != "admin" && $_SESSION['papel'] != "suporte") {
         echo "<h1>Somente ADM<h1>";
     } else {
-        require_once '../controle/gerenciarUsuarios.php';
+        require_once '../controle/liberarUsuario.php';
         ?>
 
 <!doctype html>
@@ -75,7 +75,7 @@ if (! isset($_SESSION['usuario'])) {
 						<span class="input-group-text" id="basic-addon3">E-mail</span>
 					</div>
 
-					<select class="selectpicker" data-live-search="true" name="papel">
+					<select class="selectpicker" data-live-search="true" name="email">
 
 <?php
         if ($dadosUsuariosPre) {
@@ -92,63 +92,25 @@ if (! isset($_SESSION['usuario'])) {
 
 					</select>
 				</div>
-				<input type="hidden" value="<?=$obj?>" name="obj">
 
-
+				<input type="hidden" name="adm" value="<?=$_SESSION['id_usuario']?>">
+				<input type='submit' value='Liberar Usuario'>
 			</div>
 
-			<input type='submit'
-				value='<?=(isset($_GET["objeto"]))?"Atualizar":"Criar"?>'><br>
+
 		</form>
 
 
 
 		<br>
-		<div>
-			<p>Usuarios</p>
-		</div>
-
-		<table class="table" style="width: 80%">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">#</th>
-					<th scope="col">Nome</th>
-					<th scope="col">E-mail</th>
-					<th scope="col">Papel</th>
-					<th scope="col">Ativo</th>
-					<th scope="col">#</th>
-				</tr>
-
-			</thead>
-                   
-             
-        
-      
- <?php
-
-        $cont = 0;
-        if ($dadosUsuarios) {
-
-            while ($row = mysqli_fetch_array($dadosUsuarios)) {
-                $cont ++;
-                echo "<tr >";
-                echo "<th scope='row'>" . $cont . "</th>";
-                echo "<th scope='row'>" . $row['nome'] . "</th>";
-                echo "<th scope='row'>" . $row['email'] . "</th>";
-                echo "<th scope='row'>" . $row['papel'] . "</th>";
-                echo "<th scope='row'>" . ($row['userAtivo'] == 1 ? 'Ativo' : 'Inativo') . "</th>";
-                echo '  <td><a href="' . $_SERVER["PHP_SELF"] . '?objeto=' . base64_encode($row['id']) . '">Editar</a></td>';
-            }
-        }
-        ?></table>
+		<p>Confirmacao de pagamento da Licenca 90 dias</p>
+		<p>Cadastro na IQ option ok</p>
+		<p>liberacao do usuario no backoffice</p>
+		<p>link do programa MT BRASIL</p>
+		<p>liberacao do usuario no backoffice</p>
+		<p>envio das informcoes por email</p>
 
 
-
-
-
-
-
-	</div>
 
 
 	</div>

@@ -33,6 +33,9 @@ if (isset($_GET["a"])) {
 <body>
 
 
+<?php
+echo date("Y-m-d 00:00:00" , strtotime('90 days'));
+?>
 
 	<!-- INICIO DO BOTAO PAGSEGURO -->
 	<a href="javascript:void(0)"
