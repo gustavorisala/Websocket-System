@@ -1,11 +1,11 @@
 <?php
-require_once '../controle/dadosConsultor.php';
+require_once '../controle/dadosConsultorMaster.php';
 ?>
 <!doctype html>
 <html lang="pt-br">
 <head>
 
-<title>Consultor</title>
+<title>Consultor Master</title>
 <link rel="icon" href="../imagens/favicon.png">
 <!-- jquery - link cdn -->
 <meta charset="utf-8">
@@ -15,8 +15,7 @@ require_once '../controle/dadosConsultor.php';
 	href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" />
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-<link rel="stylesheet"
-	href="../css/styleconsultor.css">
+<link rel="stylesheet" href="../css/styleconsultor.css">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
@@ -28,7 +27,6 @@ require_once '../controle/dadosConsultor.php';
 
 </head>
 <style>
-
 </style>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -41,12 +39,12 @@ require_once '../controle/dadosConsultor.php';
 
 		<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 			<ul class="navbar-nav mr-auto">
-				<a class="navbar-brand" href="#">
-					<img class="ml-4 logotipo" src="../images/logosemfundo.png" alt="">
+				<a class="navbar-brand" href="#"> <img class="ml-4 logotipo"
+					src="../images/logosemfundo.png" alt="">
 				</a>
 			</ul>
-		<?php
-include_once '../menus/consultor.php';
+			<?php
+include_once '../menus/consultorMaster.php';
 ?>
 	</div>
 	</nav>
@@ -54,32 +52,20 @@ include_once '../menus/consultor.php';
 	<div class="container-fluid">
 		<div class="row headerdados">
 			<div class="col text-center">
-				<h1>Relatório de operações</h1>
+				<h1>Relatório de todas operações</h1>
 			</div>
 		</div>
 	</div>
 	<div class="container-fluid containerdados">
 		<div class="row conteudo">
-			<!--
-			<div id="menu" class="col-3 paineluser">
-				<div class="dadosusuario">
-					<ul class="sidebar"><h3>Dados pessoais</h3>
-					<li><img src="../images/gmail.svg"> <?=$dados_usuario['email']?></li>
-					<li><img src="../images/password.svg"> <?=$dados_usuario['nome']?></li>
-					<li><img src="../images/link.svg"> <a href="https://copytraderbrasil.com.br?a=<?=$dados_usuario['codigoindicacao']?>">Copiar Link</a></li>
 
-				</ul>
-				</div>
-
-			</div>
-		-->
 			<div class="col mx-auto colinfos">
 				<form class="formdados" action="<?=$_SERVER["PHP_SELF"]?>"
 					method="POST">
 					<div class="col-8 mx-auto">
 						<div class="col centralizar mb-3">
-						<h3>Selecione o periodo</h3>
-					</div>
+							<h3>Selecione o periodo</h3>
+						</div>
 						<div class="row centralizar">
 							<div class="input-group col-4 datafiltro">
 								<div class="input-group-prepend">
@@ -114,63 +100,82 @@ $(function() {
 						<div class="col text-center p-0 pt-4">
 							<button class="btn" type="submit">Filtrar</button>
 						</div>
-
+				
 				</form>
 
+<br>
 
-				<br>
-				<div class="col text-center aprovados">
-					<h4>Clientes aprovados no periodo: <?=$quantidadeDeClienteAprovado?></span></h4>
-					<h4>Rendimento: R$ <?php echo number_format(($quantidadeDeClienteAprovado*10), 2, ',', '.');?></span></h4>
-				</div>
-				<br>
 
 				<div class="col-7 mx-auto">
-				<table class="table">
-					<thead class="thead-dark">
-						<tr>
-							<th class="colresult" scope="col" style="width: 70%; text-align: center;">Nome</th>
-							
-						</tr>
+					<table class="table">
+						<thead class="thead-dark">
+							<tr>
+								<th scope="col">ID Operacao</th>
+								<th scope="col">Ativo</th>
+								<th scope="col">Modo</th>
+								<th scope="col">Sentido</th>
+								<th scope="col">Hora Abertura</th>
+								<th scope="col">Expiracao</th>
+								<th scope="col">Preco Abertura</th>
+								<th scope="col">Preco Fechamento</th>
+								<th scope="col">Resultado</th>
+								<th scope="col">Moeda</th>
+							</tr>
 
-					</thead>
+						</thead>
 
 
 
 
- <?php
+ 
 
- if ($novosClientesNome) {
 
-     while ($row = mysqli_fetch_array($novosClientesNome)) {
+			 <?php
 
-        echo "<tr >";
-        echo "<th class='colresult' scope='row'>" . $row['nome']. "</th>";
-       
-        echo "</tr> ";
+    if ($todosOperacoes) {
+
+        while ($row = mysqli_fetch_array($todosOperacoes)) {
+
+            echo "<tr>";
+            echo "<th scope='row'>" . $row['idOperacao'] . "</th>";
+
+            $moeda = "";
+            if ($row['idAtivo'] == 1) {
+                $moeda = "EUR/USD";
+            }
+
+            if ($row['idAtivo'] == 6) {
+                $moeda = "USD/JPY";
+            }
+
+            if ($row['idAtivo'] == 5) {
+                $moeda = "GBP/USD";
+            }
+
+            echo "<th scope='row'>" . $moeda . "</th>";
+
+            echo "<th scope='row'>" . $row['tipo'] . "</th>";
+            echo "<th scope='row'>" . $row['direcao'] . "</th>";
+            echo "<th scope='row'>" . date("d/m/y H:i:s", $row['tempoAbertura']) . "</th>";
+            echo "<th scope='row'>" . date("d/m/y H:i:s", $row['expiracao']) . "</th>";
+            echo "<th scope='row'>" . $row['precoAbertura'] . "</th>";
+            echo "<th scope='row'>" . $row['precoFechamento'] . "</th>";
+
+            echo "<th scope='row'>$" . number_format($row['resultado'], 2, ',', '.') . "</th>";
+            echo "<th scope='row'>" . $row['moedaCorrente'] . "</th>";
+            echo "</tr>";
+        }
+    } else {
+        echo utf8_encode('<tr><th>Sem Opera��es</th></tr>');
     }
-} else {
-    echo utf8_encode('<tr><th>Sem Opera��es</th></tr>');
-}
 
-?>
-    </table>
-		</div>
+    ?>
+</table>
+				</div>
 			</div>
 		</div>
 	</div>
 	</div>
-	<footer class="page-footer font-small special-color-dark pt-4">
-
-		<!-- Footer Elements -->
-		<!-- Footer Elements -->
-
-		<!-- Copyright -->
-		<div class="footer-copyright text-center py-3">
-			© 2019 Copyright <a href="#"> MTBrasil</a>
-		</div>
-		<!-- Copyright -->
-
-	</footer>
+	
 </body>
 </html>

@@ -1,10 +1,8 @@
-<?php 
-
-$i=0;
+<?php
+$i = 0;
 
 if (isset($_GET["a"])) {
     $i = $_GET["a"];
-    
 }
 
 ?>
@@ -35,10 +33,21 @@ if (isset($_GET["a"])) {
 <body>
 
 
-<form action="https://app.copytraderbrasil.com.br/cadastroUsuario.php" method="POST">
-<input type="hidden" value="<?=$i?>" name="a">
-<input type="submit" value="Cadastre-se">
-</form>
+
+	<!-- INICIO DO BOTAO PAGSEGURO -->
+	<a href="javascript:void(0)"
+		onclick="PagSeguroLightbox('9CCB2EA7DBDB719EE45A7FB94E76D128'); return false;"><img
+		src="//assets.pagseguro.com.br/ps-integration-assets/botoes/pagamentos/95x45-pagar.gif"
+		alt="Pague com PagSeguro - é rápido, grátis e seguro!" /></a>
+	<script type="text/javascript"
+		src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
+	<!-- FIM DO BOTAO PAGSEGURO -->
+
+	<form action="https://app.copytraderbrasil.com.br/cadastroUsuario.php"
+		method="POST">
+		<input type="hidden" value="<?=$i?>" name="a"> <input type="submit"
+			value="Cadastre-se">
+	</form>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

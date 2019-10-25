@@ -32,15 +32,24 @@ if (! isset($_SESSION['usuario'])) {
         $dFinal = (strtotime($dFinal) + 24 * 3600);
 
         $novosClientes = buscarClientesNovosPeriodo($dInicial, $dFinal, $id_usuario);
+        $novosClientestotalConsultores = buscarClientesNovosPeriodoConsultores($dInicial, $dFinal, $id_usuario);
         $novosClientesMaster = buscarClientesNovosPeriodoMaster($dInicial, $dFinal, $id_usuario);
         $saldoOperacoes = buscarResultadoClientesConsultor($dInicial, $dFinal, $id_usuario);
+        $todosOperacoes = buscarResultadoClientesConsultorTodos($dInicial, $dFinal, $id_usuario);
 
         $quantidadeDeClienteAprovado = 0;
+        $quantidadeDeClienteAprovadoConsultores = 0;
         if ($novosClientes) {
             while ($row = mysqli_fetch_array($novosClientes)) {
                 $quantidadeDeClienteAprovado = $row['quant'];
             }
         }
+        
+        if ($novosClientestotalConsultores) {
+            while ($row = mysqli_fetch_array($novosClientestotalConsultores)) {
+                $quantidadeDeClienteAprovadoConsultores = $row['quant'];
+            }
+      }
     }
 }
 

@@ -8,8 +8,7 @@ if (! isset($_SESSION['usuario'])) {
         echo "<h1>Somente ADM<h1>";
     } else {
         require_once '../controle/gerenciarUsuariosConsultor.php';
-        ?>
-        <?php
+       
         require_once '../controle/dadosConfigurarConta.php';
 
         ?>
@@ -17,7 +16,7 @@ if (! isset($_SESSION['usuario'])) {
 <html lang="pt-br">
 <head>
 
-<title>Gerenciar Usuarios ADMIN</title>
+<title>Gerenciar Consultores</title>
 <link rel="icon" href="../imagens/favicon.png">
 <!-- jquery - link cdn -->
 <meta charset="utf-8">
@@ -107,25 +106,25 @@ nav
   height: 3rem !important;
 }
 </style>
-  	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  		<button class="navbar-toggler" type="button" data-toggle="collapse"
-  			data-target="#conteudoNavbarSuportado"
-  			aria-controls="conteudoNavbarSuportado" aria-expanded="false"
-  			aria-label="Alterna navegação">
-  			<span class="navbar-toggler-icon"></span>
-  		</button>
+  		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#conteudoNavbarSuportado"
+			aria-controls="conteudoNavbarSuportado" aria-expanded="false"
+			aria-label="Alterna navegação">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-  		<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-  			<ul class="navbar-nav mr-auto">
-  				<a class="navbar-brand" href="#">
-  					<img class="ml-4 logotipo" src="../images/logosemfundo.png" alt="">
-  				</a>
-  			</ul>
-  			<?php
-  			        include_once '../menus/consultorMaster.php';
-  			        ?>
-  	</div>
-  	</nav>
+		<div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+			<ul class="navbar-nav mr-auto">
+				<a class="navbar-brand" href="#">
+					<img class="ml-4 logotipo" src="../images/logosemfundo.png" alt="">
+				</a>
+			</ul>
+			<?php
+			        include_once '../menus/consultorMaster.php';
+			        ?>
+	</div>
+	</nav>
     <div class="container-fluid">
       <div class="row headerdados">
         <div class="col text-center">
