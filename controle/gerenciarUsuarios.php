@@ -5,6 +5,15 @@ $nome = "";
 $email = "";
 $papel = "admin";
 
+function buscarDadosUsuarioPreCadastro($link)
+{
+    $sql = "SELECT id, nome, email, papel FROM user where id in (select idUser from statususer where status='preCadastro') and userativo=1 and papel='cliente'";
+    echo ($sql);
+    $resultado_id = mysqli_query($link, $sql);
+    return $resultado_id;
+}
+
+
 function buscarDadosUsuario($link, $id)
 {
     $sql = "SELECT id, nome, email, papel, userAtivo FROM user where id=$id";
@@ -126,5 +135,5 @@ if (isset($_GET["objeto"])) {
     }
 }
 $dadosUsuarios = buscarDadosTodosUsuarios($link);
-
+$dadosUsuariosPre = buscarDadosUsuarioPreCadastro($link);
 ?>

@@ -50,37 +50,13 @@ if (! isset($_SESSION['usuario'])) {
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-				<li><a class="navbar-brand" href="../cliente/operacoes.php">Ordens</a></li>
-
-				<li><a class="navbar-brand" href="../cliente/dadosCliente.php">Dados</a></li>
-				
-
-			
-                         <?php
-
-        if ($_SESSION['papel'] == "admin") {
-            echo "<li><a class=\"navbar-brand\" href='../admin/admin.php'>ADMIN</a></li>";
-        }
-        ?>        
-                               
-	          </ul>
-			<ul class="navbar-nav  my-2 my-lg-0">
-				<li><a href="../sair.php">Sair</a></li>
-			</ul>
-
-			<!--/.nav-collapse -->
-
-		</div>
-	</nav>
+	<?php
+        include_once '../menus/admin.php';
+        ?>
 
 	<div align="center">
 
-	
+
 
 
 		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
