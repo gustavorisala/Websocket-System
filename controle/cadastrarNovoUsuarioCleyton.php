@@ -60,7 +60,7 @@ if ($i != '0') {
     $nomeConsultor = pesquisarConsultor($i, $link);
 }
 
-if (isset($_POST["nome"]) && isset($_POST["emailUser"]) && isset($_POST["WhatsApp"]) && isset($_POST["indicacao"]) && isset($_POST["sobrenome"])) {
+if (isset($_POST["nome"]) && isset($_POST["emailUser"]) && isset($_POST["WhatsApp"]) && isset($_POST["indicacao"])) {
     $objDb = new db();
     $link = $objDb->conecta_mysql();
     $i = $_POST["indicacao"];
@@ -84,7 +84,7 @@ if (isset($_POST["nome"]) && isset($_POST["emailUser"]) && isset($_POST["WhatsAp
             $ind = $_POST["indicacao"];
         }
 
-        if (salvarUsuario($_POST["nome"].$_POST["sobrenome"], $_POST["emailUser"], md5(utf8_encode("01012019")), $link, $ind, $_POST["WhatsApp"])) {
+        if (salvarUsuario($_POST["nome"], $_POST["emailUser"], md5(utf8_encode("01012019")), $link, $ind, $_POST["WhatsApp"])) {
             $sucesso = "Dados cadastrados com sucesso!";
             header('Location: http://precadastro.copytraderbrasil.com.br');
         } else {
