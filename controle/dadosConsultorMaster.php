@@ -34,6 +34,7 @@ if (! isset($_SESSION['usuario'])) {
         $novosClientes = buscarClientesNovosPeriodo($dInicial, $dFinal, $id_usuario);
         $novosClientesMaster = buscarClientesNovosPeriodoMaster($dInicial, $dFinal, $id_usuario);
         $saldoOperacoes = buscarResultadoClientesConsultor($dInicial, $dFinal, $id_usuario);
+        $todosOperacoes = buscarResultadoClientesConsultorTodos($dInicial, $dFinal, $id_usuario);
 
         $quantidadeDeClienteAprovado = 0;
         if ($novosClientes) {
