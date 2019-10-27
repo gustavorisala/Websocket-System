@@ -26,160 +26,221 @@ include '../controle/cadastrarNovoUsuario.php';
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 
-<title>Pre Cadastro MT BRASIL</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css'>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-149416562-1"></script>
+<title>Cadastro MT BRASIL</title>
 <link rel="icon" href="../imagens/favicon.png">
 </head>
-<style>
-html, body {
-	height: 100%;
-}
 
-body {
-	overflow: hidden;
-	background:
-		url("https://i.pinimg.com/originals/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
+    <style>
+    .form-control::placeholder
+    {
+      color: black !important;
+    }
+    .form-control:focus::placeholder
+    {
+      color: black !important;
+    }
+    .form-control:focus
+    {
+      border-radius: 0px !important;
+      background-color: transparent;
+      border-top: 0px;
+      border-left: 0px;
+      border-right: 0px;
+      box-shadow: none !important;
+      border-color: black;
+    }
+.form-control
+{
+  border-radius: 0px !important;
+  background-color: transparent;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
 }
-
-html, p {
-	font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue",
-		sans-serif !important;
+.titulo
+{
+  color: black !important;
 }
-
-.collogin {
-	box-shadow: 0 0 100px black;
-	background-color: black;
-	height: 100%;
+.cadastre
+{
+    background-color: #f8f9fa;
+  background-image: url(imagens/bars.png) !important;
+  background-repeat-y: no-repeat;
+  background-position-y: bottom;
+  background-size: 40% !important;
 }
-
-.box-login img {
-	width: 90%;
+.titulocadastro
+{
+  color: #b88b58;
 }
-
-.box-login {
-	padding-top: 5% !important;
-	padding: 15%;
+body, html
+{
+  height: 100% !important;
+  background-color: #f8f9fa !important;
 }
-/*campos texto */
-label {
-	font-size: 18px;
-	color: white;
+@media screen and (max-width: 990px){
+  .pricingTable{ margin-bottom: 25px; }
 }
-/* botao enviar*/
-.btn {
-	border-color: white;
-	font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue",
-		sans-serif !important;
-	font-size: 18px;
-	color: white;
-	background-color: #bb914a;
+@media (max-width: 575.98px) {
+  footer
+  {
+    position: relative !important;
+  }
+  .cadastre
+  {
+    background-color: #f8f9fa;
+    background-size: 167% !important;
+    background-image: url(imagens/bars.png) !important;
+    background-repeat-y: no-repeat;
+    background-position-y: bottom;
 }
-/* bloco erro*/
-.form-control {
-	border: 2px solid #bb914a7a
 }
-
-.errormsg {
-	padding-top: 1%;
+.colcontato
+{
+  margin-bottom: 1rem !important;
 }
-
-.rowtxtregister {
-	padding-top: 2%;
-}
-
-.txtregister {
-	font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue",
-		sans-serif !important;
-	font-size: 14px;
-	color: white;
-}
-
-.btn:hover {
-	background-color: white;
-	color: black;
-}
-
-.provedor {
-	color: #bb914a;
-	margin-bottom: 2rem;
-}
-
-input {
-	font-family: 'Helvetica', FontAwesome, sans-serif;
-}
-
-@media ( max-width : 65rem) {
-	.collogin {
-		max-width: 100%;
-		flex: 100%;
-		width: 100%;
-	}
-}
-</style>
+    </style>
 <body>
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<a class="navbar-brand logotipo d-block d-sm-none" href="#">
+		<img src="images/logomt.png" alt="logotipo">
+		</a>
+	<button id="toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+	</button>
 
-	<div id="navbar" class="navbar-collapse collapse">
-		<ul class="nav navbar-nav navbar-left">
-			<li><a href="/">HOME</a></li>
-		</ul>
+	<div class="collapse navbar-collapse justify-content-md-center row" id="navbarsExample08">
+	<div class="col-2">
+	<a class="logotipo d-none d-sm-block col text-center" href="#">
+	<img class="img-fluid" src="images/logomt.png" alt="logotipo">
+	</a></div>
+	<div class="col-8 menu">
+	<ul class="navbar-nav d-none">
+		<li class="nav-item active">
+			<a class="nav-link" href="body">INÍCIO</a>
+		</li>
+			<li class="nav-item">
+		<a class="nav-link " href="#festas">DEPOIMENTOS</a>
+				</li>
+				<li class="nav-item">
+			<a class="nav-link " href="#contato">ASSINATURAS</a>
+					</li>
+						<li class="nav-item">
+					<a class="nav-link " href="#contato">CONTATO</a>
+							</li>
+	</ul>
+							</div>
+							<div class="col menu">
+								<ul class="navbar-nav">
+							<li class="nav-item  backofficelink">
+						<a class="nav-link " href="https://app.copytraderbrasil.com.br/">BACKOFFICE</a>
+								</li>
+							</ul>
+								</div>
 	</div>
-	<!--/.nav-collapse -->
-
-
-	<div class="container containerlogin h-100">
-		<div class="row rowlogin h-100">
-			<div class="col-6 mx-auto collogin">
-				<div class="well box-login">
-					<div class="col text-center">
-						<a href="/"><img class="img-fluid" src="../images/logo.jpeg" /></a>
+	</nav>
+	<div id="precos" class="container-fluid cadastre" data-aos="zoom-out-right">
+		<div class="row">
+			<div class="col colcontato">
+				<div class="row center">
+					<h1 class="titulo">CADASTRO</h1>
+					</div>
+					</div>
 					</div>
 
-					<form role="form" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
-						<fieldset>
+			<div class="container blococadastro">
+					<div class="row">
+						<div class="col-sm-4 col-12 blococc mx-auto">
+							<form id="orcamentocontato" class="blococontato cadastro" method="post" action="emailcontato.php">
+								<?php
 
-<?php
+								if (isset($erro))
+								    echo '<div class="erro" style="color:#F00">' . utf8_encode($erro) . '</div><br/>';
+								else if (isset($sucesso))
+								    echo '<div style="color:#00f">' . utf8_encode($sucesso) . '</div><br/>';
 
-if (isset($erro))
-    echo '<div class="erro" style="color:#F00">' . utf8_encode($erro) . '</div><br/>';
-else if (isset($sucesso))
-    echo '<div style="color:#00f">' . utf8_encode($sucesso) . '</div><br/>';
-
-?>
-					<div class="form-group ls-login-user row">
-								<div class="col">
-									<label for="userLogin">Nome completo</label> <input
-										class="form-control fontawesome ls-login-bg-user input-lg"
-										id="nome" type="text" aria-label="Nome Completo" name="nome"
-										placeholder="&#xf007; Insira seu nome completo">
+								?>
+								<div class="messages"></div>
+								<div class="controls mt-2">
+									<div class="row mb-3">
+										<div class="col titulocadastro">
+											<h4>Preencha com seus dados</h1>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<div id="formname" class="form-group d-flex">
+												<input id="nome" type="text" name="nome" class="form-control" pattern="^[a-zA-Z][a-zA-Z-_\.]{1,15}$" placeholder="Nome:" required="required" data-error="Campo obrigatório.">
+												<div class="help-block with-errors"></div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+											<div class="col">
+												<div id="formname" class="form-group d-flex">
+													<input id="nome" type="text" name="sobrenome" class="form-control" placeholder="Sobrenome:" required="required" data-error="Campo obrigatório.">
+													<div class="help-block with-errors"></div>
+												</div>
+											</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<div class="form-group d-flex">
+												<input id="email" type="email" name="emailUser" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" placeholder="E-mail:" required="required" data-error="Campo obrigatório.">
+												<div class="help-block with-errors"></div>
+											</div>
+										</div>
 								</div>
-							</div>
-							<div class="form-group ls-login-user row">
-								<div class="col">
-									<label for="email">E-mail</label> <input
-										class="form-control ls-login-bg-password input-lg" id="email"
-										type="text" aria-label="E-mail" name="emailUser"
-										placeholder="&#xf0e0; Insira seu e-mail">
+								<div class="row">
+										<div class="col">
+											<div id="formtel" class="form-group d-flex">
+												<input id="telefone"  pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$" type="tel" name="WhatsApp" class="form-control" placeholder="WhatsApp:" required="required" data-error="Campo obrigatório.">
+												<div class="help-block with-errors"></div>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-							<div class="form-group ls-login-user row">
-								<div class="col">
-									<label for="email">WhatsApp</label> <input
-										class="form-control ls-login-bg-password input-lg"
-										id="WhatsApp" type="text" aria-label="WhatsApp"
-										name="WhatsApp" placeholder="&#xf232; Insira seu WhatsApp">
-								</div>
-							</div>
 							<div class="row">
-								<div class="col">
-									<input type="submit" value="Cadastrar"
-										class="btn btn-primary btn-lg btn-block" />
+									<div class="col">
+										<div id="enviar" class="form-group signupcadastro">
+											<a href="javascript:void(0)"
+												onclick="PagSeguroLightbox('9CCB2EA7DBDB719EE45A7FB94E76D128'); return false;" class="btn btn-lg btncadastro btnassinar">CADASTRE-SE</a>
+											<script type="text/javascript"
+												src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
+											<!-- FIM DO BOTAO PAGSEGURO --></div>
+										</div>
+									</div>
 								</div>
-							</div>
-						</fieldset>
-					</form>
-				</div>
-			</div>
-		</div>
+								</form>
+								 </div>
+	</div>
 	</div>
 
+	<footer class="fixed-bottom page-footer copyright center-on-small-only pt-0 mt-0" style="height: 90px;">
+	  <div id="footercel" class="col col-12 col-centered d-flex align-items-center justify-content-center p-0" style="height: auto; color: white;font-size: 18px; font-family: 'Arial';">
+	    <div class="col-12 col-md-12 ">
+	      <div class="row">
+	        <div class="col-12 d-block d-sm-none align-middle">
+	          <p>© Copyright 2019 MT BRASIL - Todos os direitos reservados</p>
+	        </div>
+	        <div class="col-md-5 offset-md-4 copyright d-none d-sm-block">
+	          <p>© Copyright 2019 MT BRASIL - Todos os direitos reservados</p>
+	        </div>
+
+	      </div>
+	    </div>
+	  </div>
+	</footer>
+	<!-- Optional JavaScript -->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script type="text/javascript" src="mdbpro/js/mdb.min.js"></script>
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
