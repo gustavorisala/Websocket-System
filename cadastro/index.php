@@ -69,7 +69,7 @@ include '../controle/cadastrarNovoUsuario.php';
 .cadastre
 {
     background-color: #f8f9fa;
-  background-image: url(imagens/1.jpg) !important;
+  background-image: url(imagens/2.jpeg) !important;
   background-repeat-y: no-repeat;
   background-position-y: bottom;
 }
@@ -174,18 +174,10 @@ body, html
 									<div class="row">
 										<div class="col">
 											<div id="formname" class="form-group d-flex">
-												<input id="nome" type="text" name="nome" class="form-control" pattern="^[a-zA-Z][a-zA-Z-_\.]{1,15}$" placeholder="Nome:" required="required" data-error="Campo obrigatório.">
+												<input id="nome" type="text" name="nome" class="form-control" placeholder="Nome completo:" required="required" data-error="Campo obrigatório.">
 												<div class="help-block with-errors"></div>
 											</div>
 										</div>
-									</div>
-									<div class="row">
-											<div class="col">
-												<div id="formname" class="form-group d-flex">
-													<input id="nome" type="text" name="sobrenome" class="form-control" placeholder="Sobrenome:" required="required" data-error="Campo obrigatório.">
-													<div class="help-block with-errors"></div>
-												</div>
-											</div>
 									</div>
 									<div class="row">
 										<div class="col">
