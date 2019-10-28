@@ -69,10 +69,9 @@ include '../controle/cadastrarNovoUsuario.php';
 .cadastre
 {
     background-color: #f8f9fa;
-  background-image: url(imagens/bars.png) !important;
+  background-image: url(imagens/1.jpg) !important;
   background-repeat-y: no-repeat;
   background-position-y: bottom;
-  background-size: 40% !important;
 }
 .titulocadastro
 {
@@ -156,7 +155,7 @@ body, html
 			<div class="container blococadastro">
 					<div class="row">
 						<div class="col-sm-4 col-12 blococc mx-auto">
-							<form id="orcamentocontato" class="blococontato cadastro" method="post" action="emailcontato.php">
+							<form id="cadastroform" class="blococontato cadastro" method="post" action="<?=$_SERVER["PHP_SELF"]?>">
 								<?php
 
 								if (isset($erro))
@@ -208,11 +207,8 @@ body, html
 							<div class="row">
 									<div class="col">
 										<div id="enviar" class="form-group signupcadastro">
-											<a href="javascript:void(0)"
-												onclick="PagSeguroLightbox('9CCB2EA7DBDB719EE45A7FB94E76D128'); return false;" class="btn btn-lg btncadastro btnassinar">CADASTRE-SE</a>
-											<script type="text/javascript"
-												src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
-											<!-- FIM DO BOTAO PAGSEGURO --></div>
+											<button class="btn btn-lg btncadastro btnassinar" type="submit">Cadastre-se</button>
+											</div>
 										</div>
 									</div>
 								</div>
