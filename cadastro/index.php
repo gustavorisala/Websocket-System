@@ -66,13 +66,6 @@ include '../controle/cadastrarNovoUsuario.php';
 {
   color: black !important;
 }
-.cadastre
-{
-    background-color: #f8f9fa;
-  background-image: url(imagens/2.jpeg) !important;
-  background-repeat-y: no-repeat;
-  background-position-y: bottom;
-}
 .titulocadastro
 {
   color: #b88b58;
@@ -90,18 +83,22 @@ body, html
   {
     position: relative !important;
   }
-  .cadastre
-  {
-    background-color: #f8f9fa;
-    background-size: 167% !important;
-    background-image: url(imagens/bars.png) !important;
-    background-repeat-y: no-repeat;
-    background-position-y: bottom;
-}
+
 }
 .colcontato
 {
   margin-bottom: 1rem !important;
+}
+body, html {
+    background-color: #f8f9fa !important;
+}
+body
+{
+	background-color: #f8f9fa;
+	background-size: 100% !important;
+	background-image: url(imagens/2.jpeg) !important;
+	background-repeat-y: no-repeat;
+	background-position-y: bottom;
 }
     </style>
 <body>

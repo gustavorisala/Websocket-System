@@ -1,16 +1,10 @@
-.snip1386
-{
-  height: 280px;
-}
-.colcontato span
-{
-  color: white !important;
-}
-.colcontato
-{
-  margin-bottom: 3rem;
-}
+
 @media (max-width: 575.98px) {
+  .embed-responsive {
+    box-shadow: 0 0 30px black;
+    height: 31vh;
+    max-width: 100% !important;
+}
   .textobanner {
       top: 36%;
       left: 50%;
@@ -42,21 +36,7 @@
   }
     #empresa
     {
-        background-size: 108% !important;
-        background-image: url(imagens/bars2.png);
-        background-repeat: repeat-x;
-        background-position-y: bottom;
-        background-color: #8e22d1;
     }
-  #precos
-  {
-    background-color: #f8f9fa;
-    background-size: 55% !important;
-    background-image: url(imagens/bars2.png);
-    background-repeat-y: no-repeat;
-    background-position-y: bottom;
-  }
-
   .offset-1 {
     margin-left: 0% !important;
 }
@@ -85,7 +65,6 @@
     max-width: 100% !important;
     background-color: #ededed;
     background-size: 100% !important;
-    background-image: url(imagens/bars2.png);
     background-repeat: repeat-x;
     background-position-y: bottom;
 }
@@ -108,7 +87,57 @@
     padding-top: 18rem !important;
   }
 }
+#contatoform input
+{
+  border-radius: 0px;
+}
+#submit
+{
+  border-radius: 20px !important;
+}
+#contatoform .form-control
+{
+  border: 0px !important;
+  border-bottom: 2px solid #aeaeae !important;
+  background-color: transparent !important;
+}
+.preto
+{
+  color: #000000 !important;
+}
+#video
+{
+  height: 100% !important;
+  min-height: 100% !important;
+  width: 100%;
+}
+.cinza
+{
+  color: #afafaf;
+}
+.snip1386
+{
+  height: 280px;
+}
+.colcontato span
+{
+  color: #afafaf;
+}
+.colcontato
+{
+  margin-bottom: 3rem;
+}
 @media (min-width: 575.98px) {
+  .display-4 {
+    font-size: 4rem !important;
+  }
+
+  .embed-responsive
+  {
+      box-shadow: 0 0 30px black;
+      height: 55.1vh;
+      max-width: 49% !important;
+  }
   .blocopreco
   {
     margin-left: 17% !important;
@@ -192,32 +221,22 @@ p
 }
 /*texto*/
 @media  {
-  .display-4 {
-    font-size: 4rem !important;
-  }
   #contato
   {
     background-size: 100%;
-    background-image: url(https://www.citrograph.com/wp-content/uploads/2013/12/contact-opus-background-1.jpg);
     background-repeat-y: no-repeat;
     background-position-y: bottom;
+    background-color: #f7f7f7;
+    border-top: 1px solid #d2d2d2;
+    background-image: url(imagens/1.jpeg);
   }
 
   #empresa
   {
-      background-size: 40% !important;
-      background-image: url(imagens/bars.png);
-      background-repeat: repeat-x;
-      background-position-y: center;
-      background-color: #8e22d1;
-  }
-  #precos
-  {
-    background-color: #f8f9fa;
-    background-size: 100%;
-    background-image: url(imagens/2.jpg);
-    background-repeat-y: no-repeat;
-    background-position-y: bottom;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      background-size: 100%;
+      background-image: url(imagens/2.jpeg);
   }
   .blococc {
       background-color: #b88b58eb;
@@ -244,11 +263,11 @@ p
   }
   .cadastro
 {
-padding: 10% !important;
-margin-top: 0% !important;
-margin-bottom: 0% !important;
-padding-top: 5% !important;
-padding-bottom: 0% !important;
+padding: 10% !important;
+margin-top: 0% !important;
+margin-bottom: 0% !important;
+padding-top: 5% !important;
+padding-bottom: 0% !important;
 }
   .colcontato h1
   {
@@ -262,10 +281,12 @@ p
       flex: 100% !important;
       max-width: 100% !important;
       background-color: #ededed;
-      background-size: cover;
-      background-image: url("imagens/1.jpg");
+      background-size: 29%;
       background-repeat: no-repeat;
-      background-position-y: bottom;
+      background-position-y: center;
+      border-top: 1px solid #d2d2d2;
+      border-bottom: 1px solid #d2d2d2;
+      background-position-x: center;
   }
   .depoimentoscol
   {
@@ -337,7 +358,7 @@ body, html
 /*barra menu */
 nav
 {
-background-color: black;
+background-color: black;
 }
 /* ITENS MENU */
 .nav-link
@@ -353,8 +374,9 @@ nav
 {
   font-size: 16px !important;
   color: white !important;
-  border-radius: 80px !important;
+  border-radius: 20px !important;
   background-color: #cc9966 !important;
+  margin-top: 1.4rem;
 }
 .display-4
 {
@@ -406,7 +428,7 @@ nav
 .titulo
 {
   font-size: 48px;
-  color: white;
+  color: black;
   font-family: "bahnschrift";
   text-align: center;
 }
@@ -493,7 +515,6 @@ input#mensagem
 }
 input
 {
-  border-radius: 30px !important;
 }
 .blococontato
 {
@@ -766,7 +787,7 @@ input[type=submit]
 {
   border: 1px solid;
   padding: 10px 20px 10px 20px !important;
-  font-size: 18px;
+  font-size: 16px;
   color: white !important;
   border-radius: 5px;
   background-color: #b88b58 !important;
@@ -1236,11 +1257,6 @@ display: none;
     justify-content: center;
     align-items: center;
 }
-.embed-responsive
-{
-    box-shadow: 0 0 30px black;
-    height: 85vh;
-}
 .fa
 {
   color: black;
@@ -1282,6 +1298,10 @@ z-index: 1;
 -webkit-transform: translate(50%, -50%);
 transform: translate(50%, -50%);
 box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+body, html {
+    height: 100% !important;
+    background-color: #f8f9fa !important;
 }
 /* PREÇOS */
 #precos
