@@ -16,7 +16,7 @@ require_once '../controle/dadosConsultor.php';
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <link rel="stylesheet"
-	href="../css/styleconsultor.css">
+	href="http://www.copytraderbrasil.com.br/css/backoffice/styleconsultor.css">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
@@ -130,7 +130,7 @@ $(function() {
 					<thead class="thead-dark">
 						<tr>
 							<th class="colresult" scope="col" style="width: 70%; text-align: center;">Nome</th>
-							
+
 						</tr>
 
 					</thead>
@@ -146,7 +146,7 @@ $(function() {
 
         echo "<tr >";
         echo "<th class='colresult' scope='row'>" . $row['nome']. "</th>";
-       
+
         echo "</tr> ";
     }
 } else {

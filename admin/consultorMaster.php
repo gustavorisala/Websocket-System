@@ -16,7 +16,7 @@ require_once '../controle/dadosConsultorMaster.php';
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <link rel="stylesheet"
-	href="../css/styleconsultor.css">
+	href="http://www.copytraderbrasil.com.br/css/backoffice/styleconsultor.css">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
@@ -148,7 +148,7 @@ $(function() {
         echo "<tr >";
         echo "<th class='colmoeda' scope='row'>" . $row['email'] . "</th>";
         echo "<th class='colresult' scope='row'>" . $row['quant'] . "</th>";
-      
+
         echo "</tr> ";
     }
 } else {
@@ -156,7 +156,7 @@ $(function() {
 }
 
 ?>
-   
+
 </table>
 </div>
 			</div>

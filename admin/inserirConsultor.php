@@ -9,7 +9,7 @@ if (! isset($_SESSION['usuario'])) {
     } else {
         require_once '../controle/gerenciarUsuariosConsultor.php';
 
-      
+
 
         ?>
 <!doctype html>
@@ -26,7 +26,7 @@ if (! isset($_SESSION['usuario'])) {
 	href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" />
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-<link rel="stylesheet" href="../css/styleconsultor.css">
+<link rel="stylesheet" href="http://www.copytraderbrasil.com.br/css/backoffice/styleconsultor.css">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"

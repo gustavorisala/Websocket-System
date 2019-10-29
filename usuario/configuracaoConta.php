@@ -16,7 +16,7 @@ require_once '../controle/dadosConfigurarConta.php';
 <!-- bootstrap - link cdn -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="http://www.copytraderbrasil.com.br/css/backoffice/configuracaoconta.css">
 
 </head>
 <body>
@@ -73,17 +73,17 @@ require_once '../controle/dadosConfigurarConta.php';
 						<h3>Dados pessoais</h3>
 						<li><img src="../images/gmail.svg"> <?=$dados_usuario['email']?></li>
 						<li><img src="../images/password.svg"> <?=$dados_usuario['nome']?></li>
-						<?php 
+						<?php
 						if ($papel == "consultor") {
 						    include_once '../afiliacao/consultorlink.php';
 						}
 						if ($papel == "consultorM") {
 						    include_once '../afiliacao/consultorlinkM.php';
 						}
-						
+
 						?>
 
-					
+
 					</ul>
 				</div>
 
@@ -113,7 +113,7 @@ else if (isset($sucesso))
 									<input type="password" class="form-control"
 										placeholder="Insira sua senha" aria-label="Senha atual"
 										aria-describedby="basic-addon1" name="senhaatual">
-							
+
 							</div>
 
 							<div class="input-group mb-3">

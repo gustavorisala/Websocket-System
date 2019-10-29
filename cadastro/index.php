@@ -15,7 +15,7 @@ include '../controle/cadastrarNovoUsuario.php';
 
 <!-- Bootstrap -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
+<link href="http://www.copytraderbrasil.com.br/css/backoffice/cadastro.css" rel="stylesheet">
 
 <link rel='stylesheet'
 	href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>

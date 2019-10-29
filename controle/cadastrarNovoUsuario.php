@@ -53,7 +53,7 @@ if (isset($_POST["nome"]) && isset($_POST["emailUser"]) && isset($_POST["WhatsAp
         // Vamos realizar o cadastro ou altera��o dos dados enviados.
         if (salvarUsuario($_POST["nome"], $_POST["emailUser"], md5(utf8_encode("01012019")), $link, $_POST["WhatsApp"])) {
             $sucesso = "Dados cadastrados com sucesso!";
-            header("Location: http://www.copytraderbrasil.com.br/cadastro/concluido.html");
+            header("Location: http://www.copytraderbrasil.com.br/cadastro/concluido.php");
         } else {
             $erro = "Erro ao Inserir Dados";
         }
