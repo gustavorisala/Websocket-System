@@ -14,7 +14,7 @@ include '../controle/cadastrarNovoUsuario.php';
 
 <!-- Bootstrap -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="http://www.copytraderbrasil.com.br/css/backoffice/cadastro.css" rel="stylesheet">
+<link href="https://www.copytraderbrasil.com.br/css/backoffice/cadastro.css" rel="stylesheet">
 
 <link rel='stylesheet'
 	href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
@@ -78,11 +78,10 @@ body, html
   .pricingTable{ margin-bottom: 25px; }
 }
 @media (max-width: 575.98px) {
-  footer
-  {
-    position: relative !important;
-  }
-
+	body
+	{
+		background-size: 160vh !important;
+	}
 }
 .colcontato
 {
@@ -94,10 +93,24 @@ body, html {
 body
 {
 	background-color: #f8f9fa;
-	background-size: 100% !important;
+	background-size: 100%;
 	background-image: url(imagens/2.jpeg) !important;
 	background-repeat-y: no-repeat;
 	background-position-y: bottom;
+}
+.btnprosseguir
+{
+-webkit-appearance: initial;
+		border: 1px solid transparent;
+		border-radius: 30px !important;
+		color: white !important;
+    padding: 4% !important;
+		background-color: #cc9966;
+}
+.prosseguirbox
+{
+	padding-top: 2rem;
+    padding-bottom: 2rem;
 }
     </style>
 <body>
@@ -151,15 +164,11 @@ body
 			<div class="container blococadastro">
 					<div class="row">
 						<div class="col-sm-4 col-12 blococc mx-auto">
+								<div id="prosseguir" class="col text-center prosseguirbox collapse">
+									<h4 class="mb-4">Prossiga para o pagamento</h4>
+								<a href="https://www.copytraderbrasil.com.br/cadastro/concluido.php" class="btnprosseguir" type="submit">Prosseguir</a>
+							</div>
 							<form id="cadastroform" class="blococontato cadastro" method="post" action="<?=$_SERVER["PHP_SELF"]?>">
-								<?php
-
-								if (isset($erro))
-								    echo '<div class="erro" style="color:#F00">' . utf8_encode($erro) . '</div><br/>';
-								else if (isset($sucesso))
-								    echo '<div style="color:#00f">' . utf8_encode($sucesso) . '</div><br/>';
-
-								?>
 								<div class="messages"></div>
 								<div class="controls mt-2">
 									<div class="row mb-3">
@@ -199,6 +208,23 @@ body
 											</div>
 										</div>
 									</div>
+									<script>
+									function concluir() {
+    document.getElementById("cadastroform").style.display = 'none';
+document.getElementById("prosseguir").style.display = 'block';
+				}
+									</script>
+									<div class="row">
+										<div class="col text-center mb-4">
+										<?php
+
+										if (isset($erro))
+										echo '<span class="erro" style="color:#F00">' . utf8_encode($erro) .  '</span><br/>';
+										else if (isset($sucesso))
+												echo '<span style="color:#00f">' . utf8_encode($sucesso) . '</span><br/>', '<script type="text/javascript">','concluir();','</script>';
+										?>
+									</div>
+								</div>
 								</div>
 								</form>
 								 </div>

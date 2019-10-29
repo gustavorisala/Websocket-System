@@ -44,17 +44,16 @@ if (isset($_POST["nome"]) && isset($_POST["emailUser"]) && isset($_POST["WhatsAp
     $objDb = new db();
     $link = $objDb->conecta_mysql();
     if (empty($_POST["emailUser"]))
-        $erro = "Campo E-mail Obrigat�rio";
+        $erro = "Campo e-mail obrigatório";
     else if (empty($_POST["nome"]))
-        $erro = "Campo Nome Obrigat�rio";
+        $erro = "Campo nome obrigatório";
     else if (emailExiste($_POST["emailUser"], $link))
-        $erro = "E-mail J� Cadastrado no Sistema!!!";
+        $erro = "E-mail já cadastrado no sistema";
     else {
         // Vamos realizar o cadastro ou altera��o dos dados enviados.
         if (salvarUsuario($_POST["nome"], $_POST["emailUser"], md5(utf8_encode("01012019")), $link, $_POST["WhatsApp"])) {
-            $sucesso = "Dados cadastrados com sucesso!";
-            header("Location: http://www.copytraderbrasil.com.br/cadastro/concluido.php");
-        } else {
+            $sucesso = "Cadastro efetuado!";
+            } else {
             $erro = "Erro ao Inserir Dados";
         }
     }
