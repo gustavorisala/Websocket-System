@@ -2,7 +2,6 @@
 include '../controle/cadastrarNovoUsuario.php';
 ?>
 
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
