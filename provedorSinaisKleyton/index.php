@@ -21,7 +21,7 @@ include '../controle/cadastrarNovoUsuarioCleyton.php';
 
 <!-- Bootstrap -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="provedorkleyton.css" rel="stylesheet">
+<link rel="stylesheet" href="https://www.copytraderbrasil.com.br/css/backoffice/styleconsultor.css">
 
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
 <!-- bootstrap - link cdn -->

@@ -16,7 +16,7 @@ require_once '../controle/dadosConsultorMaster.php';
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <link rel="stylesheet"
-	href="http://www.copytraderbrasil.com.br/css/backoffice/styleconsultor.css">
+	href="https://www.copytraderbrasil.com.br/css/backoffice/styleconsultor.css">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
@@ -122,8 +122,8 @@ $(function() {
 				<br>
 				<div class="col text-center aprovados">
 				<h4>Clientes aprovados no periodo</h4>
-					<h5>Diretamente: <?=$quantidadeDeClienteAprovado?>     Rendimento: R$ <?php echo number_format(($quantidadeDeClienteAprovado*35), 2, ',', '.');?></h5>
-					<h5>Pelo Consultores: <?=$quantidadeDeClienteAprovadoConsultores?>     Rendimento: R$ <?php echo number_format(($quantidadeDeClienteAprovadoConsultores*25), 2, ',', '.');?></h5>
+					<h5>Diretamente: <?=$quantidadeDeClienteAprovado?>     Rendimento: R$ <?php echo number_format(($quantidadeDeClienteAprovado*140), 2, ',', '.');?></h5>
+					<h5>Pelo Consultores: <?=$quantidadeDeClienteAprovadoConsultores?>     Rendimento: R$ <?php echo number_format(($quantidadeDeClienteAprovadoConsultores*100), 2, ',', '.');?></h5>
 				</div>
 				<br>
 
