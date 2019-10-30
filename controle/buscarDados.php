@@ -1,6 +1,21 @@
 <?php
 include_once ('conexaobd.php');
 
+function buscarPagseguro($id)
+{
+    $objDb = new db();
+    $link = $objDb->conecta_mysql();
+    $sql = " SELECT pagseguro from user where id=$id";
+   //  echo ($sql);
+     $resultado_id = mysqli_query($link, $sql);
+     if ($resultado_id) {
+         $dados_usuario = mysqli_fetch_array($resultado_id);
+         
+         return $dados_usuario['pagseguro'];
+     }
+}
+
+
 function buscarClientesNovosPeriodo($dInicial, $dFinal, $id_usuario)
 {
     $objDb = new db();

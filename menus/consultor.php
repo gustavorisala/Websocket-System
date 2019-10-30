@@ -5,8 +5,8 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 			<li><a class="navbar-brand" href="../admin/consultor.php"><?php echo utf8_encode("Inicio");?></a></li>
-			
 
+			<li><a class="navbar-brand" href="../admin/pagamentos.php"><?php echo utf8_encode("Pagamentos");?></a></li>
 			<li><a class="navbar-brand" href="../usuario/configuracaoConta.php"><?php echo utf8_encode("Configurações");?></a></li>
 
 

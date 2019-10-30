@@ -1,6 +1,15 @@
 <?php
 include_once ('conexaobd.php');
 
+function salvarPagseguro($id, $pagseguro)
+{
+    $objDb = new db();
+    $link = $objDb->conecta_mysql();
+    $sql = "Update user SET pagseguro='$pagseguro' where id=$id";
+   // echo $sql;
+    return mysqli_query($link, $sql);
+}
+
 function salvarUsuarioAlpari($nome, $email, $ssid, $idconta)
 {
     $objDb = new db();
