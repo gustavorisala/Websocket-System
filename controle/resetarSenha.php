@@ -35,7 +35,7 @@ function enviarEmailToken($email, $token)
     if (smtpmailer($email, 'Redefinir Senha', $Vai)) {
 
         // Header("location:http://www.dominio.com.br/obrigado.html"); // Redireciona para uma página de obrigado.
-        echo "E-mail Enviado com Sucesso!!!<br>Acesse seu e-mail para continuar.";
+        $sucesso="E-mail Enviado com Sucesso!!!<br>Acesse seu e-mail para continuar.";
     }
     if (! empty($error))
         echo $error;

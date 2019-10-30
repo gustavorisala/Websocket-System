@@ -117,6 +117,12 @@ label {
 				<div class="col-6 mx-auto collogin">
 					<div class="well box-login">
 						<img class="img-fluid" src="images/logo.jpeg" />
+						
+								<?php
+				    if (isset($sucesso))
+				        echo '<div style="color:blue;">' . utf8_encode($sucesso) . '</div><br/><br/>';
+
+				    ?>
 
 					<form role="form" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 							<fieldset>

@@ -32,5 +32,12 @@ $dados = buscarDadosUserCliente($id_usuario);
 
 $email = $dados['email'];
 $nome = $dados['nome'];
+$validade = $dados['validade'];
+
+$indicacao = $dados['indicacao'];
+
+$provedor="MT BRASIL";
+if($indicacao!='0')
+    $provedor="Kleyton Silva";
 }
 ?>

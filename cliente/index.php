@@ -42,6 +42,9 @@ if ($atual == 'completo') {
 	  </div>
 		</nav>
 	</div>
+	<div>
+		<h2>Provedor de Sinais: <?=$provedor?></p>
+	</div>
 	<div align="center">
 		<form method="post" action="dadosCliente.php">
 
@@ -50,6 +53,8 @@ if ($atual == 'completo') {
 				<p>Email: <?=$email?></p>
 
 				<p>Nome: <?=$nome?></p>
+
+				<p>Validade Licenca  IQ: <?php echo date('d/m/Y',strtotime($validade));?></p>
 			</div>
 
 			<div>

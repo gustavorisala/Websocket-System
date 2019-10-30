@@ -32,6 +32,7 @@ function enviarEmailUser($email, $senha, $nome)
 <p>E-mail: $email
 <p>Senha Provisoria: $senha
 <br>
+<p>Link de Indicação: https://app.copytraderbrasil.com.br/provedorSinaisKleyton/?a=".md5($email)."
 <br><br>
 <p>Equipe MT BRASIL</p>
 </body>

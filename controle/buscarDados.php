@@ -64,7 +64,7 @@ function buscarDadosUserCliente($id)
     $objDb = new db();
     $link = $objDb->conecta_mysql();
 
-    $sql = "SELECT nome, email, codigoindicacao FROM user WHERE id = $id";
+    $sql = "SELECT user.nome, user.email, user.codigoindicacao,user.indicacao, useriq.validade FROM user join useriq on user.id=useriq.iduser WHERE user.id = $id";
     // echo ($sql);
     $resultado_id = mysqli_query($link, $sql);
 
@@ -73,6 +73,7 @@ function buscarDadosUserCliente($id)
     }
     return null;
 }
+
 
 function buscarstatusUser($id)
 {
