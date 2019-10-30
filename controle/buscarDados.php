@@ -29,7 +29,7 @@ function buscarDadosTodasOrdens($inicio, $fim)
 
     $sql = "SELECT  iq.email as emailiq , sum(o.resultado) as resultado, iq.moedaCorrente FROM operacao o join useriq iq on o.idUser=iq.idConta where o.expiracao >= " . $inicio . " and o.expiracao <= " . $fim . " group by o.idUser";
     // $sql = "SELECT sum(resultado) as total, (SELECT s.nome from sala s where id=iq.idSala) as nomesala , iq.moedaCorrente as moeda FROM operacao o join useriq iq on iq.idConta=o.idUser where o.status=1 and iq.idUser=".$id." and from_unixtime(o.expiracao) BETWEEN '".$inicio."' and '".$fim."' GROUP BY o.idUser";
-    echo ("<script>console.log('PHP: " . $sql . "');</script>");
+   // echo ("<script>console.log('PHP: " . $sql . "');</script>");
 
     $resultado_id = mysqli_query($link, $sql);
     return $resultado_id;
@@ -96,7 +96,7 @@ function buscarOperacaoFechadasClientePeriodo($id, $inicio, $fim)
     $objDb = new db();
     $link = $objDb->conecta_mysql();
 
-    $sql = "SELECT idOperacao, precoAbertura, precoFechamento, tempoAbertura, expiracao, idAtivo, resultado, tipo, direcao FROM operacao WHERE idUser = (SELECT idConta from useriq where id=" . $id . ") and status =1 and expiracao >= " . $inicio . "  and expiracao <=" . $fim . "  ORDER BY expiracao DESC";
+    $sql = "SELECT idOperacao, precoAbertura, precoFechamento, tempoAbertura, expiracao, idAtivo, resultado, tipo, direcao FROM operacao WHERE idUser = (SELECT useriq.idConta from useriq join user on user.id=useriq.iduser where user.id=" . $id . ") and status =1 and expiracao >= " . $inicio . "  and expiracao <=" . $fim . "  ORDER BY expiracao DESC";
     // $sql = "SELECT idOperacao, precoAbertura, precoFechamento, tempoAbertura, expiracao, idAtivo, resultado, tipo, direcao FROM operacao WHERE idUser = (SELECT idConta from useriq where idUser=".$id.") and status =1 and from_unixtime(expiracao) BETWEEN '".$inicio."' and '".$fim."' ORDER BY expiracao DESC";
     // echo ($sql);
     $resultado_id = mysqli_query($link, $sql);
@@ -108,7 +108,7 @@ function buscarDadosSalaSaldoUser($id, $inicio, $fim)
     $objDb = new db();
     $link = $objDb->conecta_mysql();
 
-    $sql = "SELECT sum(o.resultado) as total , iq.moedaCorrente as moeda FROM operacao o join useriq iq on iq.idConta=o.idUser where o.status=1 and iq.id=" . $id . " and o.expiracao >=" . $inicio . " and o.expiracao <=" . $fim . " GROUP BY o.idUser";
+    $sql = "SELECT sum(o.resultado) as total , iq.moedaCorrente as moeda FROM operacao o join useriq iq on iq.idConta=o.idUser join user on user.id=iq.iduser where o.status=1 and user.id=" . $id . " and o.expiracao >=" . $inicio . " and o.expiracao <=" . $fim . " GROUP BY o.idUser";
     // $sql = "SELECT sum(resultado) as total, (SELECT s.nome from sala s where id=iq.idSala) as nomesala , iq.moedaCorrente as moeda FROM operacao o join useriq iq on iq.idConta=o.idUser where o.status=1 and iq.idUser=".$id." and from_unixtime(o.expiracao) BETWEEN '".$inicio."' and '".$fim."' GROUP BY o.idUser";
     // echo ($sql);
     $resultado_id = mysqli_query($link, $sql);
