@@ -233,7 +233,7 @@ text-shadow: 0 0 1px black;
               <div class="row">
                 <div class="col colcontato">
                   <div class="row center">
-                    <h1 class="titulo">CADASTRO CONCLUÃ�DO</h1>
+                    <h1 class="titulo">CADASTRO CONCLUÍDO</h1>
                     </div>
                     </div>
                     </div>
