@@ -39,6 +39,10 @@ body
 	width: 15%;
 	position: relative;
 }
+.linkafiliado
+{
+	
+}
 </style>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<button id="navtoggle" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -96,7 +100,7 @@ body
 					<div class="d-flex">
 						<img src="../images/password.svg"><li> <?=$dados_usuario['nome']?></li>
 					</div>
-					<div class="text-center mt-3">
+					<div class="text-center mt-3 linkafiliado">
 
 						<?php
 
