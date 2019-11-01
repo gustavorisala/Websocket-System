@@ -89,12 +89,15 @@ require_once '../controle/dadosConfigurarConta.php';
 						<img src="../images/password.svg"><li> <?=$dados_usuario['nome']?></li>
 					</div>
 					<div class="text-center mt-3">
-						<h3>Link afiliado </h3>
+						
 						<?php
+						
 						if ($papel == "consultor") {
+						    echo "<h3>Link afiliado </h3>";
 						    include_once '../afiliacao/consultorlink.php';
 						}
 						if ($papel == "consultorM") {
+						    echo "<h3>Link afiliado </h3>";
 						    include_once '../afiliacao/consultorlinkM.php';
 						}
 
