@@ -38,6 +38,6 @@ $indicacao = $dados['indicacao'];
 
 $provedor="MT BRASIL";
 if($indicacao!='0')
-    $provedor="Kleyton Silva";
+    $provedor="Reinaldo Silva";
 }
 ?>

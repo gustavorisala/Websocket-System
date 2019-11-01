@@ -26,13 +26,13 @@ function enviarEmailUser($email, $senha, $nome)
 <p>MT BRASIL</p>
 <br>
 <p>Bem Vindo $nome</p>
-<p>Usuario Criado com Sucesso por Kleyton Alves</p>
+<p>Usuario Criado com Sucesso por Reinaldo Duarte</p>
 <br>
 <p>Acesse o sistema pelo endereço: https://app.copytraderbrasil.com.br</p>
 <p>E-mail: $email
 <p>Senha Provisoria: $senha
 <br>
-<p>Link de Indicação: https://app.copytraderbrasil.com.br/provedorSinaisKleyton/?a=".md5($email)."
+<p>Link de Indicação: https://app.copytraderbrasil.com.br/provedorSinaisReinaldo/?a=".md5($email)."
 <br><br>
 <p>Equipe MT BRASIL</p>
 </body>

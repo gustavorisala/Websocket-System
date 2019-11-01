@@ -152,7 +152,7 @@ label {
 	</div>
   <div class="myContainer">
     <div class="form-container animated">
-      <h2 class="text-center form-title">Provedor: Kleyton Alves</h2>
+      <h2 class="text-center form-title">Provedor: Reinaldo Duarte</h2>
       <form>
         <div class="form-group">
           <div class="blocoafiliadoiq row">

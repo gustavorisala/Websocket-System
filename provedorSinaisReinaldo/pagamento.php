@@ -28,7 +28,7 @@ include '../controle/cadastrarNovoUsuarioCleyton.php';
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-<title>Pre Cadastro Kleyton Alves MT BRASIL</title>
+<title>Pre Cadastro Reinaldo Duarte MT BRASIL</title>
 <link rel="icon" href="../imagens/favicon.png">
 </head>
 <style>
@@ -233,7 +233,7 @@ text-shadow: 0 0 1px black;
               <div class="row">
                 <div class="col colcontato">
                   <div class="row center">
-                    <h1 class="titulo">CADASTRO CONCLUÍDO</h1>
+                    <h1 class="titulo">CADASTRO CONCLUÃ�DO</h1>
                     </div>
                     </div>
                     </div>
@@ -249,12 +249,12 @@ text-shadow: 0 0 1px black;
 
                           </div>
                           <div class="col-10 mx-auto etapas">
-                          <p>Aguardaremos a confirmação do seu pagamento para liberar seu acesso,
-                            atenção as seguintes informações:</p>
+                          <p>Aguardaremos a confirmaÃ§Ã£o do seu pagamento para liberar seu acesso,
+                            atenÃ§Ã£o as seguintes informaÃ§Ãµes:</p>
                             <ol>
-                              <li>Você recebera em seu e-mail login e senha para acesso do Backoffice.</li>
-                              <li>Recebera também em seu email o Robô MT Brasil, para instalar em seu computador,
-                                o login será feito com seu login e senha da IQ Option que serão enviados juntamente no e-mail.</li>
+                              <li>VocÃª recebera em seu e-mail login e senha para acesso do Backoffice.</li>
+                              <li>Recebera tambÃ©m em seu email o RobÃ´ MT Brasil, para instalar em seu computador,
+                                o login serÃ¡ feito com seu login e senha da IQ Option que serÃ£o enviados juntamente no e-mail.</li>
                           </ol>
                           </div>
                           <div class="col">
