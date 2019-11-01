@@ -19,6 +19,7 @@ require_once '../../controle/clienteHome.php';
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
+  <link href="css/style.css" rel="stylesheet">
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
@@ -344,9 +345,62 @@ require_once '../../controle/clienteHome.php';
                   </div>
                 </div>
                 <!-- Card Body -->
-                <div class="card-body">
+                <div id="cardordens" class="card-body">
+                  <div id="ltabela" class="row">
+                    <div id="id" class="col">
+                      <span>ID</span>
+                    </div>
+                    <div id="ativo" class="col">
+                      <span>Ativo</span>
+                    </div>
+                    <div id="modo" class="col">
+                      <span>Modo</span>
+                    </div>
+                    <div id="sentido" class="col">
+                      <span>Sentido</span>
+                    </div>
+                    <div id="hora" class="col">
+                      <span>Hora abertura</span>
+                    </div>
+                    <div id="expiracao" class="col">
+                      <span>Expiração</span>
+                    </div>
+                    <div id="precoa" class="col">
+                      <span>Preço abertura</span>
+                    </div>
+                    <div id="precof" class="col">
+                      <span>Preço fechamento</span>
+                    </div>
+                    <div id="resultado" class="col">
+                      <span>Resultado</span>
+                    </div>
+                    <div id="moeda" class="col">
+                      <span>Moeda</span>
+                    </div>
+                  </div>
                   <div class="chart-area">
-
+                    <div class="row">
+                    <div id="id" class="col">
+                    </div>
+                    <div id="ativo" class="col">
+                    </div>
+                    <div id="modo" class="col">
+                    </div>
+                    <div id="sentido" class="col">
+                    </div>
+                    <div id="hora" class="col">
+                    </div>
+                    <div id="expiracao" class="col">
+                    </div>
+                    <div id="precoa" class="col">
+                    </div>
+                    <div id="precof" class="col">
+                    </div>
+                    <div id="resultado" class="col">
+                    </div>
+                    <div id="moeda" class="col">
+                    </div>
+                  </div>
                   </div>
                 </div>
               </div>
