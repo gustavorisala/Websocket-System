@@ -36,9 +36,9 @@ if ($atual == 'completo') {
 
     $indicacao = $dados['indicacao'];
 
-    $provedor = "MT BRASIL";
-    if ($indicacao == '660fcd56e1b41fd2bac33ccc94e82c15') {
-        $provedor = "Reinaldo Silva";
+    $provedor = "Reinaldo Silva";
+    if ($indicacao == '0') {
+        $provedor = "MT BRASIL";
     }
 
     if ($indicacao == '18b1ea8041812e6af37320a7e283bd95') {
