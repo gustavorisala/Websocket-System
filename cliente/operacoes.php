@@ -117,6 +117,15 @@ margin-bottom: 0px;
     width: 97.3%;
     max-width: 100%;
 }
+footer
+{
+  position: fixed;
+  bottom: 0;
+}
+#tableordens
+{
+  margin-bottom: 30vh;
+}
 @media (max-width: 575.98px)
 {
   .tabelaordens
@@ -212,7 +221,7 @@ $(function() {
 </div>
 </div>
 </div>
-<div class="container-fluid">
+<div id="tableordens" class="container-fluid">
   <div class="row">
     <div class="col-11 mx-auto text-center barraordens">
       <h1>Ordens</h1>
