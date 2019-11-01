@@ -41,14 +41,7 @@ function salvarUsuarioIQ($email, $link)
 
 // session_start();
 include_once ("conexaobd.php");
-$nomeConsultor = null;
-//echo $i . "kkkk";
-if ($i != '0') {
-    $objDb = new db();
-    $link = $objDb->conecta_mysql();
 
-    $nomeConsultor = pesquisarConsultor($i, $link);
-}
 
 if (isset($_POST["nome"]) && isset($_POST["emailUser"]) && isset($_POST["WhatsApp"])) {
     $objDb = new db();

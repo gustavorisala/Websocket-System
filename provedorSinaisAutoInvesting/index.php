@@ -21,14 +21,19 @@ include '../controle/cadastrarNovoUsuarioAutoInvesting.php';
 
 <!-- Bootstrap -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://www.copytraderbrasil.com.br/css/backoffice/styleconsultor.css">
+<link rel="stylesheet"
+	href="https://www.copytraderbrasil.com.br/css/backoffice/styleconsultor.css">
 
-<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
+<link rel='stylesheet'
+	href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
 <!-- bootstrap - link cdn -->
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
 
-<title>Pre Cadastro Reinaldo Duarte MT BRASIL</title>
+<title>Pre Cadastro AutoInvesting MT BRASIL</title>
 <link rel="icon" href="../imagens/favicon.png">
 </head>
 <style>
@@ -37,7 +42,7 @@ html, body {
 }
 
 body {
-  overflow: hidden;
+	overflow: hidden;
 	background:
 		url("https://i.pinimg.com/originals/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
 }
@@ -52,10 +57,11 @@ html, p {
 	background-color: black;
 	height: 100%;
 }
-.box-login img
-{
-  width: 90%;
+
+.box-login img {
+	width: 90%;
 }
+
 .box-login {
 	padding-top: 5% !important;
 	padding: 15%;
@@ -98,28 +104,28 @@ label {
 	background-color: white;
 	color: black;
 }
+
 .provedor {
 	color: #bb914a;
 	margin-bottom: 2rem;
 }
 
 input {
-  font-family: 'Helvetica', FontAwesome, sans-serif;
-}
-#prosseguir h4
-{
-  color: white !important;
-  margin-bottom: 3rem;
+	font-family: 'Helvetica', FontAwesome, sans-serif;
 }
 
-.btnprosseguir
-{
--webkit-appearance: initial;
-		border: 1px solid transparent;
-		border-radius: 30px !important;
-		color: white !important;
-    padding: 4% !important;
-		background-color: #cc9966;
+#prosseguir h4 {
+	color: white !important;
+	margin-bottom: 3rem;
+}
+
+.btnprosseguir {
+	-webkit-appearance: initial;
+	border: 1px solid transparent;
+	border-radius: 30px !important;
+	color: white !important;
+	padding: 4% !important;
+	background-color: #cc9966;
 }
 
 @media ( max-width : 65rem) {
@@ -144,19 +150,19 @@ input {
 		<div class="row rowlogin h-100">
 			<div class="col-6 mx-auto collogin">
 				<div class="well box-login">
-          <div class="col text-center">
-					<a href="/"><img class="img-fluid" src="../images/logo.jpeg" /></a>
-        </div>
-        <div id="prosseguir" class="col text-center prosseguirbox collapse">
-          <h4 class="mb-4">Prossiga para o pagamento</h4>
-        <a href="pagamento.php" class="btnprosseguir" type="submit">Prosseguir</a>
-      </div>
-      <div id="cadastroform">
-					<h4 class="provedor">Provedor de sinais: Reinaldo Duarte</h4>
-					<h8 class="provedor"><?php if ($nomeConsultor != null) echo "Indicado por: " . $nomeConsultor;?></h8>
-					<form role="form" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
-						<fieldset>
-              <script>
+					<div class="col text-center">
+						<a href="/"><img class="img-fluid" src="../images/logo.jpeg" /></a>
+					</div>
+					<div id="prosseguir" class="col text-center prosseguirbox collapse">
+						<h4 class="mb-4">Prossiga para o pagamento</h4>
+						<a href="pagamento.php" class="btnprosseguir" type="submit">Prosseguir</a>
+					</div>
+					<div id="cadastroform">
+						<h4 class="provedor">Provedor de sinais: AutoInvesting</h4>
+
+						<form role="form" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
+							<fieldset>
+								<script>
               function concluir() {
               document.getElementById("cadastroform").style.display = 'none';
               document.getElementById("prosseguir").style.display = 'block';
@@ -167,43 +173,43 @@ input {
 if (isset($erro))
     echo '<div class="erro" style="color:#F00">' . utf8_encode($erro) . '</div><br/>';
 else if (isset($sucesso))
-    echo '<div style="color:#00f">' . utf8_encode($sucesso) . '</div><br/>', '<script type="text/javascript">','concluir();','</script>';
+    echo '<div style="color:#00f">' . utf8_encode($sucesso) . '</div><br/>', '<script type="text/javascript">', 'concluir();', '</script>';
 
 ?>
 					<div class="form-group ls-login-user row">
-            <div class="col">
-								<label for="userLogin">Nome completo</label> <input
-									class="form-control fontawesome ls-login-bg-user input-lg" id="nome"
-									type="text" aria-label="Nome Completo" name="nome"
-									placeholder="&#xf007; Insira seu nome completo">
-                </div>
-                        </div>
-							<div class="form-group ls-login-user row">
-                <div class="col">
-								<label for="email">E-mail</label> <input
-									class="form-control ls-login-bg-password input-lg" id="email"
-									type="text" aria-label="E-mail" name="emailUser"
-									placeholder="&#xf0e0; Insira seu e-mail">
-							</div>
-              	</div>
-							<div class="form-group ls-login-user row">
-                <div class="col">
-                  <label for="email">WhatsApp</label>
-                <input class="form-control ls-login-bg-password input-lg"
-									id="WhatsApp" type="text" aria-label="WhatsApp" name="WhatsApp"
-									placeholder="&#xf232; Insira seu WhatsApp">
-							</div>
-              	</div>
-<input type="hidden" value="<?php echo $i?>" name="indicacao">
-              <div class="row">
-            <div class="col">
-							<input type="submit" value="Cadastrar"
-								class="btn btn-primary btn-lg btn-block" />
-              </div>
-            </div>
-						</fieldset>
-					</form>
-				</div>
+									<div class="col">
+										<label for="userLogin">Nome completo</label> <input
+											class="form-control fontawesome ls-login-bg-user input-lg"
+											id="nome" type="text" aria-label="Nome Completo" name="nome"
+											placeholder="&#xf007; Insira seu nome completo">
+									</div>
+								</div>
+								<div class="form-group ls-login-user row">
+									<div class="col">
+										<label for="email">E-mail</label> <input
+											class="form-control ls-login-bg-password input-lg" id="email"
+											type="text" aria-label="E-mail" name="emailUser"
+											placeholder="&#xf0e0; Insira seu e-mail">
+									</div>
+								</div>
+								<div class="form-group ls-login-user row">
+									<div class="col">
+										<label for="email">WhatsApp</label> <input
+											class="form-control ls-login-bg-password input-lg"
+											id="WhatsApp" type="text" aria-label="WhatsApp"
+											name="WhatsApp" placeholder="&#xf232; Insira seu WhatsApp">
+									</div>
+								</div>
+								<input type="hidden" value="<?php echo $i?>" name="indicacao">
+								<div class="row">
+									<div class="col">
+										<input type="submit" value="Cadastrar"
+											class="btn btn-primary btn-lg btn-block" />
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
