@@ -9,6 +9,8 @@ require_once '../controle/dadosConsultorMaster.php';
 <link rel="icon" href="../imagens/favicon.png">
 <!-- jquery - link cdn -->
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
 <link rel="stylesheet"
@@ -16,7 +18,7 @@ require_once '../controle/dadosConsultorMaster.php';
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <link rel="stylesheet"
-	href="../css/styleconsultor.css">
+	href="https://www.copytraderbrasil.com.br/css/backoffice/styleconsultor.css">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
@@ -44,14 +46,27 @@ require_once '../controle/dadosConsultorMaster.php';
     padding: .75rem;
 	border: 1px solid;
 }
+.marrom
+{
+	text-align: center;
+	font-size: 16px;
+	color: #bb914a !important;
+}
+@media (max-width:767px)
+{
+	.marrom
+	{
+		font-size: 12px !important;
+	}
+}
 .titulo
 {
+	padding: 1%;
 	display: flex;
     justify-content: center;
     align-items: center;
 		border: 1px solid;
 		color: white;
-		padding: 0.5rem;
 		background-color: #bb914a;
 }
 #barranav
@@ -61,6 +76,10 @@ require_once '../controle/dadosConsultorMaster.php';
 #consultores
 {
 	margin-bottom: 6rem;
+}
+#listaconsult
+{
+	margin-bottom: 10rem;
 }
 </style>
 <body>
@@ -108,14 +127,14 @@ require_once '../controle/dadosConsultorMaster.php';
 			</div>
 		-->
 			<div class="col mx-auto colinfos">
-				<form class="formdados" action="<?=$_SERVER["PHP_SELF"]?>"
+				<form class="formdados p-0" action="<?=$_SERVER["PHP_SELF"]?>"
 					method="POST">
-					<div class="col-8 mx-auto">
+					<div class="col-sm-8 col-12 mx-auto">
 						<div class="col centralizar mb-3">
 						<h2>Selecione o periodo</h2>
 					</div>
 						<div class="row centralizar">
-							<div class="input-group col-4 datafiltro">
+							<div class="input-group col-sm-4 col-10 datafiltro">
 								<div class="input-group-prepend">
 									<span class="input-group-text filtro" id="basic-addon1">De :</span>
 								</div>
@@ -130,7 +149,7 @@ $(function() {
 });
 </script>
 
-							<div class="input-group col-4 datafiltro">
+							<div class="input-group col-sm-4 col-10 datafiltro">
 								<div class="input-group-prepend">
 									<span class="input-group-text filtro" id="basic-addon2">Ate:</span>
 								</div>
@@ -151,14 +170,14 @@ $(function() {
 
 				</form>
 
-				<div class="container mt-4">
+				<div class="p-0 container-fluid mt-4">
 					<div class="row">
-						<div class="col-6 mx-auto text-center titulo">
+						<div class="col-sm-8 col-12 mx-auto text-center titulo">
 						<h4>Clientes aprovados no periodo</h4>
 					</div>
 					</div>
 					<div class="row">
-					  <div class="col-6 mx-auto">
+					  <div class="col-sm-8 col-12 mx-auto">
 				<div class="row">
 				<div class="col boxdiretamente text-center">
 					<h5>Diretamente</h5>
@@ -168,46 +187,46 @@ $(function() {
 				</div>
 				</div>
 				<div class="row">
-					<div class="col-3">
-						Aprovados
+					<div class="col-3 text-center">
+						<span class="marrom">Aprovados</span>
 					</div>
-						<div class="col-3">
-							Rentabilidade
+						<div class="col-3 text-center">
+							<span class="marrom">Rentabilidade</span>
 						</div>
 
-							<div class="col-3">
-								Aprovados
+							<div class="col-3 text-center">
+								<span class="marrom">Aprovados</span>
 							</div>
-								<div class="col-3">
-									Rentabilidade
+								<div class="col-3 text-center">
+									<span class="marrom">Rentabilidade</span>
 								</div>
 							</div>
 								<div class="row">
-				<div class="col-3">
+				<div class="col-3 text-center">
 					<h5><?=$quantidadeDeClienteAprovado?></h5>
 				</div>
-				<div class="col-3">
+				<div class="col-3 text-center">
 				  R$ <?php echo number_format(($quantidadeDeClienteAprovado*140), 2, ',', '.');?>
 				</div>
 
-			<div class="col-3">
+			<div class="col-3 text-center">
 				<h5><?=$quantidadeDeClienteAprovadoConsultores?></h5>
 			</div>
-				<div class="col-3">
+				<div class="col-3 text-center">
 				  R$ <?php echo number_format(($quantidadeDeClienteAprovadoConsultores*100), 2, ',', '.');?>
 				</div>
 				</div>
 				</div>
 				</div>
 				</div>
-				<div id="consultores" class="container">
+				<div id="consultores" class="container-fluid p-0">
 				<div class="row text-center aprovados mt-4">
-					<div class="col-6 mx-auto text-center titulo">
+					<div class="col-sm-6 col-12 mx-auto text-center titulo">
 				<h4>Lista de consultores</h4>
 				</div>
 				</div>
-				<div class="row">
-				 <div class="col-6 p-0 mx-auto">
+				<div id="listaconsult" class="row">
+				 <div class="col-sm-6 col-12 p-0 mx-auto">
 				<table class="table">
 					<thead class="thead-dark">
 						<tr>

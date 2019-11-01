@@ -16,7 +16,7 @@ require_once '../controle/dadosConsultorMaster.php';
 	href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" />
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-<link rel="stylesheet" href="../css/styleconsultor.css">
+<link rel="stylesheet" href="https://www.copytraderbrasil.com.br/css/backoffice/styleconsultor.css">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
@@ -132,8 +132,12 @@ body
 	background-color: #bb914a;
 
 }
+#listaop
+{
+	margin-bottom: 10rem;
+}
 </style>
-<div class="container">
+<div id="listaop" class="container">
 				<div class="row">
 				<div class="col mx-auto">
 					<table class="table">

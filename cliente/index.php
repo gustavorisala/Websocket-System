@@ -17,7 +17,7 @@ if ($atual == 'completo') {
 <!-- bootstrap - link cdn -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/stylecliente.css">
+<link rel="stylesheet" href="https://www.copytraderbrasil.com.br/css/backoffice/stylecliente.css">
 
 </head>
 <style>

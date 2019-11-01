@@ -127,8 +127,10 @@ color: #bb914a !important
   padding: 4%;
   border-color: gray;
   margin-bottom: 0px !important;
-    margin-block-end: 0px !important;
-		height: 100%;
+  margin-block-end: 0px !important;
+  height: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .formdados h5
 {

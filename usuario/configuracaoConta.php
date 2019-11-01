@@ -16,7 +16,7 @@ require_once '../controle/dadosConfigurarConta.php';
 <!-- bootstrap - link cdn -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/configuracaoconta.css">
+<link rel="stylesheet" href="https://www.copytraderbrasil.com.br/css/backoffice/configuracaoconta.css">
 
 </head>
 <body>
@@ -41,7 +41,7 @@ body
 }
 .linkafiliado
 {
-	
+
 }
 </style>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
