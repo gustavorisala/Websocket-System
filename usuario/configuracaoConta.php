@@ -16,11 +16,22 @@ require_once '../controle/dadosConfigurarConta.php';
 <!-- bootstrap - link cdn -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="http://www.copytraderbrasil.com.br/css/backoffice/configuracaoconta.css">
+<link rel="stylesheet" href="../css/configuracaoconta.css">
 
 </head>
 <body>
-
+<style>
+.sidebar li
+{
+    position: relative;
+	font-size: 16px;
+}
+.sidebar img
+{
+	width: 15%;
+	position: relative;
+}
+</style>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#conteudoNavbarSuportado"
@@ -71,8 +82,14 @@ require_once '../controle/dadosConfigurarConta.php';
 				<div class="dadosusuario">
 					<ul class="sidebar">
 						<h3>Dados pessoais</h3>
-						<li><img src="../images/gmail.svg"> <?=$dados_usuario['email']?></li>
-						<li><img src="../images/password.svg"> <?=$dados_usuario['nome']?></li>
+						<div class="d-flex">
+						<img src="../images/gmail.svg"><li> <?=$dados_usuario['email']?></li>
+					</div>
+					<div class="d-flex">
+						<img src="../images/password.svg"><li> <?=$dados_usuario['nome']?></li>
+					</div>
+					<div class="text-center mt-3">
+						<h3>Link afiliado </h3>
 						<?php
 						if ($papel == "consultor") {
 						    include_once '../afiliacao/consultorlink.php';
@@ -82,8 +99,7 @@ require_once '../controle/dadosConfigurarConta.php';
 						}
 
 						?>
-
-
+					</div>
 					</ul>
 				</div>
 

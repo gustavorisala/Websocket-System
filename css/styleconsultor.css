@@ -34,10 +34,15 @@ nav
 {
   color: #bb914a !important;
   text-transform: uppercase;
+  font-size: 18px !important;
 }
 .logotipo
 {
   width: 10% !important;
+}
+.table .thead-dark th
+{
+  background-color: #bb914a !important;
 }
 .numclientes
 {
@@ -130,8 +135,8 @@ color: #bb914a !important
   font-size: 16px;
 }
 body {
-    background: url("https://i.pinimg.com/originals/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
-}
+  background-color: white !important;
+    }
 .paineluser
 {
   background-color: #bb914a;
@@ -154,7 +159,7 @@ width: 100%;
 }
 .containerdados .conteudo
 {
-  height: 36rem;
+  height: auto;
 }
 .sidebar img
 {

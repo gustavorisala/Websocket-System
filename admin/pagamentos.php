@@ -55,28 +55,29 @@ if ($papel == "consultorM") {
 ?>
 	</div>
 	</nav>
-
-	<div class="container-fluid">
+<style>
+</style>
+<div class="container-fluid">
 		<div class="row headerdados">
 			<div class="col text-center">
-				<h1></h1>
+				<h1>Escolha seu metodo de recebimento</h1>
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid containerdados">
+	<div class="container-fluid containerdados mt-5">
 		<div class="row conteudo">
-
-			<div class="col mx-auto colinfos">
+			<div class="col-3 mx-auto colinfos">
 				<form class="formdados" action="<?=$_SERVER["PHP_SELF"]?>"
 					method="POST">
-					<p>E-mail Pagseguro</p>
-
+					<div class="col text-center mb-4">
+						<img class="img-fluid" src="../images/pagseguro.gif">
+					</div>
 					<p><?php if(isset($Sucesso)) echo $Sucesso;?>
 					<input type="text" class="form-control"
 							placeholder="E-mail do Pagseguro" aria-label="Pagseguro"
 							aria-describedby="basic-addon2" name="Pagseguro"
 							value="<?=$Pagseguro?>"> <input type='submit' value='Salvar'><br>
-				
+
 				</form>
 			</div>
 		</div>

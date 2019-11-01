@@ -106,6 +106,21 @@ label {
 input {
   font-family: 'Helvetica', FontAwesome, sans-serif;
 }
+#prosseguir h4
+{
+  color: white !important;
+  margin-bottom: 3rem;
+}
+
+.btnprosseguir
+{
+-webkit-appearance: initial;
+		border: 1px solid transparent;
+		border-radius: 30px !important;
+		color: white !important;
+    padding: 4% !important;
+		background-color: #cc9966;
+}
 
 @media ( max-width : 65rem) {
 	.collogin {
@@ -132,17 +147,27 @@ input {
           <div class="col text-center">
 					<a href="/"><img class="img-fluid" src="../images/logo.jpeg" /></a>
         </div>
+        <div id="prosseguir" class="col text-center prosseguirbox collapse">
+          <h4 class="mb-4">Prossiga para o pagamento</h4>
+        <a href="pagamento.php" class="btnprosseguir" type="submit">Prosseguir</a>
+      </div>
+      <div id="cadastroform">
 					<h4 class="provedor">Provedor de sinais: Kleyton Alves</h4>
 					<h8 class="provedor"><?php if ($nomeConsultor != null) echo "Indicado por: " . $nomeConsultor;?></h8>
 					<form role="form" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 						<fieldset>
-
+              <script>
+              function concluir() {
+              document.getElementById("cadastroform").style.display = 'none';
+              document.getElementById("prosseguir").style.display = 'block';
+              }
+              </script>
 <?php
 
 if (isset($erro))
     echo '<div class="erro" style="color:#F00">' . utf8_encode($erro) . '</div><br/>';
 else if (isset($sucesso))
-    echo '<div style="color:#00f">' . utf8_encode($sucesso) . '</div><br/>';
+    echo '<div style="color:#00f">' . utf8_encode($sucesso) . '</div><br/>', '<script type="text/javascript">','concluir();','</script>';
 
 ?>
 					<div class="form-group ls-login-user row">
@@ -179,9 +204,11 @@ else if (isset($sucesso))
 						</fieldset>
 					</form>
 				</div>
+				</div>
 			</div>
 		</div>
 	</div>
+
 
 </body>
 </html>

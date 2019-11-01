@@ -16,7 +16,7 @@ require_once '../controle/dadosConsultorMaster.php';
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <link rel="stylesheet"
-	href="https://www.copytraderbrasil.com.br/css/backoffice/styleconsultor.css">
+	href="../css/styleconsultor.css">
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
@@ -28,11 +28,44 @@ require_once '../controle/dadosConsultorMaster.php';
 
 </head>
 <style>
-
+.table .thead-dark th
+{
+	border: 1px solid;
+}
+.boxdiretamente h5, .boxconsultor h5
+{
+	font-size: 1rem !important;
+	font-weight: bold;
+}
+.boxdiretamente, .boxconsultor
+{
+	background-color: gray;
+	color: white;
+    padding: .75rem;
+	border: 1px solid;
+}
+.titulo
+{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+		border: 1px solid;
+		color: white;
+		padding: 0.5rem;
+		background-color: #bb914a;
+}
+#barranav
+{
+	box-shadow: 0 0px 0px 3px #bb914a;
+}
+#consultores
+{
+	margin-bottom: 6rem;
+}
 </style>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav id="barranav" class="navbar navbar-expand-lg navbar-light bg-light">
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#conteudoNavbarSuportado"
 			aria-controls="conteudoNavbarSuportado" aria-expanded="false"
@@ -118,21 +151,68 @@ $(function() {
 
 				</form>
 
-
-				<br>
-				<div class="col text-center aprovados">
-				<h4>Clientes aprovados no periodo</h4>
-					<h5>Diretamente: <?=$quantidadeDeClienteAprovado?>     Rendimento: R$ <?php echo number_format(($quantidadeDeClienteAprovado*140), 2, ',', '.');?></h5>
-					<h5>Pelo Consultores: <?=$quantidadeDeClienteAprovadoConsultores?>     Rendimento: R$ <?php echo number_format(($quantidadeDeClienteAprovadoConsultores*100), 2, ',', '.');?></h5>
+				<div class="container mt-4">
+					<div class="row">
+						<div class="col-6 mx-auto text-center titulo">
+						<h4>Clientes aprovados no periodo</h4>
+					</div>
+					</div>
+					<div class="row">
+					  <div class="col-6 mx-auto">
+				<div class="row">
+				<div class="col boxdiretamente text-center">
+					<h5>Diretamente</h5>
 				</div>
-				<br>
+				<div class="col boxconsultor text-center">
+					<h5>Consultor</h5>
+				</div>
+				</div>
+				<div class="row">
+					<div class="col-3">
+						Aprovados
+					</div>
+						<div class="col-3">
+							Rentabilidade
+						</div>
 
-				<div class="col-7 mx-auto">
+							<div class="col-3">
+								Aprovados
+							</div>
+								<div class="col-3">
+									Rentabilidade
+								</div>
+							</div>
+								<div class="row">
+				<div class="col-3">
+					<h5><?=$quantidadeDeClienteAprovado?></h5>
+				</div>
+				<div class="col-3">
+				  R$ <?php echo number_format(($quantidadeDeClienteAprovado*140), 2, ',', '.');?>
+				</div>
+
+			<div class="col-3">
+				<h5><?=$quantidadeDeClienteAprovadoConsultores?></h5>
+			</div>
+				<div class="col-3">
+				  R$ <?php echo number_format(($quantidadeDeClienteAprovadoConsultores*100), 2, ',', '.');?>
+				</div>
+				</div>
+				</div>
+				</div>
+				</div>
+				<div id="consultores" class="container">
+				<div class="row text-center aprovados mt-4">
+					<div class="col-6 mx-auto text-center titulo">
+				<h4>Lista de consultores</h4>
+				</div>
+				</div>
+				<div class="row">
+				 <div class="col-6 p-0 mx-auto">
 				<table class="table">
 					<thead class="thead-dark">
 						<tr>
-							<th class="colresult" scope="col" style="width: 50%; text-align: center;">Consultor</th>
-							<th class="moeda" style="text-align: center;" scope="col">quantidade</th>
+							<th class="colresult" scope="col" style="width: 70%; text-align: center; background-color: gray !important;">Consultor</th>
+							<th class="moeda" style="text-align: center; background-color: gray !important;" scope="col">Quantidade</th>
 						</tr>
 
 					</thead>
@@ -159,11 +239,14 @@ $(function() {
 
 </table>
 </div>
+</div>
+</div>
+
 			</div>
 		</div>
 	</div>
 	</div>
-	<footer class="page-footer font-small special-color-dark pt-4">
+	<footer class="fixed-bottom page-footer font-small special-color-dark pt-4">
 
 		<!-- Footer Elements -->
 		<!-- Footer Elements -->

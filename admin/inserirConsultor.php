@@ -49,12 +49,28 @@ if (! isset($_SESSION['usuario'])) {
 	padding-left: 5%;
 	padding-right: 5%;
 }
-
-
+body
+{
+  background-color: white;
+  background-image: none;
+}
+.containerdados .conteudo
+{
+  height: auto !important;
+}
 .colcadastro {
 	background-color: white !important;
 }
-
+.table .thead-dark th
+{
+  background-color: #bb914a;
+  border: 1px solid;
+  text-align: center;
+}
+.table td, .table th
+{
+  text-align: center;
+}
 #link {
 	opacity: 0;
 	color: transparent;
@@ -86,18 +102,15 @@ if (! isset($_SESSION['usuario'])) {
 	padding-bottom: 0.3rem;
 	font-size: 16px;
 }
-
-.colcadastro {
-	overflow-y: scroll;
-	height: 69.5vh;
+#barranav {
+    box-shadow: 0 0px 0px 3px #bb914a;
 }
-
 .form-control {
 	height: 3rem !important;
 }
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav id="barranav" class="navbar navbar-expand-lg navbar-light bg-light">
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#conteudoNavbarSuportado"
 		aria-controls="conteudoNavbarSuportado" aria-expanded="false"
@@ -139,7 +152,7 @@ if (! isset($_SESSION['usuario'])) {
 
 		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 				<p></p>
-				<div class="col-6 mx-auto">
+				<div class="col-4 mx-auto">
 					<h2>Novo cadastro</h2>
 					<div class="input-group mb-3">
 						<div class="input-group-prepend">
@@ -166,6 +179,12 @@ if (! isset($_SESSION['usuario'])) {
 				</div>
 
 			</form>
+    </div>
+    </div>
+    </div>
+    <div class="container">
+      <div class="row">
+
 			<div class="col mx-auto">
 				<h3>Lista de usuários</h3>
 			</div>
@@ -201,31 +220,23 @@ if (! isset($_SESSION['usuario'])) {
             }
         }
         ?></table>
-
-
-
-
-
-
-
+      </div>
 		</div>
-	</div>
-</div>
-<footer class="page-footer font-small special-color-dark pt-4">
-
-	<!-- Footer Elements -->
-	<!-- Footer Elements -->
-
-	<!-- Copyright -->
-	<div class="footer-copyright text-center py-3">
-		© 2019 Copyright <a href="#"> MTBrasil</a>
-	</div>
-	<!-- Copyright -->
-
-</footer>
 <script>
   new ClipboardJS('.btn');
   </script>
+  <footer class="fixed-bottom page-footer font-small special-color-dark pt-4">
+
+  	<!-- Footer Elements -->
+  	<!-- Footer Elements -->
+
+  	<!-- Copyright -->
+  	<div class="footer-copyright text-center py-3">
+  		© 2019 Copyright <a href="#"> MTBrasil</a>
+  	</div>
+  	<!-- Copyright -->
+
+  </footer>
 </body>
 </html>
 <?php

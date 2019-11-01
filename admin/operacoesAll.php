@@ -8,6 +8,7 @@ require_once '../controle/dadosConsultorMaster.php';
 <title>Consultor Master</title>
 <link rel="icon" href="../imagens/favicon.png">
 <!-- jquery - link cdn -->
+
 <meta charset="utf-8">
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
@@ -29,7 +30,7 @@ require_once '../controle/dadosConsultorMaster.php';
 <style>
 </style>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav id="barranav" class="navbar navbar-expand-lg navbar-light bg-light">
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#conteudoNavbarSuportado"
 			aria-controls="conteudoNavbarSuportado" aria-expanded="false"
@@ -100,24 +101,52 @@ $(function() {
 						<div class="col text-center p-0 pt-4">
 							<button class="btn" type="submit">Filtrar</button>
 						</div>
-				
+
 				</form>
 
 <br>
+</div>
+</div>
+</div>
+</div>
+<style>
+#barranav {
+    box-shadow: 0 0px 0px 3px #bb914a;
+}
+.formdados
+{
+	border: 0px;
+}
+body
+{
+	background-image: none;
+	background-color: white !important;
+}
+.containerdados .conteudo
+{
+	height: auto !important;
+}
+.table .thead-dark th
+{
+	border: 1px solid;
+	background-color: #bb914a;
 
-
-				<div class="col-7 mx-auto">
+}
+</style>
+<div class="container">
+				<div class="row">
+				<div class="col mx-auto">
 					<table class="table">
 						<thead class="thead-dark">
 							<tr>
-								<th scope="col">ID Operacao</th>
+								<th scope="col">ID Operação</th>
 								<th scope="col">Ativo</th>
 								<th scope="col">Modo</th>
 								<th scope="col">Sentido</th>
 								<th scope="col">Hora Abertura</th>
-								<th scope="col">Expiracao</th>
-								<th scope="col">Preco Abertura</th>
-								<th scope="col">Preco Fechamento</th>
+								<th scope="col">Expiração</th>
+								<th scope="col">Preço Abertura</th>
+								<th scope="col">Preço Fechamento</th>
 								<th scope="col">Resultado</th>
 								<th scope="col">Moeda</th>
 							</tr>
@@ -127,7 +156,7 @@ $(function() {
 
 
 
- 
+
 
 
 			 <?php
@@ -171,11 +200,20 @@ $(function() {
 
     ?>
 </table>
+</div>
 				</div>
 			</div>
+	<footer class="fixed-bottom page-footer font-small special-color-dark pt-4">
+
+		<!-- Footer Elements -->
+		<!-- Footer Elements -->
+
+		<!-- Copyright -->
+		<div class="footer-copyright text-center py-3">
+			© 2019 Copyright <a href="#"> MTBrasil</a>
 		</div>
-	</div>
-	</div>
-	
+		<!-- Copyright -->
+
+	</footer>
 </body>
 </html>
