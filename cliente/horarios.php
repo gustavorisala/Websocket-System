@@ -7,7 +7,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<title>Horarios de Operação</title>
+<title><?php echo utf8_encode("Horarios de Operação");?></title>
 <link rel="icon" href="../imagens/favicon.png">
 <!-- jquery - link cdn -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -74,7 +74,7 @@
 		<div class="container-fluid informacoes">
 		<div class="row headerdados">
 			<div class="col text-center">
-				<h2>Horarios</h2>
+				<h2><?php echo utf8_encode("Horarios de Operação");?></h2>
 			</div>
 		</div>
 	</div>
@@ -84,12 +84,11 @@
 		<div class="container-fluid informacoes">
 			
 
-				<h4>Segundas a Sextas</h4><br>
-				<h4>Das 4h as 14h</h4>
+				<h4><?php echo utf8_encode("De Segunda a Sexta");?></h4>
+				<h4><?php echo utf8_encode("Das 4h as 14h");?></h4>
 
-				<p>Para Informações mais detalhadas, serão divulgadas no canal do
-					telegram</p>
-				<p>https://web.telegram.org/#/im?p=g268340166</p>
+				<p><?php echo utf8_encode("Para Informações mais detalhadas, serão divulgadas no canal do telegram");?></p>
+				<a target="_blank" href="<?php echo utf8_encode("https://web.telegram.org/#/im?p=g268340166");?>"><?php echo utf8_encode("https://web.telegram.org/#/im?p=g268340166");?></a>
 			
 		</div>
 
