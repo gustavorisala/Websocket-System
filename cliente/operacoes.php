@@ -17,8 +17,12 @@ require_once '../controle/operacoesIQ.php';
 <title>Dados Cliente</title>
 <link rel="icon" href="../imagens/favicon.png">
 <!-- jquery - link cdn -->
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" />
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <!-- bootstrap - link cdn -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -52,6 +56,8 @@ body
 }
 .selectperiodo
 {
+  border-bottom: 1px solid;
+  margin-bottom: 3rem;
   display: flex;
     justify-content: center;
     align-items: center;
@@ -64,6 +70,7 @@ body
 }
 .periodocol
 {
+  background-color: white;
   padding-left: 0%;
   padding-right: 0%;
   border: 1px solid;
@@ -76,7 +83,7 @@ body
 .rendimentos
 {
   padding: 2%;
- border: 1px solid gray;
+ border-bottom: 2px solid gray;
 }
 .saldo h5, .rendvalor h5, .saldo
 {
@@ -107,11 +114,10 @@ margin-bottom: 0px;
 {
   border: 1px solid gray;
 }
-
 .barraordens
 {
   margin-top: 3rem;
-  background-color: gray;
+  background-color: #bb914a;
   color: white;
   flex: unset;
     width: 97.3%;
@@ -125,6 +131,10 @@ footer
 #tableordens
 {
   margin-bottom: 30vh;
+}
+.tabelaordens .table, .table
+{
+  background-color: white;
 }
 @media (max-width: 575.98px)
 {
@@ -181,39 +191,49 @@ footer
   <div class="row">
 <div class="col">
   <div class="row mt-5">
-    <div class="col-sm-4 col-12 mx-auto periodocol">
+    <div class="col-sm-6 col-12 mx-auto periodocol">
 	<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
     <div class="col selectperiodo">
     <h4>Selecione o periodo</h4>
   </div>
-  <div class="calendario">
-		<p>
-			De : <input type="text" id="calendarioInicio" name="calendarioI"
-				value="<?=$dataInicio ?>" />
-		</p>
-		<script>
+  <div class="row mb-4">
+  <div class="input-group col-6 datafiltro">
+    <div class="input-group-prepend">
+      <span class="input-group-text filtro" id="basic-addon1">De :</span>
+    </div>
+    <input type="text" id="calendarioInicio" name="calendarioI"
+      class="form-control" aria-describedby="basic-addon1"
+      value="<?php echo $dataInicio ?>" />
+
+  </div>
+  <script>
 $(function() {
-    $( "#calendarioInicio" ).datepicker({dateFormat: 'dd/mm/yy'});
+$( "#calendarioInicio" ).datepicker({dateFormat: 'dd/mm/yy'});
 });
 </script>
 
-		<p>
-			Ate: <input type="text" id="calendarioFim" name="calendarioF"
-				value="<?=$dataFinal ?>" />
-		</p>
-		<script>
+<div class="input-group col-6 datafiltro">
+  <div class="input-group-prepend">
+    <span class="input-group-text filtro" id="basic-addon2">Ate:</span>
+  </div>
+  <input type="text" id="calendarioFim" name="calendarioF"
+    class="form-control" aria-describedby="basic-addon2"
+    value="<?php echo $dataFinal ?>" />
+</div>
+<script>
 $(function() {
-    $( "#calendarioFim" ).datepicker({dateFormat: 'dd/mm/yy'});
+$( "#calendarioFim" ).datepicker({dateFormat: 'dd/mm/yy'});
 });
 </script>
+</div>
     <div class="col text-center">
 		<input class="btn" type='submit' value='Filtrar'><br>
     </div>
 
-    <div class="row mt-4 ">
-      <div class="col-8 mx-auto rendimentos">
+    <div class="row mt-4 mb-4 ">
+      <div class="col-4 mx-auto rendimentos">
         <div class="row">
-    	<div class="col text-center saldo"><h5>RENDIMENTO:</h></div> <div class="col rendvalor"><h5><?=$saldo ?> <?=$moeda ?></h5></div>
+    	<div class="col text-center saldo"><h5>Rendimentos:</h></div> <div class="col rendvalor"><h5><?=$saldo ?> <?=$moeda ?></h5></div>
     </div>
     </div>
     </div>

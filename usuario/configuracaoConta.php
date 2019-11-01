@@ -21,6 +21,14 @@ require_once '../controle/dadosConfigurarConta.php';
 </head>
 <body>
 <style>
+.formdados
+{
+	border: 0px;
+}
+body
+{
+	background: unset !important;
+}
 .sidebar li
 {
     position: relative;
@@ -33,7 +41,7 @@ require_once '../controle/dadosConfigurarConta.php';
 }
 </style>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
+		<button id="navtoggle" class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#conteudoNavbarSuportado"
 			aria-controls="conteudoNavbarSuportado" aria-expanded="false"
 			aria-label="Alterna navegação">
@@ -68,7 +76,7 @@ require_once '../controle/dadosConfigurarConta.php';
 	<div class="container-fluid">
 		<div class="row headerdados">
 			<div class="col text-center">
-				<h1>Pagina do usuário</h1>
+				<h1>Configurações do usuário</h1>
 			</div>
 		</div>
 	</div>
@@ -89,9 +97,9 @@ require_once '../controle/dadosConfigurarConta.php';
 						<img src="../images/password.svg"><li> <?=$dados_usuario['nome']?></li>
 					</div>
 					<div class="text-center mt-3">
-						
+
 						<?php
-						
+
 						if ($papel == "consultor") {
 						    echo "<h3>Link afiliado </h3>";
 						    include_once '../afiliacao/consultorlink.php';
@@ -108,8 +116,8 @@ require_once '../controle/dadosConfigurarConta.php';
 
 			</div>
 
-			<div class="col-9 colinfos formdados">
-				<div class="container">
+			<div class="col-sm-9 col-10 colinfos formdados">
+				<div class="container-fluid">
 			<?php
 
 if (isset($erro))
@@ -122,7 +130,7 @@ else if (isset($sucesso))
 			<br /> <br />';
 ?>
 			<div class="row">
-						<div class="col-md-6 mx-auto colcel">
+						<div class="col-md-6 col text-center mx-auto colcel">
 							<p class="alterartxt">Alterar Senha</p>
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
@@ -183,5 +191,11 @@ else if (isset($sucesso))
 	<script>
 			new ClipboardJS('.btn');
 			</script>
+
+		<script>
+		$("#navtoggle").click(function(){
+		  $("#conteudoNavbarSuportado").toggle();
+		});
+		</script>
 </body>
 </html>

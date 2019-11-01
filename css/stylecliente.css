@@ -9,7 +9,7 @@
 }
 .form-control
 {
-  height: calc(1.5em + 1rem + 2px) !important;
+  height: auto !important;
 }
 .sidebar h3
 {
@@ -42,7 +42,8 @@ nav
 }
 .table .thead-dark th
 {
-  background-color: #bb914a !important;
+  background-color: white!important;
+  color: black;
 }
 .numclientes
 {
@@ -70,8 +71,8 @@ nav
 {
     font-family: "Gotham SSm A","Gotham SSm B","Helvetica Neue",sans-serif !important;
     font-size: 18px !important;
-  background-color: #bb914a !important;
-  color: white !important;
+    background-color: #bb914a!important;
+    color: white !important;
 }
 .btn
 {
@@ -81,7 +82,7 @@ nav
   padding-right: 10% !important;
   padding-left: 10% !important;
   color: white !important;
-  background-color: #bb914a !important;
+  background-color: #bb914a!important;
 }
 .marrombg
 {
@@ -135,7 +136,6 @@ color: #bb914a !important
   font-size: 16px;
 }
 body {
-  background-color: white !important;
   width: 100%;
   }
 .paineluser

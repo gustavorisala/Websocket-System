@@ -1,12 +1,6 @@
 @media (max-width: 65rem)
 {
-  .colcel
-  {
-    -ms-flex: 0 0 100%;
-flex: 0 0 100%;
-max-width: 100%;
-width: 100%;
-  }
+  
   .btn
   {
     font-size: 2rem;

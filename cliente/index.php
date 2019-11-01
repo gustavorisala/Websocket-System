@@ -30,6 +30,7 @@ if ($atual == 'completo') {
 }
 .informacoes .col-4
 {
+  background-color: #bb914a;
   display: flex;
     justify-content: center;
     align-items: center;
@@ -45,6 +46,7 @@ if ($atual == 'completo') {
 }
 .resultado
 {
+  background-color: white;
   font-size: 1rem !important;
   font-weight: bold;
   display: flex;
