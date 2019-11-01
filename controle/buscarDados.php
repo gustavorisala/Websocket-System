@@ -89,6 +89,21 @@ function buscarDadosUserCliente($id)
     return null;
 }
 
+function buscarDadosUserClienteConf($id)
+{
+    $objDb = new db();
+    $link = $objDb->conecta_mysql();
+    
+    $sql = "SELECT user.nome, user.email, user.codigoindicacao FROM user WHERE user.id = $id";
+    // echo ($sql);
+    $resultado_id = mysqli_query($link, $sql);
+    
+    if ($resultado_id) {
+        return mysqli_fetch_array($resultado_id);
+    }
+    return null;
+}
+
 
 function buscarstatusUser($id)
 {

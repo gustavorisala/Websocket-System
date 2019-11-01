@@ -26,7 +26,7 @@ if (isset($_POST['senhaatual']) && isset($_POST['novasenha']) && isset($_POST['c
 }
 
 
-$dados_usuario = buscarDadosUserCliente($id_usuario);
+$dados_usuario = buscarDadosUserClienteConf($id_usuario);
 
 //$dados_usuario = mysqli_fetch_array($dados);
 
