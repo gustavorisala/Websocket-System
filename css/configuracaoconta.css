@@ -1,6 +1,6 @@
 @media (max-width: 65rem)
 {
-  
+
   .btn
   {
     font-size: 2rem;
@@ -98,11 +98,13 @@
 }
 .sidebar .copiarlink
 {
+  width: 40%;
   border: 1px solid black !important;
   color: white !important;
   cursor: pointer;
   font-size: 1rem;
   -webkit-appearance: button;
+  width: 40%;
   font-weight: bold;
   background-color: #bb914a !important;
   box-shadow: 0 0 4px black !important;
