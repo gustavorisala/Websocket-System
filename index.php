@@ -4,25 +4,27 @@ include 'controle/validar_acesso.php';
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 <title>MT BRASIL LOGIN</title>
 <link rel="icon" href="imagens/favicon.png">
 
 <!-- jquery - link cdn -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
-<!-- Bootstrap -->
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
+<link href="http://www.copytraderbrasil.com.br/css/backoffice/styleindex.css" rel="stylesheet">
 
+
+<link rel='stylesheet'
+	href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
 <!-- bootstrap - link cdn -->
 
 <link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -32,10 +34,6 @@ include 'controle/validar_acesso.php';
 </head>
 
 <style>
-html, body {
-	height: 100%;
-}
-
 body {
 	background:
 		url("https://i.pinimg.com/originals/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
@@ -102,7 +100,7 @@ label {
 	<div class="container containerlogin h-100">
 
 		<div class="row rowlogin h-100">
-			<div class="col-6 mx-auto collogin">
+			<div class="col-sm-6 col-12 mx-auto collogin">
 				<div class="well box-login">
 					<img class="img-fluid" src="images/logo.jpeg" />
 				<?php
