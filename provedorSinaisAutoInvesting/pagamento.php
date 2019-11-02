@@ -161,14 +161,6 @@ footer
 {
 position: relative !important;
 }
-.cadastre
-{
-background-color: #f8f9fa;
-background-size: 310vh !important;
-background-image: url(imagens/bars.png) !important;
-background-repeat-y: no-repeat;
-background-position-y: bottom;
-}
 }
 .colcontato
 {
@@ -224,8 +216,8 @@ text-shadow: 0 0 1px black;
 
 	<div class="container containerlogin h-100">
 		<div class="row rowlogin h-100">
-			<div class="col-8 mx-auto collogin">
-				<div class="well box-login">
+			<div class="col-sm-8 col-12 mx-auto collogin">
+				<div class="well box-cadastro box-login">
           <div class="col text-center">
 					<a href="/"><img class="img-fluid" src="../images/logo.jpeg" /></a>
         </div>
@@ -233,28 +225,28 @@ text-shadow: 0 0 1px black;
               <div class="row">
                 <div class="col colcontato">
                   <div class="row center">
-                    <h1 class="titulo">CADASTRO CONCLUÃ�DO</h1>
+                    <h1 class="titulo">CADASTRO CONCLUÍDO</h1>
                     </div>
                     </div>
                     </div>
 
-                <div class="container blococadastro">
+                <div class="container-fluid blococadastro">
                     <div class="row">
-                        <div class="col mx-auto col assinatura blococc text-center divisa">
+                        <div class="col mx-auto assinatura blococc text-center divisa">
                           <h4 class="text-center titulopag">Efetue o pagamento da sua assinatura</h1>
-                            <div class="col-10 mx-auto blocopagar">
+                            <div class="col-sm-8 col-12 mx-auto blocopagar">
                                    <img class="img-fluid w-50 mb-3 mt-3" src="../images/logosemfundo.png">
                                    <h4>PLANO TRIMESTRAL</h>
                                    <h5 class="marrom valor">R$ 400,00</h>
 
                           </div>
-                          <div class="col-10 mx-auto etapas">
-                          <p>Aguardaremos a confirmaÃ§Ã£o do seu pagamento para liberar seu acesso,
-                            atenÃ§Ã£o as seguintes informaÃ§Ãµes:</p>
+                          <div class="col-sm-10 col-12 mx-auto etapas">
+                          <p>Aguardaremos a confirmação do seu pagamento para liberar seu acesso,
+                            atenção as seguintes informações:</p>
                             <ol>
-                              <li>VocÃª recebera em seu e-mail login e senha para acesso do Backoffice.</li>
-                              <li>Recebera tambÃ©m em seu email o RobÃ´ MT Brasil, para instalar em seu computador,
-                                o login serÃ¡ feito com seu login e senha da IQ Option que serÃ£o enviados juntamente no e-mail.</li>
+                              <li>Você recebera em seu e-mail login e senha para acesso do Backoffice.</li>
+                              <li>Recebera também em seu email o Robô MT Brasil, para instalar em seu computador,
+                                o login será feito com seu login e senha da IQ Option que serão enviados juntamente no e-mail.</li>
                           </ol>
                           </div>
                           <div class="col">

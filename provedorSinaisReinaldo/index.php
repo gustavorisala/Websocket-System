@@ -37,7 +37,6 @@ html, body {
 }
 
 body {
-  overflow: hidden;
 	background:
 		url("https://i.pinimg.com/originals/0a/63/0b/0a630be2b073f47d06a784ab085d46b1.jpg");
 }
@@ -131,16 +130,7 @@ input {
 }
 </style>
 <body>
-
-	<div id="navbar" class="navbar-collapse collapse">
-		<ul class="nav navbar-nav navbar-left">
-			<li><a href="/">HOME</a></li>
-		</ul>
-	</div>
-	<!--/.nav-collapse -->
-
-
-	<div class="container containerlogin h-100">
+	<div class="container containerlogin">
 		<div class="row rowlogin h-100">
 			<div class="col-6 mx-auto collogin">
 				<div class="well box-login">
