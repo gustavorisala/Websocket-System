@@ -40,9 +40,7 @@ if (! isset($_SESSION['usuario'])) {
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-				<li><a class="navbar-brand" href="admin.php">um</a></li>
-
-				<li><a class="navbar-brand" href="admin2.php">dois</a></li>
+				
 			</ul>
 			<ul class="navbar-nav  my-2 my-lg-0">
 				<li><a href="../sair.php">Sair</a></li>
@@ -72,7 +70,8 @@ if (! isset($_SESSION['usuario'])) {
 
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
-						<span class="input-group-text" id="basic-addon3">E-mail</span>
+						<span class="input-group-text" id="basic-addon3">Contas Pre
+							Cadastro</span>
 					</div>
 
 					<select class="selectpicker" data-live-search="true" name="email">
@@ -87,28 +86,48 @@ if (! isset($_SESSION['usuario'])) {
         }
 
         ?>
+      
 
 
-
-					</select>
+					</select> <input type='submit' value='Selecionar'>
 				</div>
+
+				<div>
+				
+				<?php if(isset($dadosUser)){?>
+				<h2>Criar Conta na IQ</h2>
+					<h4>Nome: <?=$dadosUser["nome"]?></h4>
+					<h4>Email: <?=$dadosUser["email"]?></h4>
+					<h4>Senha: <?=$senhaTemp?></h4>
+
+					<input type="checkbox" value="contaIQ" name="contaIQ"> Confirmar Conta IQ Criada<br>
+					<input type="checkbox" value="pagamento" name="pagamento"> Confirmar Pagamento
+					Assinatura
+				</div>
+
+
 
 				<input type="hidden" name="adm" value="<?=$_SESSION['id_usuario']?>">
 				<input type='submit' value='Liberar Usuario'>
 			</div>
 
 
+<?php
+        }
+        ?>
+
+
 		</form>
 
 
 
-		<br>
-		<p>Confirmacao de pagamento da Licenca 90 dias</p>
+		<br><br><br>
 		<p>Cadastro na IQ option ok</p>
+		<p>Confirmacao de pagamento da Licenca 90 dias</p>
 		<p>liberacao do usuario no backoffice</p>
 		<p>link do programa MT BRASIL</p>
 		<p>liberacao do usuario no backoffice</p>
-		<p>envio das informcoes por email</p>
+		<p>envio das informacoes por email</p>
 
 
 

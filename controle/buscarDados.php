@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
 include_once ('conexaobd.php');
 
 function buscarPagseguro($id)
@@ -6,15 +7,14 @@ function buscarPagseguro($id)
     $objDb = new db();
     $link = $objDb->conecta_mysql();
     $sql = " SELECT pagseguro from user where id=$id";
-   //  echo ($sql);
-     $resultado_id = mysqli_query($link, $sql);
-     if ($resultado_id) {
-         $dados_usuario = mysqli_fetch_array($resultado_id);
-         
-         return $dados_usuario['pagseguro'];
-     }
-}
+    // echo ($sql);
+    $resultado_id = mysqli_query($link, $sql);
+    if ($resultado_id) {
+        $dados_usuario = mysqli_fetch_array($resultado_id);
 
+        return $dados_usuario['pagseguro'];
+    }
+}
 
 function buscarClientesNovosPeriodo($dInicial, $dFinal, $id_usuario)
 {
@@ -26,13 +26,14 @@ function buscarClientesNovosPeriodo($dInicial, $dFinal, $id_usuario)
     $resultado_id = mysqli_query($link, $sql);
     return $resultado_id;
 }
+
 function buscarClientesNovosPeriodoNome($dInicial, $dFinal, $id_usuario)
 {
     $objDb = new db();
     $link = $objDb->conecta_mysql();
     $sql = " SELECT nome FROM user join statususer on statususer.idUser= user.id where indicacao = (select codigoindicacao from user where id=$id_usuario) and statususer.status='completo' and statususer.data >= $dInicial and statususer.data <= $dFinal";
     // echo ($sql);
-    
+
     $resultado_id = mysqli_query($link, $sql);
     return $resultado_id;
 }
@@ -44,7 +45,7 @@ function buscarDadosTodasOrdens($inicio, $fim)
 
     $sql = "SELECT  iq.email as emailiq , sum(o.resultado) as resultado, iq.moedaCorrente FROM operacao o join useriq iq on o.idUser=iq.idConta where o.expiracao >= " . $inicio . " and o.expiracao <= " . $fim . " group by o.idUser";
     // $sql = "SELECT sum(resultado) as total, (SELECT s.nome from sala s where id=iq.idSala) as nomesala , iq.moedaCorrente as moeda FROM operacao o join useriq iq on iq.idConta=o.idUser where o.status=1 and iq.idUser=".$id." and from_unixtime(o.expiracao) BETWEEN '".$inicio."' and '".$fim."' GROUP BY o.idUser";
-   // echo ("<script>console.log('PHP: " . $sql . "');</script>");
+    // echo ("<script>console.log('PHP: " . $sql . "');</script>");
 
     $resultado_id = mysqli_query($link, $sql);
     return $resultado_id;
@@ -93,17 +94,16 @@ function buscarDadosUserClienteConf($id)
 {
     $objDb = new db();
     $link = $objDb->conecta_mysql();
-    
+
     $sql = "SELECT user.nome, user.email, user.codigoindicacao FROM user WHERE user.id = $id";
     // echo ($sql);
     $resultado_id = mysqli_query($link, $sql);
-    
+
     if ($resultado_id) {
         return mysqli_fetch_array($resultado_id);
     }
     return null;
 }
-
 
 function buscarstatusUser($id)
 {
@@ -130,8 +130,14 @@ function buscarOperacaoFechadasClientePeriodo($id, $inicio, $fim)
     $sql = "SELECT idOperacao, precoAbertura, precoFechamento, tempoAbertura, expiracao, idAtivo, resultado, tipo, direcao FROM operacao WHERE idUser = (SELECT useriq.idConta from useriq join user on user.id=useriq.iduser where user.id=" . $id . ") and status =1 and expiracao >= " . $inicio . "  and expiracao <=" . $fim . "  ORDER BY expiracao DESC";
     // $sql = "SELECT idOperacao, precoAbertura, precoFechamento, tempoAbertura, expiracao, idAtivo, resultado, tipo, direcao FROM operacao WHERE idUser = (SELECT idConta from useriq where idUser=".$id.") and status =1 and from_unixtime(expiracao) BETWEEN '".$inicio."' and '".$fim."' ORDER BY expiracao DESC";
     // echo ($sql);
-    $resultado_id = mysqli_query($link, $sql);
-    return $resultado_id;
+    try {
+
+        $resultado_id = mysqli_query($link, $sql);
+        if ($resultado_id) {
+            return $resultado_id;
+        }
+    } catch (Exception $e) {}
+    return null;
 }
 
 function buscarDadosSalaSaldoUser($id, $inicio, $fim)
@@ -179,7 +185,7 @@ function buscarClientesNovosPeriodoMaster($dInicial, $dFinal, $id_usuario)
     $objDb = new db();
     $link = $objDb->conecta_mysql();
     $sql = " SELECT email, count(user.id) as quant FROM user join statususer on statususer.idUser= user.id where indicacao in (select codigoindicacao from user where papel = 'consultor') and statususer.status='completo' and statususer.data >= $dInicial and statususer.data <= $dFinal group by indicacao";
-   // echo ($sql);
+    // echo ($sql);
 
     $resultado_id = mysqli_query($link, $sql);
     return $resultado_id;
@@ -191,7 +197,7 @@ function buscarClientesNovosPeriodoConsultores($dInicial, $dFinal, $id_usuario)
     $link = $objDb->conecta_mysql();
     $sql = " SELECT count(user.id) as quant FROM user join statususer on statususer.idUser= user.id where indicacao in (select codigoindicacao from user where papel = 'consultor') and statususer.status='completo' and statususer.data >= $dInicial and statususer.data <= $dFinal";
     // echo ($sql);
-    
+
     $resultado_id = mysqli_query($link, $sql);
     return $resultado_id;
 }

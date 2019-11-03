@@ -31,6 +31,8 @@ if (isset($_POST["usuario"]) && isset($_POST["senha"])) {
                 header('Location: admin/consultorMaster.php');
             } else if ($dados_usuario['papel'] == "consultor") {
                 header('Location: admin/consultor.php');
+            } else if ($dados_usuario['papel'] == "suporte") {
+                header('Location: suporte/liberarUsuarios.php');
             } else {
                 header('Location: cliente');
             }
