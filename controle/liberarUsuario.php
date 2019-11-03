@@ -160,22 +160,22 @@ include_once ("conexaobd.php");
 $objDb = new db();
 $link = $objDb->conecta_mysql();
 
-if (isset($_POST["adm"]) && isset($_POST["email"])) {
+if (isset($_POST["adm"]) && isset($_POST["email2"])) {
    
     if (isset($_POST["contaIQ"]) && isset($_POST["pagamento"])) {
         if (empty($_POST["email"]))
             $erro = "Campo E-mail Obrigatório";
         else {
            
-            $dados_usuario = getIdCliente($_POST["email"], $link);
+            $dados_usuario = getIdCliente($_POST["email2"], $link);
             $idCliente=$dados_usuario['id'];
             $nome=$dados_usuario['nome'];
             mudarStatus($_POST["adm"], $idCliente, $link);
-            cadastrarIQ($_POST["email"], $idCliente, $link);
+            cadastrarIQ($_POST["email2"], $idCliente, $link);
             $novaSenha = novaSenha($idCliente, $link);
          //   echo $novaSenha;
-            $senhaTemp = substr($_POST["email"], 0, 3) . date("dm");
-            enviarEmailUser($_POST["email"], $novaSenha, $nome, $senhaTemp);
+            $senhaTemp = substr($_POST["email2"], 0, 3) . date("dm");
+            enviarEmailUser($_POST["email2"], $novaSenha, $nome, $senhaTemp);
         }
     }else{
         echo "Setar Confirmações";

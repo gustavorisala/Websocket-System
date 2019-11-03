@@ -269,6 +269,7 @@ if (! isset($_SESSION['usuario'])) {
       </div>
         <div class="row">
           <div class="col">
+          <input type="hidden" name="email2" value="<?=$dadosUser["email"]?>">
 				<input type="hidden" name="adm" value="<?=$_SESSION['id_usuario']?>">
 				<input type='submit' class="btn p-3" value='Liberar Usuário'>
       </div>

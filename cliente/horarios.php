@@ -88,7 +88,7 @@
 				<h4><?php echo utf8_encode("Das 4h as 14h");?></h4>
 
 				<p><?php echo utf8_encode("Para Informações mais detalhadas, serão divulgadas no canal do telegram");?></p>
-				<a target="_blank" href="<?php echo utf8_encode("https://web.telegram.org/#/im?p=g268340166");?>"><?php echo utf8_encode("https://web.telegram.org/#/im?p=g268340166");?></a>
+				<a target="_blank" href="<?php echo utf8_encode("https://t.me/joinchat/AAAAAFFDLUeLxSyMUPi_cQ");?>"><?php echo utf8_encode("https://t.me/joinchat/AAAAAFFDLUeLxSyMUPi_cQ");?></a>
 			
 		</div>
 
