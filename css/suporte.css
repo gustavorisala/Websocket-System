@@ -1,0 +1,227 @@
+@media (max-width: 65rem)
+{
+
+  .btn
+  {
+    font-size: 2rem;
+  }
+  .form-control
+  {
+    padding: 0%;
+    height: 4rem !important;
+    padding-left: 3%;
+    width: 420px !important;
+    font-size: 1.5rem !important;
+  }
+  .input-group-text
+  {
+    font-size: 22px;
+    width: 200px !important;
+  }
+  .alterartxt
+  {
+    margin-top: 10rem !important;
+    font-size: 3rem !important;
+  }
+  .formdados
+  {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: auto;
+    height: 48vh;
+  }
+  .paineluser
+  {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: auto;
+  }
+  .sidebar li
+  {
+  font-size: 3rem !important;
+  }
+  .sidebar .copiarlink
+  {
+  font-size: 2rem !important;
+  }
+  .sidebar h3
+  {
+    padding-left: 4% !important;
+    padding: 0% !important;
+    padding-right: 4% !important;
+    width: 60% !important;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1% !important;
+    padding-bottom: 1% !important;
+  }
+}
+
+*
+{
+  font-family: 'Montserrat', sans-serif;
+}
+#link
+{
+  opacity: 0;
+  color: transparent;
+  text-align: center;
+  font-size: 10px;
+  margin-top: 1rem;
+  border: 0px;
+  text-align: center;
+}
+.sidebar h3
+{
+  background-color: #bb914a;
+  color: white;
+  text-align: center;
+  border-radius: 0px;
+  width: 85%;
+  padding: 3%;
+  font-size: 3vh;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.sidebar a:hover
+{
+  text-decoration: none !important;
+}
+.alterartxt
+{
+  font-size: 20px;
+  margin-top: 4rem;
+}
+.sidebar .copiarlink:hover
+{
+  background-color: white !important;
+}
+.sidebar .copiarlink
+{
+  width: 40%;
+  border: 1px solid black !important;
+  color: white !important;
+  cursor: pointer;
+  font-size: 1rem;
+  -webkit-appearance: button;
+  width: 40%;
+  font-weight: bold;
+  background-color: #bb914a !important;
+  box-shadow: 0 0 4px black !important;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-radius: -1px;
+}
+.navbar a
+{
+  color: #bb914a !important;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+.logotipo
+{
+  width: 10%;
+}
+.sidebar
+{
+    border-left: 3px solid #adb5bd;
+    width: 100%;
+    margin-top: 3rem;
+    background-color: #ffffff;
+    padding-top: 5%;
+    padding-left: 0%;
+    /* padding-bottom: 5%; */
+    /* border-bottom-right-radius: 30px; */
+    box-shadow: 0 0 5px black;
+}
+.headerdados
+{
+  background-color: black;
+  color: white;
+  border-bottom: 1px solid black;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  }
+.form-control
+{width: 250px !important;height: 2.8rem;flex: none !important;}
+.dadosuser
+{
+  font-size: 20px !important;
+}
+.formdados
+{
+  background-color: white !important;
+  border: 1px solid;
+  padding: 4%;
+  border-color: gray;
+  margin-bottom: 0px !important;
+  margin-block-end: 0px !important;
+}
+.formdados h5
+{
+  font-size: 16px;
+}
+
+.paineluser
+{
+  background-color: #bb914a;
+}
+.colinfos
+{
+  padding: 0px !important;
+}
+footer
+{
+  color: white;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.paineluser
+{
+  border: 1px solid;
+}
+.containerdados .row
+{
+	height: 38em;
+}
+.sidebar img
+{
+	width: 15%;
+	left: 1%;
+	position: relative;
+	margin-bottom: 3%;
+}
+.fecha
+{
+  margin-left: 30%;
+  margin-top: 1rem;
+  margin-right: auto !important;
+  width: 15% !important;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+ }
+ @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+ @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+ @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+ul
+{
+	font-size: 22px;
+	font-weight: 500;
+}
+.sidebar li
+{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  list-style-type: none;
+  font-weight: bold;
+  left: 3%;
+  font-size: 18px;
+}
