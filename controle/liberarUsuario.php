@@ -47,7 +47,7 @@ function enviarEmailUser($email, $senha, $nome, $senhaIQ)
 
 function buscarDadosUserEmail($link, $email)
 {
-    $sql = "SELECT id, nome, email, papel FROM user where email='$email'";
+    $sql = "SELECT id, nome, email, papel, indicacao FROM user where email='$email'";
    // echo ($sql);
     $resultado_id = mysqli_query($link, $sql);
     while ($row = mysqli_fetch_array($resultado_id)) {

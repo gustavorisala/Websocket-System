@@ -2,6 +2,24 @@
 error_reporting(E_ERROR | E_PARSE);
 include_once ('conexaobd.php');
 
+function buscarDadosTodasOrdensMomento(){
+    $objDb = new db ();
+    $link = $objDb->conecta_mysql();
+    
+    
+    $sql = "SELECT count(*) as quantidade, expiracao, precoAbertura , tempoAbertura, sum(resultado) as resultado , trader FROM operacao group by expiracao, precoAbertura order by expiracao desc limit 30";
+    //$sql = "SELECT sum(resultado) as total, (SELECT s.nome from sala s where id=iq.idSala) as nomesala , iq.moedaCorrente as moeda FROM operacao o join useriq iq on iq.idConta=o.idUser where o.status=1 and iq.idUser=".$id." and from_unixtime(o.expiracao) BETWEEN '".$inicio."' and '".$fim."' GROUP BY o.idUser";
+    echo( $sql);
+    
+    
+    $resultado_id = mysqli_query($link, $sql);
+    return $resultado_id;
+    
+    
+    
+    
+}
+
 function buscarPagseguro($id)
 {
     $objDb = new db();
