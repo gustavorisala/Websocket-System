@@ -28,7 +28,7 @@ include '../controle/cadastrarNovoUsuarioCleyton.php';
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-<title>Pre Cadastro Reinaldo Duarte MT BRASIL</title>
+<title>Pre Cadastro TESTE MT BRASIL</title>
 <link rel="icon" href="../imagens/favicon.png">
 </head>
 <style>
@@ -142,7 +142,7 @@ input {
         <a href="pagamento.php" class="btnprosseguir" type="submit">Prosseguir</a>
       </div>
       <div id="cadastroform">
-					<h4 class="provedor">Provedor de sinais: Reinaldo Duarte</h4>
+					<h4 class="provedor">Provedor de sinais: TESTE</h4>
 					<h8 class="provedor"><?php if ($nomeConsultor != null) echo "Indicado por: " . $nomeConsultor;?></h8>
 					<form role="form" action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
 						<fieldset>
