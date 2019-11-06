@@ -22,7 +22,7 @@ if (! isset($_SESSION['usuario'])) {
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <link rel="stylesheet"
-	href="http://www.copytraderbrasil.com.br/css/backoffice/suporte.css">
+	href="https://www.copytraderbrasil.com.br/css/backoffice/suporte.css">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 <link rel="stylesheet"
