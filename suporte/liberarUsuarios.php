@@ -182,7 +182,7 @@ footer {
 			<ul class="navbar-nav mr-auto">
 				<a class="navbar-brand" href="#"> <img class="ml-4 logotipo"
 					src="../images/logosemfundo.png" alt="">
-		
+
 		</div>
 		</a> <a href="../sair.php">Sair</a>
 		</ul>
@@ -228,7 +228,7 @@ footer {
         ?>
       </select> <input class="ml-4 btn" type='submit' value='Selecionar'>
 									</div>
-							
+
 							</div>
 						</div>
 					</div>
@@ -298,10 +298,13 @@ footer {
 							<div class="col text-center">
 								<a rel="noopener noreferrer" target="_blank"
 									href="https://webmail-seguro.com.br/copytraderbrasil.com.br/"><img
-									class="img-fluid" src="../images/email.svg"></a> <a
-									rel="noopener noreferrer" target="_blank"
+									class="img-fluid" src="../images/email.svg"></a>
+                  <a rel="noopener noreferrer" target="_blank"
 									href="https://dashboard.tawk.to/login?lang=pt_br"><img
 									class="img-fluid" src="../images/callcenter.svg"></a>
+                  <a rel="noopener noreferrer" target="_blank"
+									href="https://pagseguro.uol.com.br"><img
+								class="img-fluid" src="../images/aprovado.svg"></a>
 							</div>
 						</div>
 					</div>
