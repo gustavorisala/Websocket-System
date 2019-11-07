@@ -36,7 +36,7 @@ body
 }
 .dado
 {
-  background-color: #bb914a;
+  background-color: #e9ecef;
   color: white;
   padding: 2%;
 }
@@ -61,12 +61,22 @@ body
   display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #bb914a;
-    color: white;
+    background-color: #e9ecef;
+    color: black;
     padding-top: 2%;
     padding-bottom: 2%;
     padding-left: 0%;
     padding-right: 0%;
+}
+.btn
+{
+  background-color: #e9ecef !important;
+  color: black !important;
+}
+.filtro
+{
+  background-color: #e9ecef !important;
+  color: black !important;
 }
 .periodocol
 {
@@ -99,7 +109,7 @@ margin-bottom: 0px;
   display: flex;
     justify-content: center;
     align-items: center;
-  background-color: #bb914a;
+  background-color: #e9ecef;
 }
 
 .saldovalor
@@ -117,11 +127,10 @@ margin-bottom: 0px;
 .barraordens
 {
   margin-top: 3rem;
-  background-color: #bb914a;
-  color: white;
-  flex: unset;
-    width: 97.3%;
-    max-width: 100%;
+  background-color: #e9ecef;
+  color: black;
+  padding: 1%;
+  border: 1px solid;
 }
 footer
 {
@@ -136,6 +145,10 @@ footer
 {
   background-color: white;
 }
+.tabelaordens
+{
+  padding: 0px;
+}
 @media (max-width: 575.98px)
 {
   .tabelaordens
@@ -147,7 +160,6 @@ footer
     width: 100%;
     flex: 100%;
     max-width: 100%;
-    pa
   }
   footer
   {
@@ -158,6 +170,11 @@ footer
   {
     font-size: 10px;
   }
+}
+.main
+{
+  background-size: cover;
+  background-image: url(../images/3.jpeg);
 }
 </style>
 <body>
@@ -187,7 +204,7 @@ footer
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container-fluid main">
   <div class="row">
 <div class="col">
   <div class="row mt-5">
@@ -243,7 +260,7 @@ $( "#calendarioFim" ).datepicker({dateFormat: 'dd/mm/yy'});
 </div>
 <div id="tableordens" class="container-fluid">
   <div class="row">
-    <div class="col-11 mx-auto text-center barraordens">
+    <div class="col-12 mx-auto text-center barraordens">
       <h1>Ordens</h1>
     </div>
     <div class="col tabelaordens">

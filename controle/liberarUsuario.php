@@ -7,7 +7,7 @@ $papel = "admin";
 
 function enviarEmailUser($email, $senha, $nome, $senhaIQ)
 {
-    // Variável que junta os valores acima e monta o corpo do email
+    // Variï¿½vel que junta os valores acima e monta o corpo do email
     // $Vai = "Nova Senha Solicitada, favor acessar link abaxo para definir nova Senha.\n\nlocalhost/painel/redefinirSenha.php?tokenrec=$token\n";
     $Vai = "<!doctype html>
     <html lang='pt-br'>
@@ -18,14 +18,14 @@ function enviarEmailUser($email, $senha, $nome, $senhaIQ)
 <p>Bem Vindo $nome</p>
 <p>Usuario Criado com Sucesso no MT BRASIL</p>
 <br>
-<p>Acesse o sistema pelo endereço: https://app.copytraderbrasil.com.br</p>
+<p>Acesse o sistema pelo endereï¿½o: https://app.copytraderbrasil.com.br</p>
 <p>E-mail: $email
 <p>Senha Provisoria: $senha
 <br><br>
 <p>Conta Criada na IQ Option, segue dados de acesso
 <p>Email: $email
 <p>Senha Provisoria: $senhaIQ
-<h4><b>Favor Alterar da senha na IQ Option por questões de Segurança</b></h4>
+<h4><b>Favor Alterar da senha na IQ Option por questï¿½es de Seguranï¿½a</b></h4>
 <br>
 <p>Link para Download do programa: https://app.copytraderbrasil.com.br/downloads/clienteVersaoAtual
 <br><br>
@@ -33,12 +33,12 @@ function enviarEmailUser($email, $senha, $nome, $senhaIQ)
 </body>
     </html>";
 
-    // Insira abaixo o email que irá receber a mensagem, o email que irá enviar (o mesmo da variável GUSER),
-    // o nome do email que envia a mensagem, o Assunto da mensagem e por último a variável com o corpo do email.
+    // Insira abaixo o email que irï¿½ receber a mensagem, o email que irï¿½ enviar (o mesmo da variï¿½vel GUSER),
+    // o nome do email que envia a mensagem, o Assunto da mensagem e por ï¿½ltimo a variï¿½vel com o corpo do email.
 
     if (smtpmailer($email, 'MT BRASIL - Novo Cliente', $Vai)) {
 
-        // Header("location:http://www.dominio.com.br/obrigado.html"); // Redireciona para uma página de obrigado.
+        // Header("location:http://www.dominio.com.br/obrigado.html"); // Redireciona para uma pï¿½gina de obrigado.
         echo "E-mail Enviado com Sucesso!!!";
     }
     if (! empty($error))
@@ -123,7 +123,7 @@ function getIdCliente($email, $link)
     if ($resultado_id) {
         $dados_usuario = mysqli_fetch_array($resultado_id);
         return $dados_usuario;
-      
+
     }
     return null;
 }
@@ -161,12 +161,12 @@ $objDb = new db();
 $link = $objDb->conecta_mysql();
 
 if (isset($_POST["adm"]) && isset($_POST["email2"])) {
-   
+
     if (isset($_POST["contaIQ"]) && isset($_POST["pagamento"])) {
         if (empty($_POST["email"]))
-            $erro = "Campo E-mail Obrigatório";
+            $erro = "Campo E-mail Obrigatï¿½rio";
         else {
-           
+
             $dados_usuario = getIdCliente($_POST["email2"], $link);
             $idCliente=$dados_usuario['id'];
             $nome=$dados_usuario['nome'];
@@ -178,7 +178,7 @@ if (isset($_POST["adm"]) && isset($_POST["email2"])) {
             enviarEmailUser($_POST["email2"], $novaSenha, $nome, $senhaTemp);
         }
     }else{
-        echo "Setar Confirmações";
+        echo '<div style="color: red; position: absolute; top: 46%; left: 45%;">PendÃªncias detectadas</div>';
     }
 }
 

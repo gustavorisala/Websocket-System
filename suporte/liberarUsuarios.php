@@ -118,11 +118,15 @@ footer {
 }
 
 #blocolembrete ol h1 {
-	background-color: black;
+	background-color: red;
 	color: white;
 	text-align: center;
 }
-
+#blocolembrete li
+{
+  padding-right: 5% !important;
+  padding-left: 5% !important;
+}
 #blocolembrete li {
 	padding: 2%;
 	background-color: #49505724;
@@ -146,7 +150,7 @@ footer {
 }
 
 .imguteis img {
-	width: 10%;
+	width: 30%;
 	margin: 3%;
 }
 
@@ -202,22 +206,20 @@ footer {
 					<div class="row padding">
 						<div class="col-12 col-sm-6 mx-auto">
 							<div class="col col-sm-11 mx-auto">
-<?php
 
-        if (isset($erro))
-            echo '<div style="color:#F00">' . utf8_encode($erro) . '</div><br/><br/>';
-        else if (isset($sucesso))
-            echo '<div style="color:#00f">' . utf8_encode($sucesso) . '</div><br/><br/>';
-
-        ?>
 		<form action="<?=$_SERVER["PHP_SELF"]?>" method="POST">
+      <div class="row">
+        <div class="col text-center">
+        <h1>PENDÊNCIAS</h>
+        </div>
+      </div>
 									<div class="input-group">
 										<div class="input-group-prepend">
 											<span class="input-group-text" id="basic-addon3">Contas Pré
 												Cadastro</span>
 										</div>
-										<select class="selectpicker pl-0 col-12 col-sm-6 pr-0"
-											data-live-search="true" name="email">
+										<select class="selectpicker pl-0 col-12 col-sm-8 pr-0"
+											data-live-search="true" name="email" onchange='if(this.value != 0) { this.form.submit(); }'>
 
 <?php
         if ($dadosUsuariosPre) {
@@ -226,7 +228,7 @@ footer {
             }
         }
         ?>
-      </select> <input class="ml-4 btn" type='submit' value='Selecionar'>
+      </select>
 									</div>
 
 							</div>
@@ -234,27 +236,21 @@ footer {
 					</div>
 				</div>
 				<div class="row padding">
-					<div id="blocolembrete" class="col-12 col-sm-4 centralizar">
+					<div id="blocolembrete" class="col-12 col-sm-3 centralizar">
 						<ol>
-							<h1>Lembrar-se</h1>
-							<li>Cadastrar usuário na IQ Option</li>
-							<li>Confirmar pagamento da licença de 90 dias</li>
-							<li>Liberar o usuario no backoffice</li>
-							<li>Enviar link do programa MT BRASIL</li>
-							<li>Enviar informações por e-mail</li>
+							<h1 class="pt-1 pb-1">Lembrar-se</h1>
+							<li>Receber relatório de pagamentos aprovados pelo financeiro</li>
+              <li>Cadastrar usuários com pagamento aprovado na IQ Option</li>
+							<li>Confirmar criação de conta da IQ Option</li>
+							<li>Confirmar pagamento da assinatura</li>
+							<li>Liberar usuário</li>
 						</ol>
 					</div>
-					<div id="createiq" class="col-12 col-sm-4">
+					<div id="createiq" class="col-12 mx-auto col-sm-4">
 				<?php if(isset($dadosUser)){?>
           <div class="row createtitulo">
 							<h1>Criar Conta na IQ Option</h1>
-							<h4>Cadastro link <?php
-            if ($dadosUser["indicacao"] == '18b1ea8041812e6af37320a7e283bd95') {
-                echo "AutoInvesting";
-            }else{
-                echo "Magnata";
-            }
-            ?></h4>
+							<h5><a href="https://affiliate.iqoption.com/redir/?aff=124319" rel="noopener noreferrer" target="_blank">Clique aqui</a>, para cadastrar o usuario</h>
 						</div>
 						<div id="blococriar" class="row">
 							<div class="col">
@@ -272,7 +268,7 @@ footer {
 										<div class="row">
 											<div class="col">
 												<input type="checkbox" value="pagamento" name="pagamento">
-												Confirmar Pagamento Assinatura
+												Confirmar Pagamento da Assinatura
 											</div>
 										</div>
 									</div>
@@ -287,8 +283,17 @@ footer {
 								</div>
 							</div>
 						</div>
+            <?php
+
+                    if (isset($erro))
+                        echo '<div style="color:#F00">' . utf8_encode($erro) . '</div><br/><br/>';
+                    else if (isset($sucesso))
+                        echo '<div style="color:#00f">' . utf8_encode($sucesso) . '</div><br/><br/>';
+
+                    ?>
 					</div>
-					<div class="col">
+
+					<div class="col-sm-3 col-12">
 						<div class="row">
 							<div class="col text-center">
 								<h1>Links Úteis</h1>
@@ -296,16 +301,27 @@ footer {
 						</div>
 						<div class="row imguteis">
 							<div class="col text-center">
+                <div class="row">
+                <div class="col">
 								<a rel="noopener noreferrer" target="_blank"
 									href="https://webmail-seguro.com.br/copytraderbrasil.com.br/"><img
-									class="img-fluid" src="../images/email.svg"></a>
+									class="img-fluid" src="../images/email.svg">
+                </a>
+                <h5>Webmail</h>
+              </div>
+              <div class="col">
                   <a rel="noopener noreferrer" target="_blank"
 									href="https://dashboard.tawk.to/login?lang=pt_br"><img
 									class="img-fluid" src="../images/callcenter.svg"></a>
+                  <h5>Suporte</h>
+                </div>
+                <div class="col">
                   <a rel="noopener noreferrer" target="_blank"
 									href="https://pagseguro.uol.com.br"><img
 								class="img-fluid" src="../images/aprovado.svg"></a>
+                <h5>Pagseguro</h>
 							</div>
+            </div>
 						</div>
 					</div>
 				</div>
@@ -315,6 +331,7 @@ footer {
 			</div>
 		</div>
 	</div>
+</div>
 
 	<!-- Footer -->
 	<footer class="page-footer font-small special-color-dark pt-4">

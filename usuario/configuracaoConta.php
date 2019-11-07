@@ -1,10 +1,7 @@
-
-
 <?php
 require_once '../controle/dadosConfigurarConta.php';
 
 ?>
-
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -39,9 +36,14 @@ body
 	width: 15%;
 	position: relative;
 }
-.linkafiliado
+.paineluser
 {
-
+	background-color: #e9ecef;
+}
+.input-group-text, .btn
+{
+	color: black;
+	background-color: #e9ecef;
 }
 </style>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -134,7 +136,7 @@ else if (isset($sucesso))
 			<br /> <br />';
 ?>
 			<div class="row">
-						<div class="col-md-6 col text-center mx-auto colcel">
+						<div class="col-md-6 col-12 text-center mx-auto colcel">
 							<p class="alterartxt">Alterar Senha</p>
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">

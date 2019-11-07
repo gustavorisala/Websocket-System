@@ -1,4 +1,4 @@
-<?php
+  <?php
 require_once '../controle/clienteHome.php';
 if ($atual == 'completo') {
     ?>
@@ -30,15 +30,12 @@ if ($atual == 'completo') {
 }
 .informacoes .col-4
 {
-  background-color: #bb914a;
+  background-color: #e9ecef;
+  color: black;
   display: flex;
     justify-content: center;
     align-items: center;
     font-size: 18px;
-}
-#blocodados
-{
-  margin-top: 14vh;
 }
 .colinform
 {
@@ -52,6 +49,16 @@ if ($atual == 'completo') {
   display: flex;
     justify-content: center;
     align-items: center;
+}
+.informacoes {
+  background-size: cover;
+  background-image: url(../images/3.jpeg);
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+}
+footer
+{
+  position: relative;
 }
 </style>
 <body>
@@ -79,12 +86,11 @@ if ($atual == 'completo') {
   			</div>
   		</div>
 	</div>
-		<form id="blocodados" method="post" action="dadosCliente.php">
-
-
-			<div class="container-fluid informacoes">
+  <div class="container-fluid informacoes">
         <div class="row">
+          <div class="col">
           <div class="col-sm-4 col-12 mx-auto colinform">
+            <form id="blocodados" method="post" action="dadosCliente.php">
             <div class="row">
               <div class="col-4 dado">
               Email:
@@ -117,9 +123,10 @@ if ($atual == 'completo') {
           <?=$saldo?> <?=$moeda?>
       </div>
       </div>
+    </form>
       </div>
       </div>
-		</form>
+      </div>
 	</div>
   <footer class="page-footer font-small special-color-dark pt-4">
 

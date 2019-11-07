@@ -7,7 +7,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<title><?php echo utf8_encode("Horarios de OperaÁ„o");?></title>
+<title>Horario de Opera√ß√µes</title>
 <link rel="icon" href="../imagens/favicon.png">
 <!-- jquery - link cdn -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -35,8 +35,11 @@
 	font-size: 18px;
 }
 
-#blocodados {
-	margin-top: 14vh;
+.main {
+	padding-top: 30vh;
+		padding-bottom: 30vh;
+		  background-size: cover;
+		  background-image: url(../images/3.jpeg);
 }
 
 .colinform {
@@ -50,6 +53,10 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+footer
+{
+	position: relative;
 }
 </style>
 <body>
@@ -74,22 +81,22 @@
 		<div class="container-fluid informacoes">
 		<div class="row headerdados">
 			<div class="col text-center">
-				<h2><?php echo utf8_encode("Horarios de OperaÁ„o");?></h2>
+				<h2>Horarios de Opera√ß√µes</h2>
 			</div>
 		</div>
 	</div>
 	<form id="blocodados" method="post" action="dadosCliente.php">
 
 
-		<div class="container-fluid informacoes">
-			
-
-				<h4><?php echo utf8_encode("De Segunda a Sexta");?></h4>
-				<h4><?php echo utf8_encode("Das 4h as 14h");?></h4>
-
-				<p><?php echo utf8_encode("Para InformaÁıes mais detalhadas, ser„o divulgadas no canal do telegram");?></p>
+		<div class="container-fluid informacoes main">
+				<div class="row">
+					<div class="col-5 text-center mx-auto">
+				<h4>De Segunda a Sexta</h4>
+				<h4>Das 4h as 14h</h4>
+				<p>Para informa√ß√µes mais detalhadas, ser√£o divulgadas no canal do telegram</p>
 				<a target="_blank" href="<?php echo utf8_encode("https://t.me/joinchat/AAAAAFFDLUeLxSyMUPi_cQ");?>"><?php echo utf8_encode("https://t.me/joinchat/AAAAAFFDLUeLxSyMUPi_cQ");?></a>
-			
+			</div>
+			</div>
 		</div>
 
 	</form>
@@ -113,5 +120,3 @@ $("#navtoggle").click(function(){
 </script>
 </body>
 </html>
-
-
